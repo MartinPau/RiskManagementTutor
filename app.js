@@ -293,17 +293,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Markdown parser helper: converts **text** → <strong>text</strong>, *text* → <em>text</em>
+  function parseMarkdown(text) {
+    if (!text) return '';
+    return text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*((?!\*)[^*]+)\*/g, '<em>$1</em>');
+  }
+
   // Dashboard Rendering
   function renderDashboard(container) {
     const passedA = state.quizState.quizAScore >= PASS_THRESHOLD;
     const passedB = state.quizState.quizBScore >= PASS_THRESHOLD;
+    const completedA = state.slidesViewed.partA.every(Boolean);
+    const completedB = state.slidesViewed.partB.every(Boolean);
+
+    const completeBadge = (done) => done
+      ? `<span class="module-complete-badge"><span class="material-symbols-outlined text-[12px]">check_circle</span>Completed</span>`
+      : '';
 
     container.innerHTML = `
       <header class="max-w-[800px] mx-auto mb-12">
         <div class="flex items-center gap-3 mb-6">
           <span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Portal Home</span>
           <span class="w-8 h-[1px] bg-outline-variant"></span>
-          <span class="font-label-sm text-label-sm text-on-surface-variant">Nordberg Medical Tutor</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Orderly People</span>
         </div>
         <h1 class="font-serif text-headline-xl text-on-surface mb-6">Risk Management Training Portal</h1>
         <p class="font-body-lg text-body-lg text-on-surface-variant text-balance">
@@ -312,78 +326,87 @@ document.addEventListener("DOMContentLoaded", () => {
       </header>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] mx-auto">
-        <!-- Part A Box -->
-        <div class="bg-surface-container p-8 rounded ghost-border flex flex-col justify-between h-[320px] transition-all hover:border-primary/20">
+        <!-- Module A Box -->
+        <div class="bg-surface-container p-8 rounded ghost-border flex flex-col justify-between min-h-[300px] transition-all hover:border-primary/30 ${completedA ? 'border-l-2 border-l-[#7ab89a]' : ''}">
           <div>
-            <div class="flex justify-between items-start mb-6">
-              <span class="material-symbols-outlined text-primary text-[40px]">menu_book</span>
-              <span class="text-xs bg-surface-container-highest px-2 py-1 rounded text-on-surface-variant uppercase tracking-wider font-mono">Part A</span>
+            <div class="flex justify-between items-start mb-5">
+              <span class="material-symbols-outlined text-primary text-[36px]">menu_book</span>
+              <div class="flex flex-col items-end gap-2">
+                <span class="text-xs bg-surface-container-highest px-2 py-1 rounded text-on-surface-variant uppercase tracking-wider font-sans text-[10px] font-semibold">Module A</span>
+                ${completeBadge(completedA)}
+              </div>
             </div>
-            <h2 class="font-serif text-headline-lg mb-3">Module A: Standard Overview</h2>
-            <p class="text-on-surface-variant text-sm line-clamp-3">
-              Learn the core definitions, EU MDR/US FDA regulatory alignments, general quality system requirements, risk files, policy designs, and the step-by-step lifecycle workflow.
+            <h2 class="font-serif text-xl font-bold mb-3">Standard Overview</h2>
+            <p class="text-on-surface-variant text-sm line-clamp-3 leading-relaxed">
+              Core definitions, EU MDR/US FDA alignments, risk management planning, lifecycle workflow, and key compliance requirements.
             </p>
           </div>
           <div class="flex justify-between items-center mt-6">
-            <span class="text-xs text-on-surface-variant font-mono">Progress: ${state.slidesViewed.partA.filter(Boolean).length}/${state.slidesViewed.partA.length} Pages</span>
-            <button class="px-6 py-2 bg-surface-container-high border border-outline-variant hover:bg-primary hover:text-background text-primary font-mono text-sm uppercase transition-all duration-300 rounded" onclick="window.startModuleA()">Launch Course</button>
+            <span class="text-xs text-on-surface-variant font-sans">${state.slidesViewed.partA.filter(Boolean).length} / ${state.slidesViewed.partA.length} pages</span>
+            <button class="px-5 py-2 bg-surface-container-high border border-outline-variant hover:bg-primary hover:text-background text-primary font-sans text-xs uppercase font-semibold transition-all duration-300 rounded" onclick="window.startModuleA()">${completedA ? 'Review Course' : 'Launch Course'}</button>
           </div>
         </div>
 
-        <!-- Part B Box -->
-        <div class="bg-surface-container p-8 rounded ghost-border flex flex-col justify-between h-[320px] transition-all hover:border-primary/20">
+        <!-- Module B Box -->
+        <div class="bg-surface-container p-8 rounded ghost-border flex flex-col justify-between min-h-[300px] transition-all hover:border-primary/30 ${completedB ? 'border-l-2 border-l-[#7ab89a]' : ''}">
           <div>
-            <div class="flex justify-between items-start mb-6">
-              <span class="material-symbols-outlined text-primary text-[40px]">shield_heart</span>
-              <span class="text-xs bg-surface-container-highest px-2 py-1 rounded text-on-surface-variant uppercase tracking-wider font-mono">Part B</span>
+            <div class="flex justify-between items-start mb-5">
+              <span class="material-symbols-outlined text-primary text-[36px]">biotech</span>
+              <div class="flex flex-col items-end gap-2">
+                <span class="text-xs bg-surface-container-highest px-2 py-1 rounded text-on-surface-variant uppercase tracking-wider font-sans text-[10px] font-semibold">Module B</span>
+                ${completeBadge(completedB)}
+              </div>
             </div>
-            <h2 class="font-serif text-headline-lg mb-3">Module B: Analysis Workshop</h2>
-            <p class="text-on-surface-variant text-sm line-clamp-3">
-              Explore hands-on risk analysis techniques including PHA, FMEA, HAZOP, HACCP, Fault Tree (FTA) and Event Tree (ETA) analysis with clinical device case studies.
+            <h2 class="font-serif text-xl font-bold mb-3">Analysis Workshop</h2>
+            <p class="text-on-surface-variant text-sm line-clamp-3 leading-relaxed">
+              Hands-on techniques: PHA, FMEA, HAZOP, HACCP, FTA, and ETA analysis with interactive clinical device case studies.
             </p>
           </div>
           <div class="flex justify-between items-center mt-6">
-            <span class="text-xs text-on-surface-variant font-mono">Progress: ${state.slidesViewed.partB.filter(Boolean).length}/${state.slidesViewed.partB.length} Pages</span>
-            <button class="px-6 py-2 bg-surface-container-high border border-outline-variant hover:bg-primary hover:text-background text-primary font-mono text-sm uppercase transition-all duration-300 rounded" onclick="window.startModuleB()">Launch Workshop</button>
+            <span class="text-xs text-on-surface-variant font-sans">${state.slidesViewed.partB.filter(Boolean).length} / ${state.slidesViewed.partB.length} pages</span>
+            <button class="px-5 py-2 bg-surface-container-high border border-outline-variant hover:bg-primary hover:text-background text-primary font-sans text-xs uppercase font-semibold transition-all duration-300 rounded" onclick="window.startModuleB()">${completedB ? 'Review Workshop' : 'Launch Workshop'}</button>
           </div>
         </div>
 
         <!-- Quizzes Box -->
-        <div class="bg-surface-container p-8 rounded ghost-border flex flex-col justify-between h-[320px] transition-all hover:border-primary/20">
+        <div class="bg-surface-container p-8 rounded ghost-border flex flex-col justify-between min-h-[300px] transition-all hover:border-primary/30">
           <div>
-            <div class="flex justify-between items-start mb-6">
-              <span class="material-symbols-outlined text-primary text-[40px]">quiz</span>
-              <span class="text-xs bg-surface-container-highest px-2 py-1 rounded text-on-surface-variant uppercase tracking-wider font-mono">Competence</span>
+            <div class="flex justify-between items-start mb-5">
+              <span class="material-symbols-outlined text-primary text-[36px]">assignment_turned_in</span>
+              <span class="text-xs bg-surface-container-highest px-2 py-1 rounded text-on-surface-variant uppercase tracking-wider font-sans text-[10px] font-semibold">Competence</span>
             </div>
-            <h2 class="font-serif text-headline-lg mb-3">Module Quizzes & Tests</h2>
-            <p class="text-on-surface-variant text-sm line-clamp-3">
-              Verify your comprehension. Complete the 5-question exams for both Standard Overview (Quiz A) and Analysis Techniques (Quiz B). Requires 80% to certify.
+            <h2 class="font-serif text-xl font-bold mb-3">Competence Exams</h2>
+            <p class="text-on-surface-variant text-sm line-clamp-3 leading-relaxed">
+              Verify your comprehension with two timed exams. Score at least 80% on both to unlock your official certificate.
             </p>
           </div>
-          <div class="flex justify-between items-center mt-6 col-span-2">
-            <div class="flex gap-4 text-xs text-on-surface-variant font-mono">
-              <span>Quiz A: ${state.quizState.quizAScore !== null ? state.quizState.quizAScore + "/5" : "Not Started"}</span>
-              <span>Quiz B: ${state.quizState.quizBScore !== null ? state.quizState.quizBScore + "/5" : "Not Started"}</span>
+          <div class="flex justify-between items-center mt-6">
+            <div class="flex gap-4 text-xs text-on-surface-variant font-sans">
+              <span>Exam A: <strong class="${passedA ? 'text-[#7ab89a]' : 'text-on-surface'}">${state.quizState.quizAScore !== null ? state.quizState.quizAScore + '/5 ' + (passedA ? '✓' : '') : 'Not started'}</strong></span>
+              <span>Exam B: <strong class="${passedB ? 'text-[#7ab89a]' : 'text-on-surface'}">${state.quizState.quizBScore !== null ? state.quizState.quizBScore + '/6 ' + (passedB ? '✓' : '') : 'Not started'}</strong></span>
             </div>
-            <button class="px-6 py-2 bg-surface-container-high border border-outline-variant hover:bg-primary hover:text-background text-primary font-mono text-sm uppercase transition-all duration-300 rounded" onclick="window.startQuizzes()">Open Exam</button>
+            <button class="px-5 py-2 bg-surface-container-high border border-outline-variant hover:bg-primary hover:text-background text-primary font-sans text-xs uppercase font-semibold transition-all duration-300 rounded" onclick="window.startQuizzes()">Open Exams</button>
           </div>
         </div>
 
         <!-- Certificate Box -->
-        <div class="bg-surface-container p-8 rounded ghost-border flex flex-col justify-between h-[320px] transition-all hover:border-primary/20 ${passedA && passedB ? 'border-primary/40' : 'opacity-60'}">
+        <div class="bg-surface-container p-8 rounded ghost-border flex flex-col justify-between min-h-[300px] transition-all hover:border-primary/30 ${passedA && passedB ? 'border-primary/40 border' : 'opacity-60'}">
           <div>
-            <div class="flex justify-between items-start mb-6">
-              <span class="material-symbols-outlined text-primary text-[40px]">workspace_premium</span>
-              <span class="text-xs bg-surface-container-highest px-2 py-1 rounded text-on-surface-variant uppercase tracking-wider font-mono">Certification</span>
+            <div class="flex justify-between items-start mb-5">
+              <span class="material-symbols-outlined text-primary text-[36px]">workspace_premium</span>
+              <div class="flex flex-col items-end gap-2">
+                <span class="text-xs bg-surface-container-highest px-2 py-1 rounded text-on-surface-variant uppercase tracking-wider font-sans text-[10px] font-semibold">Certification</span>
+                ${passedA && passedB ? completeBadge(true) : ''}
+              </div>
             </div>
-            <h2 class="font-serif text-headline-lg mb-3">Training Certificate</h2>
-            <p class="text-on-surface-variant text-sm line-clamp-3">
-              Once you have reviewed the courses and scored at least 80% on both quizzes, you can unlock and generate your official Certificate of Competency.
+            <h2 class="font-serif text-xl font-bold mb-3">Training Certificate</h2>
+            <p class="text-on-surface-variant text-sm line-clamp-3 leading-relaxed">
+              Once you have passed both exams (≥80%), generate your official Orderly People Certificate of Competency in ISO 14971:2019.
             </p>
           </div>
           <div class="flex justify-between items-center mt-6">
-            <span class="text-xs text-on-surface-variant font-mono">${passedA && passedB ? 'UNLOCKED' : 'LOCKED (Pass Quizzes First)'}</span>
-            <button class="px-6 py-2 bg-surface-container-high border border-outline-variant hover:bg-primary hover:text-background text-primary font-mono text-sm uppercase transition-all duration-300 rounded" ${passedA && passedB ? '' : 'disabled'} onclick="window.startCertificate()">Get Certificate</button>
+            <span class="text-xs font-sans ${passedA && passedB ? 'text-[#7ab89a] font-semibold' : 'text-on-surface-variant'}">${passedA && passedB ? '🔓 Unlocked' : 'Pass both exams first'}</span>
+            <button class="px-5 py-2 bg-surface-container-high border border-outline-variant hover:bg-primary hover:text-background text-primary font-sans text-xs uppercase font-semibold transition-all duration-300 rounded" ${passedA && passedB ? '' : 'disabled style="opacity:0.4;cursor:not-allowed"'} onclick="window.startCertificate()">Get Certificate</button>
           </div>
         </div>
       </div>
@@ -2527,83 +2550,114 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
-  // Interactivity: VOI vs VOE Match Game
+  // Interactivity: VOI vs VOE Match Game (TEC-14 — real drag-and-drop)
   function setupMatchGame() {
     const cardsContainer = document.getElementById("match-cards-container");
+    const voiZone = document.getElementById("voi-drop");
+    const voeZone = document.getElementById("voe-drop");
     const voiList = document.getElementById("voi-list");
     const voeList = document.getElementById("voe-list");
     const feedbackEl = document.getElementById("game-feedback");
 
     const items = [
-      { id: "c1", text: "Needle marking spec (DVR-045)", type: "voi" },
-      { id: "c2", text: "15-practitioner usability study (RPT-061)", type: "voe" },
-      { id: "c3", text: "Tamper-evident seal drawing BOM entry", type: "voi" },
-      { id: "c4", text: "Vial bioburden sampling study (RPT-058)", type: "voe" }
+      { id: "c1", text: "Injection depth needle marking matches design drawing (DVR-045)", type: "voi", hint: "Did you implement it?" },
+      { id: "c2", text: "15-practitioner usability study confirms correct depth (RPT-061)", type: "voe", hint: "Does it actually work?" },
+      { id: "c3", text: "Tamper-evident seal geometry matches BOM drawing spec", type: "voi", hint: "Did you implement it?" },
+      { id: "c4", text: "Bioburden sampling study shows <10 CFU/device (RPT-058)", type: "voe", hint: "Does it actually work?" }
     ];
 
-    // Render cards
-    cardsContainer.innerHTML = items.map(item => `
-      <div class="match-card bg-surface-container p-3 rounded border border-outline-variant text-xs text-on-surface font-mono text-center hover:border-primary" id="${item.id}" draggable="true">
-        ${item.text}
+    // Render cards with drag instructions
+    cardsContainer.innerHTML = `
+      <p class="text-xs text-on-surface-variant mb-3 italic">Drag each card into the correct column — <strong class="text-primary">VOI</strong> (did you implement it?) or <strong class="text-on-surface">VOE</strong> (does it work?).</p>
+      <div class="grid grid-cols-1 gap-2">
+        ${items.map(item => `
+          <div class="match-card bg-surface-container-high p-3 rounded border border-outline-variant text-xs text-on-surface font-sans hover:border-primary cursor-grab" id="${item.id}" draggable="true">
+            <span class="block font-semibold text-on-surface">${item.text}</span>
+            <span class="block text-on-surface-variant mt-1 italic text-[10px]">${item.hint}</span>
+          </div>
+        `).join('')}
       </div>
-    `).join("");
+    `;
 
-    let selectedId = null;
-
-    // Click to select
-    const cards = document.querySelectorAll(".match-card");
-    cards.forEach(card => {
-      card.onclick = () => {
-        cards.forEach(c => c.classList.remove("selected"));
-        card.classList.add("selected");
-        selectedId = card.id;
-      };
-    });
-
-    // Match handlers
-    document.getElementById("voi-drop").onclick = () => handleMatchAttempt("voi");
-    document.getElementById("voe-drop").onclick = () => handleMatchAttempt("voe");
-
+    let dragId = null;
     let matchedCount = 0;
 
-    function handleMatchAttempt(targetType) {
-      if (!selectedId) {
-        feedbackEl.textContent = "Select a card first!";
-        return;
-      }
+    // Drag events on cards
+    document.querySelectorAll('.match-card').forEach(card => {
+      card.addEventListener('dragstart', (e) => {
+        dragId = card.id;
+        e.dataTransfer.effectAllowed = 'move';
+        card.style.opacity = '0.5';
+      });
+      card.addEventListener('dragend', () => {
+        card.style.opacity = '';
+      });
+      // Click fallback: click card to select, then click zone
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.match-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        dragId = card.id;
+        feedbackEl.textContent = 'Now click VOI or VOE to place this card.';
+      });
+    });
 
-      const item = items.find(i => i.id === selectedId);
-      const cardEl = document.getElementById(selectedId);
+    // Drop zone setup
+    [voiZone, voeZone].forEach(zone => {
+      zone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        zone.classList.add('dragover');
+      });
+      zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+      zone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        zone.classList.remove('dragover');
+        const targetType = zone.id === 'voi-drop' ? 'voi' : 'voe';
+        handleMatchAttempt(targetType);
+      });
+      // Click fallback
+      zone.addEventListener('click', () => {
+        if (!dragId) return;
+        const targetType = zone.id === 'voi-drop' ? 'voi' : 'voe';
+        handleMatchAttempt(targetType);
+      });
+    });
+
+    function handleMatchAttempt(targetType) {
+      if (!dragId) return;
+      const item = items.find(i => i.id === dragId);
+      const cardEl = document.getElementById(dragId);
+      if (!item || !cardEl || cardEl.classList.contains('matched')) return;
+
+      const list = targetType === 'voi' ? voiList : voeList;
 
       if (item.type === targetType) {
-        // Correct match
-        cardEl.classList.add("matched", "pointer-events-none");
-        cardEl.classList.remove("selected");
-        
-        const list = targetType === "voi" ? voiList : voeList;
-        const entry = document.createElement("div");
-        entry.className = "bg-primary/10 text-primary py-1 px-2 rounded mb-1 text-[10px]";
-        entry.textContent = `✓ ${item.text.split(" (")[0]}`;
+        // Correct
+        cardEl.classList.add('matched', 'pointer-events-none');
+        cardEl.classList.remove('selected');
+        const entry = document.createElement('div');
+        entry.className = 'p-2 rounded mb-1 text-[11px] font-sans';
+        entry.style.cssText = 'background: rgba(122,184,154,0.12); border: 1px solid rgba(122,184,154,0.4); color: #7ab89a;';
+        entry.innerHTML = `<span class="font-bold">&#10003;</span> ${item.text}`;
         list.appendChild(entry);
-
-        selectedId = null;
+        dragId = null;
         matchedCount++;
-
         if (matchedCount === items.length) {
-          feedbackEl.innerHTML = `<span class="text-primary font-bold">Excellent! All verifications correctly matched.</span>`;
+          feedbackEl.innerHTML = `<span style="color:#7ab89a;font-weight:bold">🎉 All verifications correctly matched! VOI confirms implementation; VOE confirms effectiveness.</span>`;
         } else {
-          feedbackEl.textContent = "Correct match!";
+          feedbackEl.innerHTML = `<span style="color:#7ab89a">✓ Correct! Keep going.</span>`;
         }
       } else {
-        feedbackEl.innerHTML = `<span class="text-error">Incorrect. Try again.</span>`;
-        // Shake animation
-        cardEl.classList.add("animate-pulse");
-        setTimeout(() => cardEl.classList.remove("animate-pulse"), 500);
+        feedbackEl.innerHTML = `<span style="color:#f28b82">✗ Not quite — think: does this card confirm the measure was <em>implemented</em> (VOI) or that it actually <em>works</em> (VOE)?</span>`;
+        cardEl.classList.add('animate-pulse');
+        setTimeout(() => {
+          cardEl.classList.remove('animate-pulse', 'selected');
+          dragId = null;
+        }, 700);
       }
     }
   }
 
-  // Interactivity: Benefit-Risk Scale
+  // Interactivity: Benefit-Risk Scale (TEC-15 — fixed gravity animation)
   function setupScaleInteractivity() {
     const scaleBeam = document.getElementById("scale-beam-group");
     const panLeft = document.getElementById("scale-pan-left");
@@ -2619,46 +2673,40 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // Default risk weight is 50
+      // Risk side is fixed at weight 50; benefits accumulate on the right
       const riskWeight = 50;
-      
-      // Calculate rotation angle
-      // If benefit exceeds, rotate right (clockwise, e.g., positive angle)
-      // Max rotation is 15deg
-      let angle = -12; // Start with risk heavier
-      
-      if (totalBenefitWeight > 0) {
-        const ratio = totalBenefitWeight / (riskWeight + totalBenefitWeight);
-        angle = -12 + (ratio * 30); // scale between -12 and +18 degrees
-      }
+      const netDiff = totalBenefitWeight - riskWeight; // negative means risk heavier
 
-      // Rotate beam
-      scaleBeam.style.transform = `rotate(${angle}deg)`;
-      
-      // Counter-rotate pans to keep them level
-      panLeft.style.transform = `rotate(${-angle}deg)`;
-      panRight.style.transform = `rotate(${-angle}deg)`;
+      // Angle: clamp between -18 (risk heavy) and +18 (benefits heavy)
+      const maxAngle = 18;
+      const angle = Math.max(-maxAngle, Math.min(maxAngle, (netDiff / riskWeight) * maxAngle));
 
-      // Update outcome text
-      if (angle > 2) {
-        outcomeBadge.textContent = "BENEFITS OUTWEIGH RESIDUAL RISK (ACCEPTED §7.4)";
-        outcomeBadge.style.color = "var(--primary)";
-        outcomeBadge.style.borderColor = "var(--primary)";
-        outcomeBadge.style.backgroundColor = "rgba(87, 241, 219, 0.05)";
-      } else {
-        outcomeBadge.textContent = "RISK OUTWEIGHS BENEFITS (UNACCEPTABLE)";
+      // Apply transforms — pans counter-rotate to stay horizontal (gravity effect)
+      if (scaleBeam) scaleBeam.style.transform = `rotate(${angle}deg)`;
+      if (panLeft) panLeft.style.transform = `translateY(${angle > 0 ? Math.abs(angle) * 1.5 : 0}px)`;
+      if (panRight) panRight.style.transform = `translateY(${angle < 0 ? Math.abs(angle) * 1.5 : 0}px)`;
+
+      if (!outcomeBadge) return;
+      if (angle > 1) {
+        outcomeBadge.textContent = "BENEFITS OUTWEIGH RESIDUAL RISK — Accepted per §7.4";
+        outcomeBadge.style.color = "#7ab89a";
+        outcomeBadge.style.borderColor = "#7ab89a";
+        outcomeBadge.style.backgroundColor = "rgba(122, 184, 154, 0.06)";
+      } else if (angle < -1) {
+        outcomeBadge.textContent = "RISK OUTWEIGHS BENEFITS — Still UNACCEPTABLE";
         outcomeBadge.style.color = "var(--error)";
         outcomeBadge.style.borderColor = "var(--error)";
-        outcomeBadge.style.backgroundColor = "rgba(255, 180, 171, 0.05)";
+        outcomeBadge.style.backgroundColor = "rgba(242, 139, 130, 0.06)";
+      } else {
+        outcomeBadge.textContent = "BALANCED — Borderline — additional evidence needed";
+        outcomeBadge.style.color = "var(--tertiary)";
+        outcomeBadge.style.borderColor = "var(--tertiary)";
+        outcomeBadge.style.backgroundColor = "rgba(212, 184, 150, 0.06)";
       }
     }
 
-    checkboxes.forEach(cb => {
-      cb.onchange = updateScale;
-    });
-
-    // Initial scale check
-    updateScale();
+    checkboxes.forEach(cb => { cb.onchange = updateScale; });
+    updateScale(); // initialize
   }
 
   // Module B: Analysis Workshop Rendering
@@ -3268,19 +3316,91 @@ document.addEventListener("DOMContentLoaded", () => {
         isWide: false
       },
       {
-        title: `ETA Example, Probability of various harms`,
-        content: `<p class="mb-3 text-sm text-on-surface-variant leading-relaxed">3</p>
-          <p class="mb-3 text-sm text-on-surface-variant leading-relaxed">Event Tree Analysis - Useful for finding probabilities of various harms</p>`,
-        infographic: `
-          <div class="h-full flex flex-col justify-center items-center p-6 text-center">
-            <span class="material-symbols-outlined text-primary text-[48px] mb-4">grid_on</span>
-            <h3 class="font-serif text-lg mb-2 text-on-surface">ETA Example, Probability of various harms</h3>
-            <p class="text-xs text-on-surface-variant max-w-[280px] leading-relaxed">
-              ETA Example, Probability of various harms is part of the ISO 14971 Risk Management Training (Part B). Focus on key compliance elements.
-            </p>
+        title: `ETA Example: Probability of Various Harms`,
+        content: `<p class="mb-3 text-sm text-on-surface-variant leading-relaxed">Event Tree Analysis is especially powerful when you can assign <strong>failure probabilities</strong> to each safeguard barrier. Multiplying probabilities along each path gives you the quantified risk for each outcome.</p>
+          <p class="text-xs text-primary font-sans font-semibold uppercase mb-2">Ventilator Pressure Sensor Failure — Quantified ETA</p>
+          <p class="text-xs text-on-surface-variant mb-3">Assumptions: P(alarm fails) = 0.10 | P(clinician non-response) = 0.20 | P(valve fails) = 0.05</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr class="bg-surface-container-high text-primary font-sans font-semibold">
+                  <th class="p-2 border border-outline-variant">Alarm?</th>
+                  <th class="p-2 border border-outline-variant">Clinician?</th>
+                  <th class="p-2 border border-outline-variant">Valve?</th>
+                  <th class="p-2 border border-outline-variant">Outcome</th>
+                  <th class="p-2 border border-outline-variant">Path Probability</th>
+                </tr>
+              </thead>
+              <tbody class="text-on-surface-variant">
+                <tr class="border-b border-outline-variant/30">
+                  <td class="p-2 border border-outline-variant" style="color:#7ab89a">YES (0.90)</td>
+                  <td class="p-2 border border-outline-variant" style="color:#7ab89a">YES (0.80)</td>
+                  <td class="p-2 border border-outline-variant">—</td>
+                  <td class="p-2 border border-outline-variant" style="color:#7ab89a">No Harm</td>
+                  <td class="p-2 border border-outline-variant" style="color:#7ab89a">0.90 × 0.80 = <strong>72.0%</strong></td>
+                </tr>
+                <tr class="border-b border-outline-variant/30">
+                  <td class="p-2 border border-outline-variant" style="color:#7ab89a">YES (0.90)</td>
+                  <td class="p-2 border border-outline-variant" style="color:#f28b82">NO (0.20)</td>
+                  <td class="p-2 border border-outline-variant" style="color:#7ab89a">YES (0.95)</td>
+                  <td class="p-2 border border-outline-variant" style="color:var(--tertiary)">Minor Harm</td>
+                  <td class="p-2 border border-outline-variant" style="color:var(--tertiary)">0.90 × 0.20 × 0.95 = <strong>17.1%</strong></td>
+                </tr>
+                <tr class="border-b border-outline-variant/30">
+                  <td class="p-2 border border-outline-variant" style="color:#7ab89a">YES (0.90)</td>
+                  <td class="p-2 border border-outline-variant" style="color:#f28b82">NO (0.20)</td>
+                  <td class="p-2 border border-outline-variant" style="color:#f28b82">NO (0.05)</td>
+                  <td class="p-2 border border-outline-variant" style="color:#f28b82">Serious Harm</td>
+                  <td class="p-2 border border-outline-variant" style="color:#f28b82">0.90 × 0.20 × 0.05 = <strong>0.9%</strong></td>
+                </tr>
+                <tr class="border-b border-outline-variant/30">
+                  <td class="p-2 border border-outline-variant" style="color:#f28b82">NO (0.10)</td>
+                  <td class="p-2 border border-outline-variant">—</td>
+                  <td class="p-2 border border-outline-variant" style="color:#7ab89a">YES (0.95)</td>
+                  <td class="p-2 border border-outline-variant" style="color:var(--tertiary)">Moderate Harm</td>
+                  <td class="p-2 border border-outline-variant" style="color:var(--tertiary)">0.10 × 0.95 = <strong>9.5%</strong></td>
+                </tr>
+                <tr>
+                  <td class="p-2 border border-outline-variant" style="color:#f28b82">NO (0.10)</td>
+                  <td class="p-2 border border-outline-variant">—</td>
+                  <td class="p-2 border border-outline-variant" style="color:#f28b82">NO (0.05)</td>
+                  <td class="p-2 border border-outline-variant" style="color:#f28b82;font-weight:bold">Critical Harm</td>
+                  <td class="p-2 border border-outline-variant" style="color:#f28b82;font-weight:bold">0.10 × 0.05 = <strong>0.5%</strong></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-    `,
-        isWide: false
+          <p class="mt-3 text-[10px] text-on-surface-variant italic">Key insight: The worst-case path (critical harm) requires the sensor <em>and</em> alarm <em>and</em> valve to all fail — reducing to just 0.5%. The most common residual risk is minor harm (17.1%) when the clinician misses the alarm but the valve saves the day.</p>
+        `,
+        infographic: `
+          <div class="h-full flex flex-col justify-center p-6 bg-surface-container-high rounded border border-outline-variant">
+            <h4 class="font-sans text-xs font-bold text-primary uppercase mb-4 tracking-wider">Outcome Probability Distribution</h4>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-xs font-sans mb-1"><span style="color:#7ab89a">No Harm</span><span style="color:#7ab89a">72.0%</span></div>
+                <div class="h-3 rounded" style="background:rgba(131,152,150,0.15)"><div class="h-3 rounded" style="background:#7ab89a;width:72%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs font-sans mb-1"><span style="color:var(--tertiary)">Minor Harm</span><span style="color:var(--tertiary)">17.1%</span></div>
+                <div class="h-3 rounded" style="background:rgba(131,152,150,0.15)"><div class="h-3 rounded" style="background:var(--tertiary);width:17.1%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs font-sans mb-1"><span style="color:var(--tertiary)">Moderate Harm</span><span style="color:var(--tertiary)">9.5%</span></div>
+                <div class="h-3 rounded" style="background:rgba(131,152,150,0.15)"><div class="h-3 rounded" style="background:var(--tertiary);opacity:0.7;width:9.5%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs font-sans mb-1"><span style="color:#f28b82">Serious Harm</span><span style="color:#f28b82">0.9%</span></div>
+                <div class="h-3 rounded" style="background:rgba(131,152,150,0.15)"><div class="h-3 rounded" style="background:#f28b82;width:0.9%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs font-sans mb-1"><span style="color:#f28b82;font-weight:bold">Critical Harm</span><span style="color:#f28b82;font-weight:bold">0.5%</span></div>
+                <div class="h-3 rounded" style="background:rgba(131,152,150,0.15)"><div class="h-3 rounded" style="background:#f28b82;width:0.5%"></div></div>
+              </div>
+            </div>
+            <p class="text-[10px] text-on-surface-variant mt-4 italic">Probabilities sum to ~100%. This quantified view helps prioritize which barrier to improve first.</p>
+          </div>
+        `,
+        isWide: true
       },
       {
         title: `Failure Mode and Effects Analysis (FMEA)   IEC 60812`,
@@ -3916,7 +4036,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.goToQuizzes = () => navigateTo("quizzes");
   }
 
-  // Interactivity: FTA Switches
+  // Interactivity: FTA Switches (TEC-17 — SVG nodes directly clickable)
   function setupFtaInteractivity() {
     const swSensor = document.getElementById("fta-sensor");
     const swAlarm = document.getElementById("fta-alarm");
@@ -3933,49 +4053,70 @@ document.addEventListener("DOMContentLoaded", () => {
     const boxSensor = document.getElementById("box-sensor");
     const boxAlarm = document.getElementById("box-alarm");
 
+    // Make SVG node boxes directly clickable to toggle (TEC-17)
+    if (boxSoftware) {
+      boxSoftware.style.cursor = 'pointer';
+      boxSoftware.addEventListener('click', () => {
+        if (swSoftware) { swSoftware.checked = !swSoftware.checked; updateFta(); }
+      });
+    }
+    if (boxSensor) {
+      boxSensor.style.cursor = 'pointer';
+      boxSensor.addEventListener('click', () => {
+        if (swSensor) { swSensor.checked = !swSensor.checked; updateFta(); }
+      });
+    }
+    if (boxAlarm) {
+      boxAlarm.style.cursor = 'pointer';
+      boxAlarm.addEventListener('click', () => {
+        if (swAlarm) { swAlarm.checked = !swAlarm.checked; updateFta(); }
+      });
+    }
+
     function updateFta() {
-      const sensorFailed = swSensor.checked;
-      const alarmFailed = swAlarm.checked;
-      const softwareFailed = swSoftware.checked;
+      const sensorFailed = swSensor && swSensor.checked;
+      const alarmFailed = swAlarm && swAlarm.checked;
+      const softwareFailed = swSoftware && swSoftware.checked;
 
       // Update node boxes colors
-      boxSoftware.style.borderColor = softwareFailed ? "var(--error)" : "var(--outline-variant)";
-      boxSensor.style.borderColor = sensorFailed ? "var(--error)" : "var(--outline-variant)";
-      boxAlarm.style.borderColor = alarmFailed ? "var(--error)" : "var(--outline-variant)";
+      if (boxSoftware) boxSoftware.style.stroke = softwareFailed ? "#f28b82" : "var(--outline-variant)";
+      if (boxSensor) boxSensor.style.stroke = sensorFailed ? "#f28b82" : "var(--outline-variant)";
+      if (boxAlarm) boxAlarm.style.stroke = alarmFailed ? "#f28b82" : "var(--outline-variant)";
+
+      if (boxSoftware) boxSoftware.style.fill = softwareFailed ? "rgba(242,139,130,0.18)" : "";
+      if (boxSensor) boxSensor.style.fill = sensorFailed ? "rgba(242,139,130,0.18)" : "";
+      if (boxAlarm) boxAlarm.style.fill = alarmFailed ? "rgba(242,139,130,0.18)" : "";
 
       // AND gate logic
       const andActive = sensorFailed && alarmFailed;
-      andGate.style.fill = andActive ? "var(--error)" : "var(--primary)";
+      if (andGate) andGate.style.fill = andActive ? "#f28b82" : "var(--primary)";
 
       // OR gate logic (software fails OR AND-gate active)
       const topActive = softwareFailed || andActive;
-      orGate.style.fill = topActive ? "var(--error)" : "var(--primary-container)";
+      if (orGate) orGate.style.fill = topActive ? "#f28b82" : "var(--primary-container)";
 
       if (topActive) {
-        topRect.style.stroke = "var(--error)";
-        topRect.style.fill = "rgba(147, 0, 10, 0.2)";
-        topText.textContent = "OVERDOSE DELIVERED!";
-        statusText.innerHTML = `<span class="text-error font-bold">HAZARD ACTIVE: ${softwareFailed ? 'Software Bug' : 'Dual Sensor/Alarm Failure'} triggered the overdose.</span>`;
+        if (topRect) { topRect.style.stroke = "#f28b82"; topRect.style.fill = "rgba(122,0,10,0.2)"; }
+        if (topText) topText.textContent = "OVERDOSE DELIVERED!";
+        if (statusText) statusText.innerHTML = `<span style="color:#f28b82;font-weight:bold">⚠️ HAZARD ACTIVE: ${softwareFailed ? 'Software Bug' : 'Dual Sensor+Alarm Failure'} triggered the overdose.</span>`;
       } else {
-        topRect.style.stroke = "var(--outline)";
-        topRect.style.fill = "var(--surface-container-high)";
-        topText.textContent = "SAFE OPERATION";
-        
+        if (topRect) { topRect.style.stroke = "var(--outline)"; topRect.style.fill = "var(--surface-container-high)"; }
+        if (topText) topText.textContent = "SAFE OPERATION";
         let subText = "Safe. ";
         if (sensorFailed && !alarmFailed) {
-          subText += "Flow sensor failed, but Occlusion Alarm BLOCKED the overdose (AND gate protection).";
+          subText += "Flow sensor failed, but Occlusion Alarm blocked the overdose (AND gate protection).";
         } else if (!sensorFailed && alarmFailed) {
-          subText += "Alarm failed, but Flow Sensor remains active.";
+          subText += "Alarm failed, but Flow Sensor remains active — AND gate safe.";
         } else {
-          subText += "No failures active.";
+          subText += "No failures active. Click the node boxes above or use the toggles to simulate failures.";
         }
-        statusText.innerHTML = `<span class="text-primary">${subText}</span>`;
+        if (statusText) statusText.innerHTML = `<span style="color:var(--primary)">${subText}</span>`;
       }
     }
 
-    swSensor.onchange = updateFta;
-    swAlarm.onchange = updateFta;
-    swSoftware.onchange = updateFta;
+    if (swSensor) swSensor.onchange = updateFta;
+    if (swAlarm) swAlarm.onchange = updateFta;
+    if (swSoftware) swSoftware.onchange = updateFta;
 
     updateFta();
   }
@@ -4342,11 +4483,61 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
 
+    // Always bind these for the Back / Retry buttons in case celebration doesn't fire
     window.backToQuizzes = () => navigateTo("quizzes");
     window.retryExam = (t) => renderExamStage(container, t);
+
+    // Show congratulations overlay when BOTH exams have now been passed
+    const nowPassedA = state.quizState.quizAScore >= PASS_THRESHOLD;
+    const nowPassedB = state.quizState.quizBScore >= PASS_THRESHOLD;
+
+    if (nowPassedA && nowPassedB) {
+      // Let user see their score for 2.5s, then show celebration
+      setTimeout(() => showCelebration(container, type), 2500);
+    }
   }
 
-  // Render Certificate View
+  // Celebration overlay (TEC-26)
+  function showCelebration(container, examType) {
+    // Spawn confetti
+    const colors = ['#839896','#f8f5eb','#7ab89a','#d4b896','#b8c4c2'];
+    for (let i = 0; i < 60; i++) {
+      const c = document.createElement('div');
+      c.className = 'confetti-piece';
+      c.style.cssText = `
+        left: ${Math.random()*100}vw;
+        top: -10px;
+        width: ${6 + Math.random()*10}px;
+        height: ${6 + Math.random()*10}px;
+        background: ${colors[Math.floor(Math.random()*colors.length)]};
+        animation-duration: ${2 + Math.random()*3}s;
+        animation-delay: ${Math.random()*2}s;
+        border-radius: ${Math.random()>0.5?'50%':'2px'};
+      `;
+      document.body.appendChild(c);
+      c.addEventListener('animationend', () => c.remove());
+    }
+
+    container.innerHTML = `
+      <div class="max-w-[600px] mx-auto text-center">
+        <div class="celebration-modal bg-surface-container p-10 rounded ghost-border">
+          <div class="text-[72px] mb-4">🎉</div>
+          <h2 class="font-serif text-3xl font-bold mb-3" style="color:#7ab89a">Both Exams Passed!</h2>
+          <p class="text-on-surface-variant mb-2 text-sm">Congratulations! You have demonstrated competence in ISO 14971:2019 Risk Management — both the Standard Overview and Analysis Techniques modules.</p>
+          <p class="text-on-surface-variant mb-8 text-sm">Your <strong>Certificate of Competency</strong> is now ready to generate.</p>
+          <div class="flex gap-4 justify-center">
+            <button class="px-6 py-3 bg-primary text-background font-sans text-sm uppercase font-bold rounded hover:opacity-90 transition-all" onclick="window.backToQuizzes()">View Score Details</button>
+            <button class="px-6 py-3 border border-primary text-primary font-sans text-sm uppercase font-semibold rounded hover:bg-primary hover:text-background transition-all" onclick="window.goCertificate()">Get Certificate →</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    window.backToQuizzes = () => navigateTo("quizzes");
+    window.goCertificate = () => navigateTo("certificate");
+  }
+
+  // Render Certificate View (TEC-27/28 — Orderly People logo + branding)
   function renderCertificate(container) {
     const passedA = state.quizState.quizAScore >= PASS_THRESHOLD;
     const passedB = state.quizState.quizBScore >= PASS_THRESHOLD;
@@ -4355,11 +4546,11 @@ document.addEventListener("DOMContentLoaded", () => {
       container.innerHTML = `
         <div class="max-w-[600px] mx-auto text-center py-12">
           <span class="material-symbols-outlined text-[64px] text-on-surface-variant opacity-40 mb-4">lock</span>
-          <h2 class="font-serif text-headline-xl mb-2">Certificate Locked</h2>
+          <h2 class="font-serif text-3xl font-bold mb-2">Certificate Locked</h2>
           <p class="text-sm text-on-surface-variant leading-relaxed mb-6">
-            You must pass Quiz A (at least 4/5) and Quiz B (at least 4/6) before you can generate your certificate.
+            You must pass Exam A (at least 4/5) and Exam B (at least 4/6) before you can generate your certificate.
           </p>
-          <button class="px-6 py-2.5 bg-primary text-background font-mono text-xs uppercase font-bold rounded" onclick="navigateTo('quizzes')">Open Quizzes</button>
+          <button class="px-6 py-2.5 bg-primary text-background font-sans text-xs uppercase font-bold rounded" onclick="navigateTo('quizzes')">Open Exams</button>
         </div>
       `;
       return;
@@ -4369,49 +4560,56 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="max-w-[700px] mx-auto text-center no-print">
         <header class="mb-8">
           <span class="material-symbols-outlined text-primary text-[48px] mb-2">workspace_premium</span>
-          <h2 class="font-serif text-headline-xl">Claim Your Certificate</h2>
+          <h2 class="font-serif text-3xl font-bold">Claim Your Certificate</h2>
           <p class="text-xs text-on-surface-variant mt-2">Enter your name as you would like it to appear on the official certificate.</p>
         </header>
 
         <div class="bg-surface-container p-6 rounded ghost-border mb-8 max-w-[450px] mx-auto">
           <div class="flex gap-3">
-            <input type="text" id="cert-name-input" value="${state.userName}" placeholder="E.g., Erika Sundgren" class="flex-1 bg-surface-container-high border border-outline-variant text-on-surface px-4 py-2 text-sm rounded focus:border-primary focus:outline-none font-mono">
-            <button class="px-6 py-2 bg-primary text-background font-mono text-xs uppercase font-bold rounded hover:bg-primary-container" id="cert-update-btn">Save Name</button>
+            <input type="text" id="cert-name-input" value="${state.userName}" placeholder="E.g. Erika Sundgren" class="flex-1 bg-surface-container-high border border-outline-variant text-on-surface px-4 py-2 text-sm rounded focus:border-primary focus:outline-none font-sans">
+            <button class="px-6 py-2 bg-primary text-background font-sans text-xs uppercase font-bold rounded hover:opacity-90" id="cert-update-btn">Save Name</button>
           </div>
         </div>
 
         <div class="flex gap-4 justify-center">
-          <button class="px-6 py-2.5 bg-surface-container-high border border-outline-variant text-on-surface hover:bg-surface-container-highest font-mono text-xs uppercase rounded" onclick="window.printCertificate()">Print / Save PDF</button>
+          <button class="px-6 py-2.5 bg-surface-container-high border border-outline-variant text-on-surface hover:bg-surface-container-highest font-sans text-xs uppercase rounded" onclick="window.printCertificate()">Print / Save PDF</button>
         </div>
       </div>
 
-      <!-- High Fidelity Elegant Printable Certificate -->
-      <div class="max-w-[800px] mx-auto mt-12 p-12 bg-white text-slate-900 border-[16px] border-double border-slate-800 flex flex-col justify-center items-center text-center relative shadow-2xl" id="print-certificate-container">
+      <!-- Printable Certificate with Orderly People branding -->
+      <div class="max-w-[800px] mx-auto mt-12 p-12 bg-white text-slate-900 border-[16px] border-double border-[#121615] flex flex-col justify-center items-center text-center relative shadow-2xl" id="print-certificate-container">
         <!-- Corner decorations -->
-        <div class="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-slate-800"></div>
-        <div class="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-slate-800"></div>
-        <div class="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-slate-800"></div>
-        <div class="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-slate-800"></div>
+        <div class="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-[#121615]"></div>
+        <div class="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-[#121615]"></div>
+        <div class="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-[#121615]"></div>
+        <div class="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-[#121615]"></div>
 
-        <h4 class="font-mono text-[11px] tracking-[0.25em] text-slate-500 uppercase mb-8">Certificate of Completion</h4>
-        <h1 class="font-serif text-[42px] font-medium text-slate-800 mb-2">ISO 14971 Compliance</h1>
-        <h3 class="font-mono text-xs tracking-wider text-slate-500 uppercase mb-8">Risk Management of Medical Devices</h3>
+        <!-- Orderly People Logo -->
+        <img src="orderly_logo.png" alt="Orderly People" class="h-14 mb-6 opacity-80" style="filter: invert(1) brightness(0);" onerror="this.style.display='none'">
+
+        <h4 style="font-family:'Georgia',serif; font-size:11px; letter-spacing:0.25em; color:#6a7a76; text-transform:uppercase; margin-bottom:28px;">Certificate of Completion</h4>
+        <h1 style="font-family:'Georgia',serif; font-size:38px; font-weight:bold; color:#121615; margin-bottom:6px;">ISO 14971 Compliance</h1>
+        <h3 style="font-family:'Georgia',serif; font-size:12px; letter-spacing:0.12em; color:#6a7a76; text-transform:uppercase; margin-bottom:28px;">Risk Management of Medical Devices</h3>
         
-        <p class="font-serif italic text-md text-slate-600 mb-4">This document certifies that</p>
-        <h2 class="font-serif text-3xl font-bold text-slate-900 border-b-2 border-slate-300 px-8 pb-2 mb-6" id="cert-display-name">${state.userName || '[YOUR NAME]'}</h2>
+        <p style="font-family:'Georgia',serif; font-style:italic; font-size:14px; color:#4a5a56; margin-bottom:14px;">This document certifies that</p>
+        <h2 style="font-family:'Georgia',serif; font-size:30px; font-weight:bold; color:#121615; border-bottom:2px solid #c8d4d2; padding:0 32px 8px; margin-bottom:22px;" id="cert-display-name">${state.userName || '[YOUR NAME]'}</h2>
         
-        <p class="font-serif text-slate-600 max-w-[500px] leading-relaxed text-sm mb-12">
-          has successfully completed the interactive training curriculum and passed the examination requirements for <strong>Certified ISO 14971 Practitioner</strong>, demonstrating competence in applying <strong>ISO 14971:2019</strong> standard workflows and analysis techniques.
+        <p style="font-family:'Georgia',serif; color:#4a5a56; max-width:500px; line-height:1.7; font-size:13px; margin-bottom:36px;">
+          has successfully completed the interactive training curriculum and passed all examination requirements for <strong>Certified ISO 14971 Practitioner</strong>, demonstrating competence in applying <strong>ISO 14971:2019</strong> standard workflows and risk analysis techniques under the Orderly People Risk Management Training Programme.
         </p>
 
-        <div class="w-full flex justify-between items-end border-t border-slate-200 pt-8 px-6 font-mono text-[10px] text-slate-500">
-          <div class="text-left">
-            <span>Date: ${new Date().toLocaleDateString('sv-SE')}</span><br>
-            <span>Nordberg Medical Tutor</span>
+        <div style="width:100%; display:flex; justify-content:space-between; align-items:flex-end; border-top:1px solid #c8d4d2; padding-top:24px; font-family:monospace; font-size:10px; color:#6a7a76; padding-left:24px; padding-right:24px;">
+          <div style="text-align:left;">
+            <div>Date: ${new Date().toLocaleDateString('sv-SE')}</div>
+            <div style="margin-top:4px;">Orderly People Risk Tutor</div>
           </div>
-          <div class="text-right">
-            <span>Verify ID: RM-${Math.random().toString(36).substr(2, 9).toUpperCase()}</span><br>
-            <span>Status: Verified STABLE v4.2.0</span>
+          <div style="text-align:center; padding-bottom:4px;">
+            <div style="font-size:20px; color:#839896; margin-bottom:2px;">&#10003;&#10003;</div>
+            <div style="font-size:9px; letter-spacing:0.15em;">VERIFIED</div>
+          </div>
+          <div style="text-align:right;">
+            <div>ID: RM-${Math.random().toString(36).substr(2, 9).toUpperCase()}</div>
+            <div style="margin-top:4px;">ISO 14971:2019 Compliant</div>
           </div>
         </div>
       </div>
@@ -4428,13 +4626,10 @@ document.addEventListener("DOMContentLoaded", () => {
         state.userName = val;
         localStorage.setItem("rm_tutor_username", val);
         nameDisplay.textContent = val;
-        alert("Name updated!");
       }
     };
 
-    window.printCertificate = () => {
-      window.print();
-    };
+    window.printCertificate = () => window.print();
   }
 
   // Load initial view

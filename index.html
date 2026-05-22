@@ -3,71 +3,73 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>ISO 14971:2019 Risk Management Tutor</title>
+  <title>ISO 14971:2019 Risk Management Tutor — Orderly People</title>
+  <meta name="description" content="Interactive ISO 14971:2019 Risk Management training portal by Orderly People. Build competence in medical device risk management with interactive modules, quizzes, and a certified competence certificate."/>
   
   <!-- Tailwind CSS CDN with forms and container queries -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   
-  <!-- Tailwind Config from Stitch style guide -->
+  <!-- Tailwind Config — Orderly People brand palette -->
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           "colors": {
-            "primary-fixed-dim": "#3cddc7",
-            "secondary-fixed": "#d8e3fb",
-            "surface-tint": "#3cddc7",
-            "on-tertiary": "#4b2800",
-            "on-secondary-fixed-variant": "#3c475a",
-            "secondary-fixed-dim": "#bcc7de",
-            "outline-variant": "#3c4a46",
-            "on-primary-container": "#00574d",
-            "primary-fixed": "#62fae3",
-            "on-tertiary-container": "#744000",
-            "secondary-container": "#3e495d",
-            "on-background": "#e5e2e1",
-            "on-error-container": "#ffdad6",
-            "tertiary": "#ffd1aa",
-            "surface-container-low": "#1c1b1b",
-            "error": "#ffb4ab",
-            "on-secondary": "#263143",
-            "tertiary-fixed-dim": "#ffb875",
-            "on-primary-fixed-variant": "#005047",
-            "on-surface": "#e5e2e1",
-            "surface-container-high": "#2a2a2a",
-            "tertiary-fixed": "#ffdcc0",
-            "surface-container": "#201f1f",
-            "outline": "#859490",
-            "on-primary": "#003731",
-            "error-container": "#93000a",
-            "on-tertiary-fixed-variant": "#6b3b00",
-            "on-surface-variant": "#bacac5",
-            "inverse-on-surface": "#313030",
-            "inverse-surface": "#e5e2e1",
-            "background": "#131313",
-            "secondary": "#bcc7de",
-            "on-primary-fixed": "#00201c",
-            "primary": "#57f1db",
-            "on-error": "#690005",
-            "surface-container-lowest": "#0e0e0e",
-            "surface-dim": "#131313",
-            "on-tertiary-fixed": "#2d1600",
-            "inverse-primary": "#006b5f",
-            "primary-container": "#2dd4bf",
-            "on-secondary-fixed": "#111c2d",
-            "surface": "#131313",
-            "surface-container-highest": "#353534",
-            "on-secondary-container": "#aeb9d0",
-            "surface-variant": "#353534",
-            "surface-bright": "#393939",
-            "tertiary-container": "#ffac5a"
+            /* Orderly People brand: warm cream on deep dark, with slate teal accent */
+            "primary-fixed-dim": "#7a8f8d",
+            "secondary-fixed": "#c8d4d2",
+            "surface-tint": "#839896",
+            "on-tertiary": "#121615",
+            "on-secondary-fixed-variant": "#2e3936",
+            "secondary-fixed-dim": "#a8b4b2",
+            "outline-variant": "#2e3a36",
+            "on-primary-container": "#f8f5eb",
+            "primary-fixed": "#9aada9",
+            "on-tertiary-container": "#f8f5eb",
+            "secondary-container": "#2e3936",
+            "on-background": "#f8f5eb",
+            "on-error-container": "#ffd6d6",
+            "tertiary": "#d4b896",
+            "surface-container-low": "#181d1a",
+            "error": "#f28b82",
+            "on-secondary": "#121615",
+            "tertiary-fixed-dim": "#c4a87c",
+            "on-primary-fixed-variant": "#1e2423",
+            "on-surface": "#f8f5eb",
+            "surface-container-high": "#262e2a",
+            "tertiary-fixed": "#e4c8a6",
+            "surface-container": "#1e2421",
+            "outline": "#6a7a76",
+            "on-primary": "#f8f5eb",
+            "error-container": "#7a1c1c",
+            "on-tertiary-fixed-variant": "#2e2418",
+            "on-surface-variant": "#a8b4b0",
+            "inverse-on-surface": "#1e2421",
+            "inverse-surface": "#f0ede6",
+            "background": "#121615",
+            "secondary": "#b8c4c2",
+            "on-primary-fixed": "#121615",
+            "primary": "#839896",
+            "on-error": "#1a0000",
+            "surface-container-lowest": "#0a0d0b",
+            "surface-dim": "#0e1210",
+            "on-tertiary-fixed": "#121615",
+            "inverse-primary": "#4a5f5d",
+            "primary-container": "#6b807e",
+            "on-secondary-fixed": "#121615",
+            "surface": "#121615",
+            "surface-container-highest": "#303a35",
+            "on-secondary-container": "#c8d4d2",
+            "surface-variant": "#303a35",
+            "surface-bright": "#2a302d",
+            "tertiary-container": "#a88060"
           },
           "borderRadius": {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
           },
           "spacing": {
             "margin-desktop": "64px",
@@ -77,20 +79,20 @@
             "max-width": "1280px"
           },
           "fontFamily": {
-            "body-md": ["Geist"],
-            "label-sm": ["Geist"],
-            "body-lg": ["Geist"],
-            "headline-lg-mobile": ["EB Garamond"],
-            "headline-lg": ["EB Garamond"],
-            "headline-xl": ["EB Garamond"]
+            "body-md": ["Poppins", "sans-serif"],
+            "label-sm": ["Poppins", "sans-serif"],
+            "body-lg": ["Poppins", "sans-serif"],
+            "headline-lg-mobile": ["Merriweather", "serif"],
+            "headline-lg": ["Merriweather", "serif"],
+            "headline-xl": ["Merriweather", "serif"]
           },
           "fontSize": {
-            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
-            "label-sm": ["13px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
-            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
-            "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "500" }],
-            "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "500" }],
-            "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500" }]
+            "body-md": ["15px", { "lineHeight": "1.65", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "body-lg": ["17px", { "lineHeight": "1.65", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }],
+            "headline-lg": ["30px", { "lineHeight": "1.3", "fontWeight": "700" }],
+            "headline-xl": ["44px", { "lineHeight": "1.15", "letterSpacing": "-0.01em", "fontWeight": "700" }]
           }
         },
       },
@@ -114,44 +116,52 @@
 
   <!-- Desktop SideNavBar -->
   <nav class="hidden md:flex flex-col h-screen w-64 bg-surface-container border-r border-outline-variant py-8 fixed left-0 top-0 z-40 no-print">
-    <!-- User Profile Header -->
+    <!-- Orderly People Logo Header -->
     <div class="px-6 mb-8 flex items-center gap-4">
-      <div class="w-10 h-10 rounded bg-surface-container-highest ghost-border flex items-center justify-center overflow-hidden">
-        <span class="material-symbols-outlined text-primary text-[24px]">account_circle</span>
+      <div class="flex flex-col">
+        <span class="font-serif text-primary text-lg font-bold tracking-tight leading-none">Orderly People</span>
+        <span class="text-[10px] text-on-surface-variant font-sans tracking-widest uppercase mt-0.5">Risk Management Tutor</span>
       </div>
-      <div>
-        <h2 class="font-label-sm text-label-sm text-on-surface uppercase font-bold tracking-wider">Risk Engineer</h2>
-        <p class="font-label-sm text-[11px] text-on-surface-variant mt-0.5" id="cert-user-level">Trainee</p>
+    </div>
+    
+    <!-- Trainee Badge -->
+    <div class="px-6 mb-6">
+      <div class="bg-surface-container-high rounded p-3 flex items-center gap-3 ghost-border">
+        <span class="material-symbols-outlined text-primary text-[22px]">account_circle</span>
+        <div>
+          <h2 class="font-sans text-[11px] text-on-surface uppercase font-bold tracking-wider" id="sidebar-role-label">Risk Engineer</h2>
+          <p class="font-sans text-[10px] text-on-surface-variant mt-0.5" id="cert-user-level">Trainee</p>
+        </div>
       </div>
     </div>
     
     <!-- Nav Links -->
     <div class="flex-grow px-4 space-y-1">
       <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="dashboard" href="#">
-        <span class="material-symbols-outlined">grid_view</span>
-        <span class="font-body-md text-sm font-semibold">Dashboard</span>
+        <span class="material-symbols-outlined text-[20px]">grid_view</span>
+        <span class="font-sans text-sm font-medium">Dashboard</span>
       </a>
       <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="partA" href="#">
-        <span class="material-symbols-outlined">menu_book</span>
-        <span class="font-body-md text-sm font-semibold">Module A: Standard Overview</span>
+        <span class="material-symbols-outlined text-[20px]">menu_book</span>
+        <span class="font-sans text-sm font-medium">Module A: Standard</span>
       </a>
       <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="partB" href="#">
-        <span class="material-symbols-outlined">shield_heart</span>
-        <span class="font-body-md text-sm font-semibold">Module B: Analysis Workshop</span>
+        <span class="material-symbols-outlined text-[20px]">biotech</span>
+        <span class="font-sans text-sm font-medium">Module B: Analysis</span>
       </a>
       <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="quizzes" href="#">
-        <span class="material-symbols-outlined">quiz</span>
-        <span class="font-body-md text-sm font-semibold">Competence Exams</span>
+        <span class="material-symbols-outlined text-[20px]">quiz</span>
+        <span class="font-sans text-sm font-medium">Competence Exams</span>
       </a>
       <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="certificate" href="#">
-        <span class="material-symbols-outlined">workspace_premium</span>
-        <span class="font-body-md text-sm font-semibold">Certificate</span>
+        <span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+        <span class="font-sans text-sm font-medium">Certificate</span>
       </a>
     </div>
 
     <!-- Quick Action Launch Exams -->
-    <div class="px-6 mb-8 mt-auto border-t border-outline-variant pt-6">
-      <button class="w-full py-2.5 px-4 border border-primary text-primary font-mono text-[11px] uppercase tracking-wider hover:bg-primary hover:text-background transition-all duration-300 rounded" onclick="window.startQuizzes()">
+    <div class="px-6 mb-4 mt-auto border-t border-outline-variant pt-6">
+      <button class="w-full py-2.5 px-4 border border-primary text-primary font-sans text-[11px] uppercase tracking-wider hover:bg-primary hover:text-background transition-all duration-300 rounded font-semibold" onclick="window.startQuizzes()">
         Open Quizzes
       </button>
     </div>
@@ -159,7 +169,7 @@
 
   <!-- Mobile Top Header -->
   <header class="md:hidden flex justify-between items-center w-full px-margin-mobile py-4 bg-background/80 backdrop-blur-md border-b border-outline-variant sticky top-0 z-50 no-print">
-    <span class="font-serif text-lg text-primary tracking-wider">ISO 14971 Tutor</span>
+    <span class="font-serif text-base text-primary tracking-wider font-bold">Orderly People</span>
     <button class="text-on-surface p-1" id="mobile-menu-btn">
       <span class="material-symbols-outlined">menu</span>
     </button>
@@ -167,11 +177,11 @@
 
   <!-- Mobile Menu Drawer (Toggled by JS) -->
   <div class="hidden md:hidden flex flex-col bg-surface-container border-b border-outline-variant px-margin-mobile py-4 space-y-2 z-40 no-print" id="mobile-menu">
-    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-semibold" data-view="dashboard" href="#">Dashboard</a>
-    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-semibold" data-view="partA" href="#">Module A: Standard Overview</a>
-    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-semibold" data-view="partB" href="#">Module B: Analysis Workshop</a>
-    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-semibold" data-view="quizzes" href="#">Competence Exams</a>
-    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-semibold" data-view="certificate" href="#">Training Certificate</a>
+    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-medium" data-view="dashboard" href="#">Dashboard</a>
+    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-medium" data-view="partA" href="#">Module A: Standard Overview</a>
+    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-medium" data-view="partB" href="#">Module B: Analysis Workshop</a>
+    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-medium" data-view="quizzes" href="#">Competence Exams</a>
+    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-medium" data-view="certificate" href="#">Training Certificate</a>
   </div>
 
   <!-- Main Canvas Component -->
@@ -184,16 +194,16 @@
     <!-- Footer Branding -->
     <footer class="w-full py-8 bg-surface-container-lowest border-t border-outline-variant mt-auto no-print">
       <div class="flex flex-col lg:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-max-width mx-auto gap-6 lg:gap-0">
-        <div class="font-serif text-sm text-primary tracking-wider font-semibold">
-          Nordberg Medical Risk Tutor
+        <div class="font-serif text-sm text-primary tracking-wider font-bold">
+          Orderly People Risk Tutor
         </div>
         <div class="flex flex-wrap justify-center gap-6 text-xs">
           <a class="text-on-surface-variant hover:text-primary transition-all" href="https://www.iso.org/standard/72032.html" target="_blank">ISO 14971:2019 Standard</a>
           <a class="text-on-surface-variant hover:text-primary transition-all" href="https://www.fda.gov/medical-devices" target="_blank">US FDA Compliance</a>
           <a class="text-on-surface-variant hover:text-primary transition-all" href="https://health.ec.europa.eu/medical-devices-sector_en" target="_blank">EU MDR Guidelines</a>
         </div>
-        <div class="font-mono text-[9px] text-on-surface-variant tracking-widest uppercase text-center lg:text-right">
-          © 2026 NORDBERG MEDICAL. COMPLIANT WITH ISO 14971:2019. VERSION 4.2.0-STABLE
+        <div class="font-sans text-[9px] text-on-surface-variant tracking-widest uppercase text-center lg:text-right">
+          © 2026 ORDERLY PEOPLE. COMPLIANT WITH ISO 14971:2019.
         </div>
       </div>
     </footer>
