@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ISO 14971:2019 - The Risk Management Process</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary-fixed-dim": "#3cddc7",
+                "secondary-fixed": "#d8e3fb",
+                "surface-tint": "#3cddc7",
+                "on-tertiary": "#4b2800",
+                "on-secondary-fixed-variant": "#3c475a",
+                "secondary-fixed-dim": "#bcc7de",
+                "outline-variant": "#3c4a46",
+                "on-primary-container": "#00574d",
+                "primary-fixed": "#62fae3",
+                "on-tertiary-container": "#744000",
+                "secondary-container": "#3e495d",
+                "on-background": "#e5e2e1",
+                "on-error-container": "#ffdad6",
+                "tertiary": "#ffd1aa",
+                "surface-container-low": "#1c1b1b",
+                "error": "#ffb4ab",
+                "on-secondary": "#263143",
+                "tertiary-fixed-dim": "#ffb875",
+                "on-primary-fixed-variant": "#005047",
+                "on-surface": "#e5e2e1",
+                "surface-container-high": "#2a2a2a",
+                "tertiary-fixed": "#ffdcc0",
+                "surface-container": "#201f1f",
+                "outline": "#859490",
+                "on-primary": "#003731",
+                "error-container": "#93000a",
+                "on-tertiary-fixed-variant": "#6b3b00",
+                "on-surface-variant": "#bacac5",
+                "inverse-on-surface": "#313030",
+                "inverse-surface": "#e5e2e1",
+                "background": "#131313",
+                "secondary": "#bcc7de",
+                "on-primary-fixed": "#00201c",
+                "primary": "#57f1db",
+                "on-error": "#690005",
+                "surface-container-lowest": "#0e0e0e",
+                "surface-dim": "#131313",
+                "on-tertiary-fixed": "#2d1600",
+                "inverse-primary": "#006b5f",
+                "primary-container": "#2dd4bf",
+                "on-secondary-fixed": "#111c2d",
+                "surface": "#131313",
+                "surface-container-highest": "#353534",
+                "on-secondary-container": "#aeb9d0",
+                "surface-variant": "#353534",
+                "surface-bright": "#393939",
+                "tertiary-container": "#ffac5a"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-desktop": "64px",
+                "gutter": "24px",
+                "margin-mobile": "16px",
+                "unit": "8px",
+                "max-width": "1280px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Geist"
+                ],
+                "label-sm": [
+                        "Geist"
+                ],
+                "body-lg": [
+                        "Geist"
+                ],
+                "headline-lg-mobile": [
+                        "EB Garamond"
+                ],
+                "headline-lg": [
+                        "EB Garamond"
+                ],
+                "headline-xl": [
+                        "EB Garamond"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "13px",
+                        {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "500"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:wght@400;500;700&amp;family=Geist:wght@400;500;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&amp;family=EB+Garamond:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Geist font placeholder - assuming a standard sans-serif fallback for the environment */
+        @font-face {
+            font-family: 'geist';
+            src: local('Inter'), local('Helvetica Neue'), local('Arial'), sans-serif;
+        }
+        
+        .progress-bar-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(87, 241, 219, 0.5), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite linear;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .ghost-border {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex selection:bg-primary selection:text-background">
+<!-- Progress Indicator -->
+<div class="fixed top-0 left-0 w-full h-[2px] z-[60] bg-surface-container">
+<div class="h-full bg-primary w-[45%] relative overflow-hidden">
+<div class="absolute inset-0 progress-bar-shimmer"></div>
+</div>
+</div>
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex flex-col h-screen w-64 bg-surface-container border-r border-outline-variant py-8 fixed left-0 top-0 z-40">
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container-highest ghost-border flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="account_circle">account_circle</span>
+</div>
+<div>
+<h2 class="font-label-sm text-label-sm text-on-surface uppercase">Risk Engineer</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Level II Certified</p>
+</div>
+</div>
+<div class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary bg-surface-container-high border-r-2 border-primary translate-x-1 transition-all duration-300 rounded-l" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-body-md text-body-md">ISO 14971</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="font-body-md text-body-md">Hazard Analysis</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="matrix">grid_4x4</span>
+<span class="font-body-md text-body-md">FMEA</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-body-md text-body-md">PMS</span>
+</a>
+</div>
+<div class="px-6 mb-8 mt-auto">
+<button class="w-full py-3 px-4 border border-primary text-primary font-label-sm text-label-sm uppercase hover:bg-primary hover:text-background transition-all duration-300 rounded">
+                Launch Matrix
+            </button>
+</div>
+<div class="px-4 space-y-1 border-t border-outline-variant pt-4 mx-4">
+<a class="flex items-center gap-3 px-2 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="description">description</span>
+<span class="font-label-sm text-label-sm">Documentation</span>
+</a>
+<a class="flex items-center gap-3 px-2 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="help_outline">help_outline</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 relative min-h-screen flex flex-col">
+<!-- TopAppBar (Mobile Fallback & Branding) -->
+<header class="md:hidden flex justify-between items-center w-full px-margin-mobile py-6 bg-background/80 backdrop-blur-md border-b border-outline-variant sticky top-0 z-50">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tighter">RISK_CORE</span>
+<button class="text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<!-- Article Content -->
+<article class="flex-1 w-full max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24">
+<!-- Header Section -->
+<header class="max-w-[800px] mx-auto mb-16">
+<div class="flex items-center gap-3 mb-6">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Module 4.2</span>
+<span class="w-8 h-[1px] bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ISO 14971:2019 Compliance</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-8 text-balance">The Risk Management Process</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant text-balance">
+                    Establishing a systematic application of management policies, procedures, and practices to the tasks of analyzing, evaluating, controlling, and monitoring risk throughout the total product life cycle.
+                </p>
+</header>
+<!-- Main Reading Layout (Editorial Asymmetry) -->
+<div class="grid grid-cols-4 md:grid-cols-12 gap-gutter mb-16">
+<!-- Left Column: Context & Definitions -->
+<div class="col-span-4 md:col-span-4 space-y-12 pr-0 md:pr-8 border-r-0 md:border-r border-outline-variant">
+<section>
+<h3 class="font-label-sm text-label-sm text-on-surface mb-4 border-b border-outline-variant pb-2 uppercase">1.0 Scope</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            This process applies to all medical devices, including Software as a Medical Device (SaMD), and describes the ongoing process for identifying hazards associated with a medical device, estimating and evaluating the associated risks, controlling these risks, and monitoring the effectiveness of the controls.
+                        </p>
+</section>
+<section class="bg-surface-container-high p-6 rounded ghost-border">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="info">info</span>
+<h4 class="font-headline-lg text-headline-lg text-on-surface mb-2">Key Definition</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+<strong class="text-on-surface">Harm:</strong> Physical injury or damage to the health of people, or damage to property or the environment.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+<strong class="text-on-surface">Hazard:</strong> Potential source of harm.
+                        </p>
+</section>
+</div>
+<!-- Right Column: Core Content & Matrix -->
+<div class="col-span-4 md:col-span-8 space-y-16 md:pl-8">
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Risk Acceptability Criteria</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 text-balance">
+                            Before evaluating the risk of individual identified hazards, the manufacturer must establish criteria for risk acceptability. These criteria must be based on applicable national or regional regulations, relevant international standards, and take into account generally acknowledged state of the art.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 text-balance">
+                            The evaluation relies on a combination of severity (the measure of the possible consequences of a hazard) and probability (the likelihood of the occurrence of harm).
+                        </p>
+<!-- Risk Matrix Diagram (Bento Grid Style) -->
+<div class="w-full bg-background border border-outline-variant rounded p-6 md:p-8 mt-12">
+<header class="flex justify-between items-end mb-8 border-b border-outline-variant pb-4">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface tracking-widest uppercase">Figure 1.0</h3>
+<h4 class="font-label-sm text-label-sm text-primary mt-1">Severity vs. Probability Schematic</h4>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="zoom_in">zoom_in</span>
+</header>
+<!-- Schematic Container -->
+<div class="relative w-full aspect-[4/3] md:aspect-[16/9] border border-outline-variant bg-surface-container flex flex-col p-4 md:p-8 rounded">
+<!-- Y Axis Label (Severity) -->
+<div class="absolute left-2 top-1/2 -translate-y-1/2 -rotate-90 origin-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-widest">Severity (S1 - S5) →</span>
+</div>
+<!-- X Axis Label (Probability) -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-widest">Probability (P1 - P5) →</span>
+</div>
+<!-- The Matrix Grid -->
+<div class="w-full h-full ml-6 mb-6 grid grid-cols-5 grid-rows-5 gap-1 p-1 bg-surface-container-high border border-outline-variant rounded">
+<!-- Row 5 (Highest Severity) -->
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-tertiary-container/80 text-on-tertiary-container flex items-center justify-center font-label-sm text-[10px] transition-colors hover:bg-tertiary-container rounded-sm">HIGH</div>
+<div class="bg-tertiary-container/80 text-on-tertiary-container flex items-center justify-center font-label-sm text-[10px] transition-colors hover:bg-tertiary-container rounded-sm">HIGH</div>
+<div class="bg-tertiary-container/80 text-on-tertiary-container flex items-center justify-center font-label-sm text-[10px] transition-colors hover:bg-tertiary-container rounded-sm">HIGH</div>
+<!-- Row 4 -->
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-tertiary-container/80 text-on-tertiary-container flex items-center justify-center font-label-sm text-[10px] transition-colors hover:bg-tertiary-container rounded-sm">HIGH</div>
+<div class="bg-tertiary-container/80 text-on-tertiary-container flex items-center justify-center font-label-sm text-[10px] transition-colors hover:bg-tertiary-container rounded-sm">HIGH</div>
+<!-- Row 3 -->
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-tertiary-container/80 text-on-tertiary-container flex items-center justify-center font-label-sm text-[10px] transition-colors hover:bg-tertiary-container rounded-sm">HIGH</div>
+<!-- Row 2 -->
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<!-- Row 1 (Lowest Severity) -->
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+<div class="bg-surface-container-highest border border-outline-variant transition-colors hover:bg-surface-bright rounded-sm"></div>
+</div>
+</div>
+<div class="mt-4 flex gap-6 border-t border-outline-variant pt-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-surface-container-highest border border-outline-variant rounded-sm"></div>
+<span class="font-label-sm text-[12px] text-on-surface-variant">Acceptable</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-surface-container-highest border border-outline-variant rounded-sm"></div>
+<span class="font-label-sm text-[12px] text-on-surface-variant">ALARP (As Low As Reasonably Practicable)</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-tertiary-container rounded-sm"></div>
+<span class="font-label-sm text-[12px] text-on-surface-variant">Unacceptable</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Footer Action Area -->
+<div class="border-t border-outline-variant pt-12 flex justify-between items-center mt-16">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors font-label-sm text-label-sm group">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform" data-icon="arrow_back">arrow_back</span>
+                    Previous: Regulatory Framework
+                </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary hover:bg-primary-container transition-all duration-300 font-label-sm text-label-sm group rounded uppercase">
+                    Mark as Complete
+                    <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform" data-icon="check_circle">check_circle</span>
+</button>
+</div>
+</article>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-12 bg-background border-t border-outline-variant mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-max-width mx-auto gap-8 md:gap-0">
+<div class="font-label-sm text-label-sm text-on-surface uppercase">
+                    RISK_CORE
+                </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface underline transition-all" href="#">Regulatory Affairs</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface underline transition-all" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface underline transition-all" href="#">Technical Data</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface underline transition-all" href="#">Security Documentation</a>
+</div>
+<div class="font-label-sm text-[10px] text-on-surface-variant tracking-widest uppercase">
+                    © 2024 V-SYSTEMS. COMPLIANT WITH ISO 14971:2019. VERSION 4.2.0-STABLE
+                </div>
+</div>
+</footer>
+</main>
+</body></html>
