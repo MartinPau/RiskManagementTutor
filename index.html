@@ -141,14 +141,37 @@
         <span class="material-symbols-outlined text-[20px]">grid_view</span>
         <span class="font-sans text-sm font-medium">Dashboard</span>
       </a>
-      <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="partA" href="#">
-        <span class="material-symbols-outlined text-[20px]">menu_book</span>
-        <span class="font-sans text-sm font-medium">Module A: Standard</span>
-      </a>
-      <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="partB" href="#">
-        <span class="material-symbols-outlined text-[20px]">biotech</span>
-        <span class="font-sans text-sm font-medium">Module B: Analysis</span>
-      </a>
+      <div>
+        <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="partA" href="#">
+          <span class="material-symbols-outlined text-[20px]">menu_book</span>
+          <span class="font-sans text-sm font-medium">Module A: Standard</span>
+        </a>
+        <div id="partA-sections" class="pl-9 pr-4 py-1 space-y-1 hidden transition-all">
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="intro" href="#">1. Introduction</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="terms" href="#">2. Key Terms</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="general" href="#">3. General Requirements</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="analysis" href="#">4. Risk Analysis</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="evaluation" href="#">5. Risk Evaluation</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="control" href="#">6. Risk Control</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="residual" href="#">7. Residual Risk</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="postmarket" href="#">8. Post-Market Loop</a>
+        </div>
+      </div>
+      <div>
+        <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="partB" href="#">
+          <span class="material-symbols-outlined text-[20px]">biotech</span>
+          <span class="font-sans text-sm font-medium">Module B: Analysis</span>
+        </a>
+        <div id="partB-sections" class="pl-9 pr-4 py-1 space-y-1 hidden transition-all">
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="overview" href="#">1. Overview</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="pha" href="#">2. PHA</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="fmea" href="#">3. FMEA</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="fta" href="#">4. FTA (interactive)</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="eta" href="#">5. ETA (interactive)</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="hazop" href="#">6. HAZOP (interactive)</a>
+          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="haccp" href="#">7. HACCP (interactive)</a>
+        </div>
+      </div>
       <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="quizzes" href="#">
         <span class="material-symbols-outlined text-[20px]">quiz</span>
         <span class="font-sans text-sm font-medium">Competence Exams</span>
