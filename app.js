@@ -69,16 +69,16 @@ document.addEventListener("DOMContentLoaded", () => {
       rationale: "A hazardous situation requires a person to be exposed to a hazard. Option A describes the hazard itself, B describes the harm, C and E describe contributing factors or root causes. Only D identifies the circumstance where a patient is exposed to a hazard."
     },
     {
-      q: "The manufacturer shall identify risk control measures using the following priority order:",
+      q: "Place the following ISO 14971 risk control measures in the correct priority order (highest priority first): [1] Provide a warning label in the Instructions for Use (IFU). [2] Design out the hazard by selecting non-toxic materials. [3] Add a protective guard on the device housing. Which answer lists them from highest to lowest priority?",
       options: [
-        "A) 1. Protective measures > 2. Inherent safety by design > 3. Information for safety",
-        "B) 1. Information for safety > 2. Protective measures > 3. Inherent safety by design",
-        "C) 1. Inherent safety by design > 2. Protective measures > 3. Information for safety",
-        "D) 1. Inherent safety by design > 2. Information for safety > 3. Protective measures",
-        "E) 1. Protective measures > 2. Information for safety > 3. Inherent safety by design"
+        "A) IFU Warning (1) \u2192 Protective guard (3) \u2192 Design out (2)",
+        "B) Protective guard (3) \u2192 IFU Warning (1) \u2192 Design out (2)",
+        "C) Design out (2) \u2192 Protective guard (3) \u2192 IFU Warning (1)",
+        "D) Design out (2) \u2192 IFU Warning (1) \u2192 Protective guard (3)",
+        "E) Protective guard (3) \u2192 Design out (2) \u2192 IFU Warning (1)"
       ],
       correct: 2, // C
-      rationale: "ISO 14971 Clause 7.1 specifies the priority order: (1) inherent safety by design, (2) protective measures in the medical device itself or in the manufacturing process, and (3) information for safety. This reflects the principle that eliminating a hazard is preferable to protecting against it, which is preferable to warning about it."
+      rationale: "ISO 14971 Clause 6.2 mandates a strict 3-tier priority: 1st \u2014 Inherent safety by design (designing out the hazard), 2nd \u2014 Protective measures in the device or manufacturing process (the guard), 3rd \u2014 Information for safety (IFU warnings). This hierarchy reflects the principle that eliminating hazards is always preferred over mitigating or warning about them."
     },
     {
       q: "After implementing all practical risk control measures for an identified risk, the residual risk is judged not acceptable. According to ISO 14971, what is the next required step?",
@@ -743,14 +743,54 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="mb-3 text-sm text-on-surface-variant leading-relaxed">into risk management.</p>
           <p class="mb-3 text-sm text-on-surface-variant leading-relaxed">↻  Continuous feedback loop throughout product lifecycle</p>`,
         infographic: `
-          <div class="h-full flex flex-col justify-center items-center p-6 text-center">
-            <span class="material-symbols-outlined text-primary text-[48px] mb-4">school</span>
-            <h3 class="font-serif text-lg mb-2 text-on-surface">The Risk Management Process - Overview</h3>
-            <p class="text-xs text-on-surface-variant max-w-[280px] leading-relaxed">
-              The Risk Management Process - Overview is part of the ISO 14971 Risk Management Training (Part A). Focus on key compliance elements.
-            </p>
+          <div class="h-full flex flex-col justify-center p-4">
+            <h4 class="font-sans text-xs font-bold text-primary uppercase mb-3 tracking-wider text-center">ISO 14971 — The Lifecycle Loop</h4>
+            <svg viewBox="0 0 260 200" width="100%" height="180" xmlns="http://www.w3.org/2000/svg">
+              <!-- Boxes -->
+              <rect x="90" y="4" width="80" height="26" rx="3" fill="#2a302d" stroke="#839896" stroke-width="1"/>
+              <text x="130" y="21" text-anchor="middle" fill="#f8f5eb" font-size="8" font-family="sans-serif">Risk Management</text>
+              <text x="130" y="28" text-anchor="middle" fill="#839896" font-size="6" font-family="sans-serif">Plan (§4)</text>
+
+              <rect x="2" y="64" width="80" height="26" rx="3" fill="#2a302d" stroke="#839896" stroke-width="1"/>
+              <text x="42" y="80" text-anchor="middle" fill="#f8f5eb" font-size="8" font-family="sans-serif">Risk Analysis</text>
+              <text x="42" y="87" text-anchor="middle" fill="#839896" font-size="6" font-family="sans-serif">§5</text>
+
+              <rect x="178" y="64" width="80" height="26" rx="3" fill="#2a302d" stroke="#839896" stroke-width="1"/>
+              <text x="218" y="80" text-anchor="middle" fill="#f8f5eb" font-size="8" font-family="sans-serif">Risk Evaluation</text>
+              <text x="218" y="87" text-anchor="middle" fill="#839896" font-size="6" font-family="sans-serif">§6</text>
+
+              <rect x="90" y="124" width="80" height="26" rx="3" fill="#2a302d" stroke="#839896" stroke-width="1"/>
+              <text x="130" y="140" text-anchor="middle" fill="#f8f5eb" font-size="8" font-family="sans-serif">Risk Control</text>
+              <text x="130" y="147" text-anchor="middle" fill="#839896" font-size="6" font-family="sans-serif">§7</text>
+
+              <rect x="50" y="170" width="70" height="22" rx="3" fill="#1a2a20" stroke="#7ab89a" stroke-width="1"/>
+              <text x="85" y="184" text-anchor="middle" fill="#7ab89a" font-size="7" font-family="sans-serif">RM Review + PMS</text>
+              <text x="85" y="189" text-anchor="middle" fill="#7ab89a" font-size="5" font-family="sans-serif">§8 / §10</text>
+
+              <!-- Arrows -->
+              <line x1="90" y1="17" x2="82" y2="64" stroke="#839896" stroke-width="1" marker-end="url(#arrow)"/>
+              <line x1="170" y1="17" x2="178" y2="64" stroke="#839896" stroke-width="1" marker-end="url(#arrow)"/>
+              <line x1="82" y1="90" x2="130" y2="124" stroke="#839896" stroke-width="1" marker-end="url(#arrow)"/>
+              <line x1="178" y1="90" x2="150" y2="124" stroke="#839896" stroke-width="1" marker-end="url(#arrow)"/>
+              <line x1="120" y1="150" x2="100" y2="170" stroke="#7ab89a" stroke-width="1" marker-end="url(#arrow-g)"/>
+              <!-- Feedback loop -->
+              <path d="M 85 181 Q 10 181 10 77" fill="none" stroke="#d4b896" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-t)"/>
+              <text x="4" y="140" fill="#d4b896" font-size="6" font-family="sans-serif" transform="rotate(-90 4 140)">feedback</text>
+
+              <defs>
+                <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L6,3 z" fill="#839896"/>
+                </marker>
+                <marker id="arrow-g" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L6,3 z" fill="#7ab89a"/>
+                </marker>
+                <marker id="arrow-t" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L6,3 z" fill="#d4b896"/>
+                </marker>
+              </defs>
+            </svg>
           </div>
-    `
+        `
       },
       {
         title: `The Risk Management File (§4.5)`,
@@ -774,14 +814,47 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="mb-3 text-sm text-on-surface-variant leading-relaxed">Completeness check before</p>
           <p class="mb-3 text-sm text-on-surface-variant leading-relaxed">commercial release</p>`,
         infographic: `
-          <div class="h-full flex flex-col justify-center items-center p-6 text-center">
-            <span class="material-symbols-outlined text-primary text-[48px] mb-4">school</span>
-            <h3 class="font-serif text-lg mb-2 text-on-surface">The Risk Management File (§4.5)</h3>
-            <p class="text-xs text-on-surface-variant max-w-[280px] leading-relaxed">
-              The Risk Management File (§4.5) is part of the ISO 14971 Risk Management Training (Part A). Focus on key compliance elements.
-            </p>
+          <div class="h-full flex flex-col justify-center p-4">
+            <h4 class="font-sans text-xs font-bold text-primary uppercase mb-3 tracking-wider text-center">Risk Management File — Document Stack</h4>
+            <div class="space-y-2">
+              <div class="flex items-center gap-3 p-2 rounded border" style="border-color:#839896;background:rgba(131,152,150,0.08)">
+                <span class="material-symbols-outlined text-primary text-[20px]">assignment</span>
+                <div>
+                  <div class="text-xs font-bold text-on-surface">Risk Management Plan</div>
+                  <div class="text-[10px] text-on-surface-variant">Scope, criteria, responsibilities (§4.4)</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-2 rounded border" style="border-color:#6b807e;background:rgba(107,128,126,0.07)">
+                <span class="material-symbols-outlined text-primary text-[20px]">search</span>
+                <div>
+                  <div class="text-xs font-bold text-on-surface">Risk Analysis Records</div>
+                  <div class="text-[10px] text-on-surface-variant">Hazards, hazardous situations, estimation (§5)</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-2 rounded border" style="border-color:#5a7070;background:rgba(90,112,112,0.06)">
+                <span class="material-symbols-outlined text-primary text-[20px]">balance</span>
+                <div>
+                  <div class="text-xs font-bold text-on-surface">Risk Evaluation Records</div>
+                  <div class="text-[10px] text-on-surface-variant">Acceptability decisions + rationale (§6)</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-2 rounded border" style="border-color:#4a6060;background:rgba(74,96,96,0.05)">
+                <span class="material-symbols-outlined text-primary text-[20px]">shield</span>
+                <div>
+                  <div class="text-xs font-bold text-on-surface">Risk Control Records</div>
+                  <div class="text-[10px] text-on-surface-variant">Measures, VOI/VOE verification (§7)</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-2 rounded border" style="border-color:#7ab89a;background:rgba(122,184,154,0.07)">
+                <span class="material-symbols-outlined" style="color:#7ab89a;font-size:20px">verified</span>
+                <div>
+                  <div class="text-xs font-bold" style="color:#7ab89a">RM Review Report</div>
+                  <div class="text-[10px] text-on-surface-variant">Completeness check before release (§8)</div>
+                </div>
+              </div>
+            </div>
           </div>
-    `
+        `
       },
       {
         title: `Management responsibilities & Competence (§4.2-4.3)`,
@@ -1466,27 +1539,62 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="mb-3 text-sm text-on-surface-variant leading-relaxed">inform about</p>
           <p class="mb-3 text-sm text-on-surface-variant leading-relaxed">hazard</p>`,
         infographic: `
-          <div class="h-full flex flex-col justify-center items-center p-6 text-center">
-            <span class="material-symbols-outlined text-primary text-[48px] mb-4">school</span>
-            <h3 class="font-serif text-lg mb-2 text-on-surface">Risk Control Option Analysis (§7.1)</h3>
-            <p class="text-xs text-on-surface-variant max-w-[280px] leading-relaxed">
-              Risk Control Option Analysis (§7.1) is part of the ISO 14971 Risk Management Training (Part A). Focus on key compliance elements.
-            </p>
+          <div class="h-full flex flex-col justify-center p-4">
+            <h4 class="font-sans text-xs font-bold text-primary uppercase mb-3 tracking-wider text-center">§6.2 Priority Order — Pyramid</h4>
+            <div class="space-y-2">
+              <div class="text-center">
+                <div class="inline-block px-6 py-2 rounded font-sans text-xs font-bold" style="background:rgba(122,184,154,0.18);border:1px solid #7ab89a;color:#7ab89a">
+                  1st: Inherent Safety by Design
+                </div>
+                <div class="text-[9px] text-on-surface-variant mt-1">Eliminate or reduce the hazard by design choice</div>
+              </div>
+              <div class="flex justify-center">
+                <svg width="16" height="16"><path d="M8 14 L8 2" stroke="#839896" stroke-width="1.5" marker-end="url(#down)"/><defs><marker id="down" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,0 L3,6 z" fill="#839896"/></marker></defs></svg>
+              </div>
+              <div class="text-center">
+                <div class="inline-block px-6 py-2 rounded font-sans text-xs font-bold" style="background:rgba(212,184,150,0.18);border:1px solid #d4b896;color:#d4b896">
+                  2nd: Protective Measures
+                </div>
+                <div class="text-[9px] text-on-surface-variant mt-1">Guards, interlocks, alarms in the device or process</div>
+              </div>
+              <div class="flex justify-center">
+                <svg width="16" height="16"><path d="M8 14 L8 2" stroke="#839896" stroke-width="1.5"/><polygon points="5,14 11,14 8,8" fill="#839896"/></svg>
+              </div>
+              <div class="text-center">
+                <div class="inline-block px-6 py-2 rounded font-sans text-xs" style="background:rgba(131,152,150,0.12);border:1px solid #839896;color:#a8b4b0">
+                  3rd: Information for Safety
+                </div>
+                <div class="text-[9px] text-on-surface-variant mt-1">IFU warnings, training, labelling — last resort</div>
+              </div>
+            </div>
           </div>
-    `
+        `
       },
       {
         title: `ISO/TR 24971, Risk Control examples`,
         content: `<p class="mb-3 text-sm text-on-surface-variant leading-relaxed">Risk Control Measures, ideally defined as specific measurable requirements (with Req ID)</p>`,
         infographic: `
-          <div class="h-full flex flex-col justify-center items-center p-6 text-center">
-            <span class="material-symbols-outlined text-primary text-[48px] mb-4">school</span>
-            <h3 class="font-serif text-lg mb-2 text-on-surface">ISO/TR 24971, Risk Control examples</h3>
-            <p class="text-xs text-on-surface-variant max-w-[280px] leading-relaxed">
-              ISO/TR 24971, Risk Control examples is part of the ISO 14971 Risk Management Training (Part A). Focus on key compliance elements.
-            </p>
+          <div class="h-full flex flex-col justify-center p-4">
+            <h4 class="font-sans text-xs font-bold text-primary uppercase mb-3 tracking-wider">Control Measure Examples by Type</h4>
+            <div class="space-y-3">
+              <div class="p-2 rounded border" style="border-color:#7ab89a;background:rgba(122,184,154,0.07)">
+                <div class="text-[10px] font-bold uppercase" style="color:#7ab89a">Design (1st Priority)</div>
+                <div class="text-[10px] text-on-surface-variant mt-1">Use blunt-tip cannula → eliminates sharp injury hazard entirely</div>
+                <div class="text-[9px] font-mono" style="color:#839896">ID: RCM-001 | Verified by: DVR-002</div>
+              </div>
+              <div class="p-2 rounded border" style="border-color:#d4b896;background:rgba(212,184,150,0.07)">
+                <div class="text-[10px] font-bold uppercase" style="color:#d4b896">Protective (2nd Priority)</div>
+                <div class="text-[10px] text-on-surface-variant mt-1">Tamper-evident seal → prevents undetected contamination</div>
+                <div class="text-[9px] font-mono" style="color:#839896">ID: RCM-012 | Verified by: DVR-019</div>
+              </div>
+              <div class="p-2 rounded border" style="border-color:#839896;background:rgba(131,152,150,0.07)">
+                <div class="text-[10px] font-bold uppercase" style="color:#839896">Info for Safety (3rd Priority)</div>
+                <div class="text-[10px] text-on-surface-variant mt-1">IFU instruction: “Do not re-use. Single-patient use only.”</div>
+                <div class="text-[9px] font-mono" style="color:#839896">ID: RCM-031 | Verified by: DVR-047</div>
+              </div>
+            </div>
           </div>
-    `
+        `
       },
       {
         title: `Risk Control Verification: VOI & VOE`,
