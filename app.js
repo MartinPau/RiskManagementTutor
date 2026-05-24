@@ -192,57 +192,32 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       schematic: `
         <svg viewBox="0 0 200 80" width="100%" height="70" xmlns="http://www.w3.org/2000/svg" class="font-sans">
-          <rect x="10" y="25" width="60" height="30" rx="2" fill="none" stroke="var(--outline)" stroke-width="1.5"/>
-          <text x="40" y="42" text-anchor="middle" fill="var(--on-surface)" font-size="10">Sterile Tank</text>
-          <line x1="70" y1="40" x2="130" y2="40" stroke="var(--primary)" stroke-width="2"/>
-          <rect x="80" y="10" width="40" height="20" rx="2" fill="var(--primary-container)" stroke="var(--primary)"/>
-          <text x="100" y="22" text-anchor="middle" fill="var(--primary)" font-size="9" font-weight="bold">Process Node</text>
-          <rect x="130" y="25" width="60" height="30" rx="2" fill="none" stroke="var(--outline)" stroke-width="1.5"/>
-          <text x="160" y="42" text-anchor="middle" fill="var(--on-surface)" font-size="10">Syringe/Vial</text>
-          <text x="100" y="70" text-anchor="middle" fill="var(--error)" font-size="9" font-weight="bold">Parameter: Volume | Guide Word: Less</text>
-        </svg>
-      `,
-      
-      q: "During a HAZOP study on a sterile filling process, the team analyzes the node 'Transfer sterile solution to vials' and applies the guide word 'Less' to the parameter 'Volume'. Which of the following is the correct definition of the resulting deviation and its clinical consequence?",
-      options: [
-        "A) Deviation: Solution temperature drops below 18°C; Consequence: Reduced product viscosity.",
-        "B) Deviation: Vials are completely empty; Consequence: No treatment is delivered.",
-        "C) Deviation: Fill volume is less than 4.9 mL; Consequence: Sub-therapeutic dose is delivered to the patient.",
-        "D) Deviation: Fill volume is greater than 5.1 mL; Consequence: Product wastage.",
-        "E) Deviation: Filling speed is too slow; Consequence: Increased bioburden."
-      ],
-      correct: 2, // C
-      rationale: "Applying the guide word 'Less' to the parameter 'Volume' yields a fill volume below the specification (e.g., < 4.9 mL). This underfill means the patient may receive a sub-therapeutic dose of the medication, which is a clinical consequence. (Completely empty is 'No' volume, and overfill is 'More' volume)."
-    },
-    {
-      schematic: `
-        <svg viewBox="0 0 200 80" width="100%" height="70" xmlns="http://www.w3.org/2000/svg" class="font-sans">
           <rect x="5" y="25" width="50" height="30" rx="2" fill="none" stroke="var(--outline)" stroke-width="1"/>
-          <text x="30" y="42" text-anchor="middle" fill="var(--on-surface-variant)" font-size="9">Compounding</text>
+          <text x="30" y="42" text-anchor="middle" fill="var(--on-surface-variant)" font-size="9">Prep Line</text>
           <line x1="55" y1="40" x2="70" y2="40" stroke="var(--outline)" stroke-width="1"/>
           
           <rect x="70" y="25" width="60" height="30" rx="2" fill="var(--primary-container)" stroke="var(--primary)" stroke-width="1.5"/>
-          <text x="100" y="38" text-anchor="middle" fill="var(--primary)" font-size="9" font-weight="bold">Filtration (0.22µm)</text>
+          <text x="100" y="38" text-anchor="middle" fill="var(--primary)" font-size="9" font-weight="bold">Autoclave Chamber</text>
           <text x="100" y="48" text-anchor="middle" fill="var(--secondary)" font-size="8" font-weight="bold">CCP-1</text>
           <line x1="130" y1="40" x2="145" y2="40" stroke="var(--outline)" stroke-width="1"/>
           
           <rect x="145" y="25" width="50" height="30" rx="2" fill="none" stroke="var(--outline)" stroke-width="1"/>
-          <text x="170" y="42" text-anchor="middle" fill="var(--on-surface-variant)" font-size="9">Aseptic Fill</text>
+          <text x="170" y="42" text-anchor="middle" fill="var(--on-surface-variant)" font-size="9">Sterile Pack</text>
           
-          <text x="100" y="70" text-anchor="middle" fill="var(--tertiary)" font-size="9" font-weight="bold">Critical Limit: Bubble Point pressure?</text>
+          <text x="100" y="70" text-anchor="middle" fill="var(--tertiary)" font-size="9" font-weight="bold">Critical Limit: Temp &amp; Time?</text>
         </svg>
       `,
       
-      q: "In a sterile manufacturing line for an injectable implant, the manufacturer establishes the 0.22 µm sterile filtration step as a Critical Control Point (CCP-1). Which of the following defines a valid Critical Limit and its associated monitoring procedure for this CCP?",
+      q: "In a manufacturing facility for a sterile catheter, the steam sterilization stage (autoclave) is established as a Critical Control Point (CCP-1) to eliminate biological hazards. Which of the following defines a valid Critical Limit and its associated monitoring procedure for this CCP?",
       options: [
-        "A) Limit: Filter pore size is 0.22 µm; Monitoring: Annual supplier audit of the filter manufacturer.",
-        "B) Limit: Filter integrity test pressure ≥ 3,450 mbar; Monitoring: Pre- and post-use filter integrity test.",
-        "C) Limit: Temperature is 20°C; Monitoring: Continuous chart recorder.",
-        "D) Limit: Operator wears sterile gowning; Monitoring: Visual inspection before entering the cleanroom.",
-        "E) Limit: S5 severity is not acceptable; Monitoring: Post-market complaint review."
+        "A) Limit: Operator gown status; Monitoring: Annual supplier audit of the cleanroom garment vendor.",
+        "B) Limit: Chamber temperature &ge; 121.1&deg;C for at least 15 minutes; Monitoring: Continuous sensor recording for each sterilization batch.",
+        "C) Limit: Cleanroom relative humidity is 50%; Monitoring: Monthly manual checking of cleanroom logs.",
+        "D) Limit: Use of non-toxic pouch materials; Monitoring: Visual inspection of incoming raw packaging reels.",
+        "E) Limit: Low-risk patient complaint rate; Monitoring: Post-market complaint file reviews."
       ],
       correct: 1, // B
-      rationale: "Under HACCP principles, a Critical Limit must be a measurable, verifiable value that separates acceptability from unacceptability (e.g., bubble point or pressure-hold test result, such as filter integrity test pressure ≥ 3,450 mbar). The monitoring procedure must check the CCP in real time or per batch (e.g., pre- and post-use integrity testing). Supplier audits (A) and gowning checks (D) are support programs, not CCP monitoring."
+      rationale: "HACCP principles require a Critical Limit to be a measurable parameter that separates safe operation from unsafe (e.g., autoclave temperature ≥ 121.1°C for 15 minutes). Monitoring must check each batch in real time, making Option B the correct answer."
     },
     {
       q: "During a risk assessment for a novel drug-eluting coronary stent, clinical data reveals a low-frequency but high-severity risk of late stent thrombosis. After implementing all feasible design and protective risk controls, the residual risk remains above the manufacturer's predefined acceptability limit. According to ISO 14971 Clause 7.4, under what condition may this device still be placed on the market or remain in use?",
@@ -315,6 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Navigation Logic
+  window.navigateTo = navigateTo;
   function navigateTo(view) {
     state.currentView = view;
     
@@ -980,7 +956,7 @@ const partASlides = [
           VOE gathers clinical or testing evidence demonstrating that the control measure successfully reduces the probability of occurrence of harm or the severity of that harm.
         </p>
         <p class="text-xs text-primary font-mono uppercase mb-2">Interactive Match Game</p>
-        <p class="text-xs text-on-surface-variant mb-4">Click a verification record on the right, then select the matching container (VOI or VOE) on the left.</p>
+        <p class="text-xs text-on-surface-variant mb-4">Drag each verification record card from the right and drop it into the correct container (VOI or VOE) on the left, or click a card to select it and then click the container.</p>
         <div class="grid grid-cols-2 gap-4">
           <div class="drop-zone border border-dashed border-outline-variant p-4 rounded text-center min-h-[90px] flex flex-col justify-center" id="voi-drop">
             <span class="text-xs font-mono text-primary uppercase block mb-1">VOI Container</span>
@@ -1010,52 +986,80 @@ const partASlides = [
       content: `
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Analyzing Control Side Effects</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          Risk control measures are meant to reduce risk, but they do not exist in a vacuum. Under ISO 14971 §7.2 and §7.5, you must evaluate whether any newly introduced risk control measure:
+          Under ISO 14971 §7.2 and §7.5, you must evaluate whether any risk control measure introduces <strong>new hazards</strong> or affects previously estimated risks.
         </p>
-        <ul class="list-disc pl-5 mb-4 text-on-surface-variant text-sm space-y-1">
-          <li><strong>Introduces new hazards</strong> or hazardous situations (e.g., adding a mechanical interlock shield that might pinch or trap patient fingers).</li>
-          <li><strong>Affects previously estimated risks</strong> (e.g., a software override mechanism that alters the occlusion alarm's detection probability).</li>
-        </ul>
         <div class="p-3 bg-surface-container-high rounded border border-outline-variant mb-3">
-          <span class="text-xs text-primary font-mono uppercase block mb-1">Standard Requirement</span>
-          <p class="text-xs text-on-surface-variant">
-            Any new risks introduced by controls must be entered into the Risk Management File and subjected to the same analysis, estimation, and control process.
+          <span class="text-xs text-primary font-mono uppercase block mb-1">Real-World Analogy (The Speed Bump)</span>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            <strong>Initial Hazard:</strong> Fast-moving cars at a pedestrian crosswalk (hazardous situation).<br>
+            <strong>Risk Mitigation:</strong> Install speed bumps (control measure) to force drivers to slow down.<br>
+            <strong>Side Effect Hazard:</strong> Speed bumps can damage car suspensions, cause sudden swerving, or delay emergency vehicles (new hazard/risk).
           </p>
         </div>
+        <p class="text-xs text-on-surface-variant leading-relaxed">
+          In medical devices, a software warning box (control) might cause alarm fatigue (new hazard), or a protective mechanical shield might pinch a user's finger. You must re-analyze these controls using the same risk management process.
+        </p>
       `,
       infographic: `
         <div class="h-full flex flex-col justify-center p-4">
-          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">Risk Control Side Effect Loop</h4>
+          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">Speed Bump Risk Analogy</h4>
           <svg viewBox="0 0 280 200" width="100%" height="180" xmlns="http://www.w3.org/2000/svg">
+            <!-- Road background -->
+            <rect x="5" y="5" width="270" height="190" fill="#f1f3f5" rx="6" stroke="var(--outline-variant)" stroke-width="1.5"/>
+            <!-- Road Lane Lines -->
+            <line x1="5" y1="100" x2="275" y2="100" stroke="#cbd5e1" stroke-dasharray="10, 8" stroke-width="2"/>
+            
+            <!-- Pedestrian Crosswalk (Zebra Crossing) -->
+            <rect x="120" y="5" width="40" height="190" fill="#cbd5e1"/>
+            <rect x="125" y="15" width="30" height="15" fill="#ffffff"/>
+            <rect x="125" y="45" width="30" height="15" fill="#ffffff"/>
+            <rect x="125" y="75" width="30" height="15" fill="#ffffff"/>
+            <rect x="125" y="105" width="30" height="15" fill="#ffffff"/>
+            <rect x="125" y="135" width="30" height="15" fill="#ffffff"/>
+            <rect x="125" y="165" width="30" height="15" fill="#ffffff"/>
+            <text x="140" y="185" text-anchor="middle" fill="#64748b" font-size="8" font-weight="bold">Crosswalk</text>
+
+            <!-- Speed Bumps (Risk Mitigations) -->
+            <!-- Left Speed Bump -->
+            <rect x="60" y="10" width="25" height="80" rx="3" fill="#991b1b" stroke="#7f1d1d" stroke-width="1"/>
+            <path d="M 65 20 L 80 30 M 65 40 L 80 50 M 65 60 L 80 70" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="72.5" y="96" text-anchor="middle" fill="#991b1b" font-size="7" font-weight="bold">Speed Bump</text>
+            <text x="72.5" y="104" text-anchor="middle" fill="#64748b" font-size="6" font-style="italic">(Mitigation)</text>
+
+            <!-- Right Speed Bump -->
+            <rect x="195" y="110" width="25" height="80" rx="3" fill="#991b1b" stroke="#7f1d1d" stroke-width="1"/>
+            <path d="M 200 120 L 215 130 M 200 140 L 215 150 M 200 160 L 215 170" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="207.5" y="101" text-anchor="middle" fill="#991b1b" font-size="7" font-weight="bold">Speed Bump</text>
+            <text x="207.5" y="109" text-anchor="middle" fill="#64748b" font-size="6" font-style="italic">(Mitigation)</text>
+
+            <!-- Car -->
+            <g id="svg-car" transform="translate(10, 40)">
+              <rect x="0" y="5" width="40" height="20" rx="3" fill="var(--primary)" stroke="var(--primary-container)" stroke-width="1"/>
+              <rect x="25" y="8" width="10" height="14" rx="1" fill="#e2e8f0"/>
+              <rect x="5" y="2" width="8" height="3" fill="#000000" rx="1"/>
+              <rect x="27" y="2" width="8" height="3" fill="#000000" rx="1"/>
+              <rect x="5" y="25" width="8" height="3" fill="#000000" rx="1"/>
+              <rect x="27" y="25" width="8" height="3" fill="#000000" rx="1"/>
+              <line x1="45" y1="15" x2="60" y2="15" stroke="var(--tertiary)" stroke-width="1.5" marker-end="url(#arr-f)"/>
+            </g>
+
+            <!-- Labels -->
+            <rect x="30" y="152" width="85" height="35" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="72.5" y="163" text-anchor="middle" fill="var(--on-surface)" font-size="7" font-weight="bold">Hazardous Situation</text>
+            <text x="72.5" y="172" text-anchor="middle" fill="var(--on-surface-variant)" font-size="6">Car approaching crosswalk</text>
+            <text x="72.5" y="181" text-anchor="middle" fill="var(--on-surface-variant)" font-size="6">with pedestrian crossing</text>
+
+            <rect x="175" y="10" width="90" height="38" rx="3" fill="var(--error-container)" stroke="var(--error)" stroke-width="1"/>
+            <text x="220" y="21" text-anchor="middle" fill="var(--error)" font-size="7" font-weight="bold">New Hazards Introduced</text>
+            <text x="220" y="30" text-anchor="middle" fill="var(--on-error-container)" font-size="6">• Vehicle suspension damage</text>
+            <text x="220" y="38" text-anchor="middle" fill="var(--on-error-container)" font-size="6">• Sudden braking / swerving</text>
+            <text x="220" y="46" text-anchor="middle" fill="var(--on-error-container)" font-size="6">• Emergency vehicle delays</text>
+            
             <defs>
-              <marker id="arr-new" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L6,3 z" fill="var(--error)"/>
-              </marker>
               <marker id="arr-f" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L6,3 z" fill="var(--primary)"/>
+                <path d="M0,0 L0,6 L6,3 z" fill="var(--tertiary)"/>
               </marker>
             </defs>
-            
-            <rect x="15" y="15" width="100" height="35" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)"/>
-            <text x="65" y="30" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-weight="bold">Initial Hazard</text>
-            <text x="65" y="42" text-anchor="middle" fill="var(--on-surface-variant)" font-size="11">e.g. sharp needle tip</text>
-            
-            <line x1="115" y1="32" x2="165" y2="32" stroke="var(--primary)" stroke-width="1.5" marker-end="url(#arr-f)"/>
-            <text x="140" y="27" text-anchor="middle" fill="var(--primary)" font-size="11">Apply Control</text>
-
-            <rect x="165" y="15" width="100" height="35" rx="4" fill="var(--primary-container)" stroke="var(--primary)" stroke-width="1.5"/>
-            <text x="215" y="30" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-weight="bold">Control Measure</text>
-            <text x="215" y="42" text-anchor="middle" fill="var(--primary)" font-size="11">e.g. safety shield</text>
-
-            <path d="M 215 50 Q 215 110 140 110" fill="none" stroke="var(--error)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arr-new)"/>
-            <text x="210" y="85" fill="var(--error)" font-size="11" font-weight="bold">Introduces?</text>
-
-            <rect x="60" y="115" width="160" height="35" rx="4" fill="var(--error-container)" stroke="var(--error)" stroke-width="1.5"/>
-            <text x="140" y="130" text-anchor="middle" fill="var(--error)" font-size="12" font-weight="bold">New Hazard / Risk</text>
-            <text x="140" y="142" text-anchor="middle" fill="var(--on-error-container)" font-size="11">e.g. finger pinch hazard</text>
-            
-            <path d="M 60 132 Q 15 132 15 50" fill="none" stroke="var(--outline)" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arr-f)"/>
-            <text x="25" y="100" fill="var(--on-surface-variant)" font-size="11">Analyze again</text>
           </svg>
         </div>
       `
@@ -1414,112 +1418,110 @@ const partBSlides = [
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
           ETA is an inductive (forward-looking) technique that starts with an initiating event (e.g., pressure sensor failure) and branches forward through the success or failure of subsequent safety barriers to determine the final clinical outcomes.
         </p>
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Clinical Example: Ventilator Pressure Failure</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          If a pressure sensor fails (Initiating Event), the event tree traces what happens as safety safeguards respond: Does the overpressure alarm trigger? Does the clinician intervene? Does the mechanical relief valve open?
-        </p>
-        <p class="text-xs text-primary font-mono uppercase mb-2">Interactive Path Tracer: Ventilator Pressure Failure</p>
-        <p class="text-xs text-on-surface-variant mb-4">Click "Yes" or "No" to decide if the safeguard barriers work, and see the clinical outcome.</p>
+        <p class="text-xs text-primary font-mono uppercase mb-2">Select Clinical Example</p>
+        <div class="grid grid-cols-3 gap-2 mb-4" id="eta-example-selector">
+          <button class="p-2 bg-surface-container-high border border-primary text-primary font-sans text-xs uppercase font-semibold rounded active" data-ex="ventilator">Ventilator</button>
+          <button class="p-2 bg-surface-container-high border border-outline-variant text-on-surface-variant font-sans text-xs uppercase rounded" data-ex="pump">Syringe Pump</button>
+          <button class="p-2 bg-surface-container-high border border-outline-variant text-on-surface-variant font-sans text-xs uppercase rounded" data-ex="defib">AED Shock</button>
+        </div>
+        <p class="text-xs text-primary font-mono uppercase mb-2">Interactive Path Tracer</p>
+        <p class="text-xs text-on-surface-variant mb-4">Click the safeguard barrier buttons below to toggle whether they work (YES) or fail (NO), and trace the clinical outcome.</p>
         <div class="grid grid-cols-3 gap-2 text-center text-xs font-mono mb-4">
-          <button class="p-2 bg-surface-container-high rounded border border-primary/20 text-primary" id="eta-btn-alarm">Alarm works?</button>
-          <button class="p-2 bg-surface-container-high rounded border border-primary/20 text-primary" id="eta-btn-response">Clinician responds?</button>
-          <button class="p-2 bg-surface-container-high rounded border border-primary/20 text-primary" id="eta-btn-valve">Valve opens?</button>
+          <button class="p-2 bg-surface-container-high rounded border border-outline-variant text-on-surface" id="eta-btn-alarm">Barrier 1</button>
+          <button class="p-2 bg-surface-container-high rounded border border-outline-variant text-on-surface" id="eta-btn-response">Barrier 2</button>
+          <button class="p-2 bg-surface-container-high rounded border border-outline-variant text-on-surface" id="eta-btn-valve">Barrier 3</button>
         </div>
         <div class="p-3 bg-surface-container rounded border border-outline-variant text-xs text-on-surface" id="eta-choice-summary">
-          Current Path: Sensor Fails → Alarm (Yes) → Clinician (Yes) → Valve (Yes)
+          Current Path: Initiating Event → Barrier 1 (Yes) → Barrier 2 (Yes) → Barrier 3 (Yes)
         </div>
       `,
       infographic: `
         <div class="h-full flex flex-col justify-center items-center p-4">
-          <h4 class="font-mono text-primary text-xs uppercase mb-4">ETA Branching Diagram</h4>
+          <h4 class="font-mono text-primary text-xs uppercase mb-4" id="eta-diagram-title">ETA Branching Diagram</h4>
           <div class="w-full bg-surface-container p-4 rounded border border-outline-variant text-xs space-y-3 font-mono">
             <div class="flex justify-between items-center pb-2 border-b border-outline-variant/30 text-on-surface">
-              <span>1. Alarm triggers?</span>
+              <span id="eta-label-alarm">1. Barrier 1?</span>
               <span class="text-primary font-bold" id="eta-status-alarm">YES</span>
             </div>
             <div class="flex justify-between items-center pb-2 border-b border-outline-variant/30 text-on-surface">
-              <span>2. Clinician responds?</span>
+              <span id="eta-label-response">2. Barrier 2?</span>
               <span class="text-primary font-bold" id="eta-status-response">YES</span>
             </div>
             <div class="flex justify-between items-center pb-2 border-b border-outline-variant/30 text-on-surface">
-              <span>3. Pressure valve opens?</span>
+              <span id="eta-label-valve">3. Barrier 3?</span>
               <span class="text-primary font-bold" id="eta-status-valve">YES</span>
             </div>
-            <div class="flex justify-between items-center pt-2 text-sm text-on-surface">
-              <span>Outcome:</span>
-              <span class="text-primary font-bold font-serif" id="eta-outcome-text">NO HARM</span>
+            <div class="flex flex-col gap-1 pt-2 border-t border-outline-variant/30">
+              <span class="text-xs text-on-surface-variant">Outcome:</span>
+              <span class="text-primary font-bold font-serif text-sm leading-tight" id="eta-outcome-text">NO HARM</span>
             </div>
           </div>
-          <p class="text-[10px] text-on-surface-variant mt-4 text-center">Failing multiple barriers in sequence leads to barotrauma lung damage.</p>
+          <p class="text-[10px] text-on-surface-variant mt-4 text-center" id="eta-footer-text">Failing multiple barriers in sequence leads to clinical harm.</p>
         </div>
       `,
       isWide: false
     },
     {
-      title: `HAZOP Example: Sterile Filling Process`,
+      title: `HAZOP Example: Insulin Infusion Pump`,
       section: `hazop`,
       content: `
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Guide-Word Deviation Analysis</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          HAZOP is a systematic, team-based technique that uses standardized guide words (More, Less, None, Reverse) applied to process parameters (Flow, Temperature, Pressure) to identify deviations from design intent in manufacturing.
+          HAZOP is a systematic, team-based technique that uses standardized guide words (More, Less, No, Reverse) applied to process parameters (Flow, Pressure, Temperature) to identify deviations from design intent.
         </p>
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Clinical Example: Sterile Filling Process</h4>
+        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Clinical Example: Insulin Infusion Pump</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          During filling of sterile syringes, guide words are applied to identify deviations. Applying 'Less' to 'Volume' identifies underfilled vials (sub-therapeutic dose). Applying 'More' to 'Temperature' identifies product denaturing.
+          The node analyzed is the "Insulin delivery line". We apply guide words to see the deviations and identify safety requirements.
         </p>
-        <p class="mb-4 text-xs text-on-surface-variant">Apply guide words to parameters to find deviations.</p>
-        <div class="grid grid-cols-3 gap-2" id="hazop-selector">
-          <button class="p-2.5 bg-surface-container-high border border-outline-variant rounded text-xs font-mono active text-primary" data-p="Volume" data-gw="Less">Less Volume</button>
-          <button class="p-2.5 bg-surface-container-high border border-outline-variant rounded text-xs font-mono" data-p="Volume" data-gw="More">More Volume</button>
-          <button class="p-2.5 bg-surface-container-high border border-outline-variant rounded text-xs font-mono" data-p="Temperature" data-gw="More">More Temp</button>
+        <p class="mb-4 text-xs text-on-surface-variant">Click the deviation buttons below to analyze the HAZOP study records.</p>
+        <div class="grid grid-cols-2 gap-2" id="hazop-selector">
+          <button class="p-2.5 bg-surface-container-high border border-outline-variant rounded text-xs font-mono active text-primary" data-p="Flow" data-gw="More">More Flow (Overdose)</button>
+          <button class="p-2.5 bg-surface-container-high border border-outline-variant rounded text-xs font-mono" data-p="Flow" data-gw="Less">Less Flow (Underfill)</button>
+          <button class="p-2.5 bg-surface-container-high border border-outline-variant rounded text-xs font-mono" data-p="Flow" data-gw="No">No Flow (Blockage)</button>
+          <button class="p-2.5 bg-surface-container-high border border-outline-variant rounded text-xs font-mono" data-p="Pressure" data-gw="More">More Pressure (Occlusion)</button>
         </div>
       `,
       infographic: `
         <div class="h-full flex flex-col justify-center p-6 bg-surface-container-high rounded border border-outline-variant" id="hazop-details-panel">
-          <h3 class="font-serif text-headline-lg text-primary mb-2" id="hazop-title">Deviation: Less Volume</h3>
-          <div class="space-y-2 text-xs text-on-surface-variant">
-            <p><strong>Possible Cause:</strong> Pump wear, air bubble in line, partial blockage.</p>
-            <p><strong>Consequence:</strong> Underfill vial, resulting in a sub-therapeutic dose to the patient.</p>
-            <p><strong>Safeguard:</strong> In-line checkweigher, automatic reject station.</p>
-            <p class="text-primary"><strong>Action Required:</strong> Add bubble detector to inlet line.</p>
-          </div>
+          <h3 class="font-serif text-headline-lg text-primary mb-2">Deviation Analysis</h3>
+          <p class="text-xs text-on-surface-variant">Click one of the buttons on the left to display possible causes, consequences, safeguards, and required actions.</p>
         </div>
       `,
       isWide: false
     },
     {
-      title: `HACCP Example: Sterile Medical Device Manufacturing`,
+      title: `HACCP Example: Catheter Steam Sterilization`,
       section: `haccp`,
       content: `
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Critical Control Points (CCPs)</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
           HACCP is a preventive system developed to control hazards at critical points in a manufacturing process. It establishes Critical Limits (measurable values), monitoring procedures, and corrective actions to prevent, eliminate, or reduce hazards to acceptable levels.
         </p>
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">HACCP in Sterile Device Manufacturing</h4>
+        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">HACCP in Catheter Sterilization</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          HACCP is applied to the sterile filtration, filling, and freeze-drying process to establish control limits for bioburden and particulate levels.
+          Applying HACCP to catheter manufacturing establishes limits for critical sterilization, assembly, and packaging steps.
         </p>
-        <p class="text-xs text-on-surface-variant mb-4">Click the Critical Control Points (CCPs) in the process step pipeline below to inspect limits.</p>
-        <div class="flex flex-col gap-2 font-mono text-xs">
-          <div class="p-2 bg-surface-container rounded border border-outline-variant cursor-pointer hover:border-primary text-on-surface" onclick="window.showHaccp(1)">
-            Step 2: Sterile Filtration <span class="float-right text-primary text-[10px]">CCP-1</span>
+        <p class="text-xs text-on-surface-variant mb-4 font-semibold text-primary">Click each CCP in the process pipeline below to inspect limits:</p>
+        <div class="flex flex-col gap-2 font-mono text-xs" id="haccp-stepper-list">
+          <div class="p-3 bg-surface-container rounded border border-outline-variant cursor-pointer hover:border-primary text-on-surface transition-all haccp-step active border-primary bg-primary/5 text-primary" data-step="1" onclick="window.showHaccp(1)">
+            Step 1: Steam Sterilization <span class="float-right text-primary text-[10px] font-bold">CCP-1</span>
           </div>
-          <div class="p-2 bg-surface-container rounded border border-outline-variant cursor-pointer hover:border-primary text-on-surface" onclick="window.showHaccp(2)">
-            Step 3: Aseptic Filling <span class="float-right text-primary text-[10px]">CCP-2</span>
+          <div class="p-3 bg-surface-container rounded border border-outline-variant cursor-pointer hover:border-primary text-on-surface transition-all haccp-step" data-step="2" onclick="window.showHaccp(2)">
+            Step 2: Aseptic Assembly <span class="float-right text-primary text-[10px] font-bold">CCP-2</span>
           </div>
-          <div class="p-2 bg-surface-container rounded border border-outline-variant cursor-pointer hover:border-primary text-on-surface" onclick="window.showHaccp(3)">
-            Step 4: Freeze Drying <span class="float-right text-primary text-[10px]">CCP-3</span>
+          <div class="p-3 bg-surface-container rounded border border-outline-variant cursor-pointer hover:border-primary text-on-surface transition-all haccp-step" data-step="3" onclick="window.showHaccp(3)">
+            Step 3: Sterile Sealing <span class="float-right text-primary text-[10px] font-bold">CCP-3</span>
           </div>
         </div>
       `,
       infographic: `
         <div class="h-full flex flex-col justify-center p-6 bg-surface-container-high rounded border border-outline-variant" id="haccp-details">
-          <h3 class="font-serif text-headline-lg text-primary mb-3">Sterile Filtration (CCP-1)</h3>
+          <h3 class="font-serif text-headline-lg text-primary mb-3">Autoclave Sterilization (CCP-1)</h3>
           <div class="space-y-2 text-xs text-on-surface-variant">
-            <p><strong>Hazard:</strong> Bacterial bioburden / product contamination.</p>
-            <p><strong>Critical Limit:</strong> Integrity test bubble point ≥ 3,450 mbar.</p>
-            <p><strong>Monitoring:</strong> Pre- and post-use filter integrity test.</p>
-            <p><strong>Corrective Action:</strong> Quarantine batch, re-filter through a new sterile membrane.</p>
+            <p><strong>Biological Hazard:</strong> Bacterial spores survival, compromising sterile barrier.</p>
+            <p><strong>Critical Limit:</strong> Chamber temperature ≥ 121.1°C for at least 15 minutes.</p>
+            <p><strong>Monitoring:</strong> Continuous calibrated thermocouple probe and pressure sensor recording for each autoclave batch.</p>
+            <p class="text-primary"><strong>Corrective Action:</strong> Quarantine the batch, run biological indicator strip analysis, and repeat autoclave cycle with corrected steam parameters.</p>
           </div>
         </div>
       `,
@@ -1527,21 +1529,18 @@ const partBSlides = [
     },
     {
       title: `Workshop Wrap-Up &amp; Hands-On Exercise`,
-      section: `haccp`,
+      section: `wrapup`,
       content: `
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Phase 2: Complete the Risk Analysis</h4>
+        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Integrating Analysis Techniques</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          Now that you have reviewed the key risk analysis techniques, it is time for the hands-on exercise. You will be assigned to breakout rooms to complete the risk analysis matrix for the steerable catheter system.
-        </p>
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Key Deliverables</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          For each identified failure mode, your team must define:
+          A robust risk management file rarely relies on a single technique. In practice, medical device manufacturers combine these methods to achieve complete coverage:
         </p>
         <ul class="list-disc pl-5 mb-4 text-on-surface-variant text-sm space-y-1">
-          <li>Pre-control risk estimation (Severity × Probability)</li>
-          <li>At least one risk control measure following the 3-tier hierarchy</li>
-          <li>A verification plan specifying VOI and VOE records</li>
-          <li>Post-control residual risk estimation</li>
+          <li><strong>PHA</strong> provides the early baseline of hazards during conceptual design.</li>
+          <li><strong>FMEA</strong> systematically analyzes component failure modes and reliability.</li>
+          <li><strong>FTA</strong> traces multiple failures to top-level hazardous events.</li>
+          <li><strong>HAZOP</strong> identifies deviations in complex process nodes and fluid lines.</li>
+          <li><strong>HACCP</strong> establishes control points and monitoring on the production floor.</li>
         </ul>
         <div class="p-3 bg-surface-container-high rounded border border-outline-variant flex flex-col gap-3">
           <p class="text-xs text-on-surface-variant">When you are ready to complete your competence assessment, click the button below to open the exams.</p>
@@ -1549,15 +1548,48 @@ const partBSlides = [
         </div>
       `,
       infographic: `
-        <div class="h-full flex flex-col justify-center items-center p-6 text-center">
-          <span class="material-symbols-outlined text-primary text-[64px] mb-4">workspace_premium</span>
-          <h3 class="font-serif text-xl mb-2 text-on-surface">Module B Complete</h3>
-          <p class="text-xs text-on-surface-variant max-w-[280px] leading-relaxed">
-            You have finished all sections of the Risk Analysis Workshop. Open the quizzes to test your competency.
-          </p>
+        <div class="h-full flex flex-col justify-center p-4">
+          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">Integrated Risk Analysis Strategy</h4>
+          <svg viewBox="0 0 280 200" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" class="font-mono">
+            <!-- Grid connectors -->
+            <path d="M 50 45 L 50 145 M 50 145 L 230 145 M 230 145 L 230 45 M 50 95 L 230 95" stroke="var(--outline-variant)" stroke-width="1.5" stroke-dasharray="3,3" fill="none"/>
+            
+            <!-- PHA Node -->
+            <rect x="15" y="15" width="70" height="30" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="50" y="28" text-anchor="middle" fill="var(--on-surface)" font-size="9" font-weight="bold">1. PHA</text>
+            <text x="50" y="39" text-anchor="middle" fill="var(--on-surface-variant)" font-size="6">Early hazards list</text>
+
+            <!-- FMEA Node -->
+            <rect x="195" y="15" width="70" height="30" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="230" y="28" text-anchor="middle" fill="var(--on-surface)" font-size="9" font-weight="bold">2. FMEA</text>
+            <text x="230" y="39" text-anchor="middle" fill="var(--on-surface-variant)" font-size="6">Reliability & faults</text>
+
+            <!-- FTA Node -->
+            <rect x="15" y="80" width="70" height="30" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="50" y="93" text-anchor="middle" fill="var(--on-surface)" font-size="9" font-weight="bold">3. FTA</text>
+            <text x="50" y="104" text-anchor="middle" fill="var(--on-surface-variant)" font-size="6">Root cause logic</text>
+
+            <!-- HAZOP Node -->
+            <rect x="195" y="80" width="70" height="30" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="230" y="93" text-anchor="middle" fill="var(--on-surface)" font-size="9" font-weight="bold">4. HAZOP</text>
+            <text x="230" y="104" text-anchor="middle" fill="var(--on-surface-variant)" font-size="6">Process dev. study</text>
+
+            <!-- HACCP Node -->
+            <rect x="105" y="130" width="70" height="30" rx="3" fill="var(--primary-container)" stroke="var(--primary)" stroke-width="1"/>
+            <text x="140" y="143" text-anchor="middle" fill="var(--primary)" font-size="9" font-weight="bold">5. HACCP</text>
+            <text x="140" y="154" text-anchor="middle" fill="var(--secondary)" font-size="6">CCP monitoring</text>
+
+            <!-- Center arrow workflow -->
+            <path d="M 90 30 L 190 30 M 230 50 L 230 75 M 190 95 L 90 95 M 50 115 L 50 140" stroke="var(--primary)" stroke-width="1.5" fill="none" marker-end="url(#arr-blue)"/>
+            
+            <defs>
+              <marker id="arr-blue" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="var(--primary)"/>
+              </marker>
+            </defs>
+          </svg>
         </div>
-      `,
-      isWide: false
+      `
     }
   ];
 
@@ -1586,7 +1618,7 @@ function renderPartA(container) {
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
           <!-- Text/Control Column -->
-          <div class="lg:col-span-6 flex flex-col justify-between min-h-[460px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
+          <div class="lg:col-span-5 flex flex-col justify-between min-h-[500px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
             <div>
               <h2 class="font-serif text-headline-xl mb-6">${slide.title}</h2>
               <div class="font-body-md text-body-md text-on-surface-variant text-balance">
@@ -1605,7 +1637,7 @@ function renderPartA(container) {
           </div>
 
           <!-- Infographic Column -->
-          <div class="lg:col-span-6 flex items-center justify-center min-h-[440px] bg-surface-container/30 rounded border border-outline-variant p-6">
+          <div class="lg:col-span-7 flex items-center justify-center min-h-[480px] bg-surface-container/30 rounded border border-outline-variant p-6">
             <div class="w-full h-full flex flex-col justify-center" id="infographic-stage">
               ${slide.infographic}
             </div>
@@ -1881,6 +1913,7 @@ function renderPartA(container) {
         // Correct
         cardEl.classList.add('matched', 'pointer-events-none');
         cardEl.classList.remove('selected');
+        cardEl.style.display = 'none'; // Hide matching card on successful match (TEC-14)
         const entry = document.createElement('div');
         entry.className = 'p-2 rounded mb-1 text-[11px] font-sans';
         entry.style.cssText = 'background: rgba(122,184,154,0.12); border: 1px solid rgba(122,184,154,0.4); color: #7ab89a;';
@@ -1928,10 +1961,17 @@ function renderPartA(container) {
       const maxAngle = 18;
       const angle = Math.max(-maxAngle, Math.min(maxAngle, (netDiff / riskWeight) * maxAngle));
 
-      // Apply transforms — pans counter-rotate to stay horizontal (gravity effect)
-      if (scaleBeam) scaleBeam.style.transform = `rotate(${angle}deg)`;
-      if (panLeft) panLeft.style.transform = `translateY(${angle > 0 ? Math.abs(angle) * 1.5 : 0}px)`;
-      if (panRight) panRight.style.transform = `translateY(${angle < 0 ? Math.abs(angle) * 1.5 : 0}px)`;
+      // Apply transforms — beam rotates around center (150, 70)
+      if (scaleBeam) {
+        scaleBeam.setAttribute("transform", `rotate(${angle}, 150, 70)`);
+      }
+      // Counter-rotate pans around their respective pivot points to stay horizontal (gravity effect)
+      if (panLeft) {
+        panLeft.setAttribute("transform", `rotate(${-angle}, 50, 70)`);
+      }
+      if (panRight) {
+        panRight.setAttribute("transform", `rotate(${-angle}, 250, 70)`);
+      }
 
       if (!outcomeBadge) return;
       if (angle > 1) {
@@ -2013,7 +2053,7 @@ function renderPartA(container) {
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
             <!-- Text/Control Column -->
-            <div class="lg:col-span-6 flex flex-col justify-between min-h-[460px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
+            <div class="lg:col-span-5 flex flex-col justify-between min-h-[500px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
               <div>
                 <h2 class="font-serif text-headline-xl mb-6">${slide.title}</h2>
                 <div class="font-body-md text-body-md text-on-surface-variant text-balance">
@@ -2032,7 +2072,7 @@ function renderPartA(container) {
             </div>
 
             <!-- Infographic Column -->
-            <div class="lg:col-span-6 flex items-center justify-center min-h-[440px] bg-surface-container/30 rounded border border-outline-variant p-6">
+            <div class="lg:col-span-7 flex items-center justify-center min-h-[480px] bg-surface-container/30 rounded border border-outline-variant p-6">
               <div class="w-full h-full flex flex-col justify-center" id="infographic-stage-b">
                 ${slide.infographic}
               </div>
@@ -2090,25 +2130,28 @@ function renderPartA(container) {
     const boxSensor = document.getElementById("box-sensor");
     const boxAlarm = document.getElementById("box-alarm");
 
-    // Make SVG node boxes directly clickable to toggle (TEC-17)
-    if (boxSoftware) {
-      boxSoftware.style.cursor = 'pointer';
-      boxSoftware.addEventListener('click', () => {
-        if (swSoftware) { swSoftware.checked = !swSoftware.checked; updateFta(); }
-      });
-    }
-    if (boxSensor) {
-      boxSensor.style.cursor = 'pointer';
-      boxSensor.addEventListener('click', () => {
-        if (swSensor) { swSensor.checked = !swSensor.checked; updateFta(); }
-      });
-    }
-    if (boxAlarm) {
-      boxAlarm.style.cursor = 'pointer';
-      boxAlarm.addEventListener('click', () => {
-        if (swAlarm) { swAlarm.checked = !swAlarm.checked; updateFta(); }
-      });
-    }
+    // Make SVG node boxes directly clickable to toggle (TEC-17) with hover highlights
+    const ftaBoxes = [
+      { el: boxSoftware, sw: swSoftware },
+      { el: boxSensor, sw: swSensor },
+      { el: boxAlarm, sw: swAlarm }
+    ];
+    ftaBoxes.forEach(b => {
+      if (b.el) {
+        b.el.style.cursor = 'pointer';
+        b.el.addEventListener('click', () => {
+          if (b.sw) { b.sw.checked = !b.sw.checked; updateFta(); }
+        });
+        b.el.addEventListener('mouseover', () => {
+          b.el.style.strokeWidth = "2.5px";
+          b.el.style.filter = "drop-shadow(0 2px 4px rgba(26,54,93,0.15))";
+        });
+        b.el.addEventListener('mouseout', () => {
+          b.el.style.strokeWidth = "1.5px";
+          b.el.style.filter = "";
+        });
+      }
+    });
 
     function updateFta() {
       const sensorFailed = swSensor && swSensor.checked;
@@ -2159,7 +2202,7 @@ function renderPartA(container) {
   }
 
   // Interactivity: ETA pathfinder
-  function setupEtaInteractivity() {
+    function setupEtaInteractivity() {
     const btnAlarm = document.getElementById("eta-btn-alarm");
     const btnResponse = document.getElementById("eta-btn-response");
     const btnValve = document.getElementById("eta-btn-valve");
@@ -2174,20 +2217,67 @@ function renderPartA(container) {
     let valAlarm = true;
     let valResponse = true;
     let valValve = true;
+    let activeEx = "ventilator";
 
-    function toggleBtn(btn, val) {
+    const examples = {
+      ventilator: {
+        title: "ETA Branching: Ventilator Pressure",
+        b1: "Alarm triggers?",
+        b2: "Clinician responds?",
+        b3: "Relief valve opens?",
+        footer: "Failing multiple barriers in sequence leads to barotrauma lung damage.",
+        calc: (v1, v2, v3) => {
+          if (v1 && v2) return { text: "NO HARM (Alarm triggered clinician response)", color: "text-primary" };
+          if (v1 && !v2 && v3) return { text: "MINOR HARM (Valve opened, alarm ignored)", color: "text-tertiary" };
+          if (v1 && !v2 && !v3) return { text: "SERIOUS HARM (Barotrauma, valve failed)", color: "text-error" };
+          if (!v1 && v3) return { text: "MODERATE HARM (Valve opened, no alarm)", color: "text-tertiary font-bold" };
+          return { text: "CRITICAL HARM (Barotrauma, all barriers failed)", color: "text-error font-bold animate-pulse" };
+        }
+      },
+      pump: {
+        title: "ETA Branching: Pump Occlusion",
+        b1: "Sensor alarms?",
+        b2: "Software auto-pauses?",
+        b3: "Nurse clears line?",
+        footer: "If occlusion sensors and auto-pause fail, lines can burst or deliver massive drug boluses.",
+        calc: (v1, v2, v3) => {
+          if (v2) return { text: "NO HARM (Motor automatically stopped)", color: "text-primary" };
+          if (v1 && v3) return { text: "MINOR HARM (Nurse intervened manually)", color: "text-tertiary" };
+          if (v1 && !v3) return { text: "SERIOUS HARM (Alarm ignored; line burst)", color: "text-error" };
+          return { text: "CRITICAL HARM (Bolus overdose delivered to patient)", color: "text-error font-bold animate-pulse" };
+        }
+      },
+      defib: {
+        title: "ETA Branching: AED Shock",
+        b1: "Self-test warns?",
+        b2: "Operator notes alert?",
+        b3: "Backup AED available?",
+        footer: "If AED fails self-test alerts and backup units aren't available, resuscitation fails.",
+        calc: (v1, v2, v3) => {
+          if (v1 && v2 && v3) return { text: "NO HARM (Operator gets backup AED)", color: "text-primary" };
+          if (v1 && v2 && !v3) return { text: "CRITICAL HARM (AED failed, no backup available)", color: "text-error font-bold" };
+          if (!v1 && v3) return { text: "MINOR HARM (AED failed silently, used backup AED)", color: "text-tertiary" };
+          return { text: "FATAL HARM (Silent AED failure, patient dies)", color: "text-error font-bold animate-pulse" };
+        }
+      }
+    };
+
+    function toggleBtn(btn, val, label) {
       if (val) {
-        btn.textContent = "YES (Working)";
+        btn.textContent = `YES: ${label.split(" ")[0]} (Working)`;
         btn.style.color = "var(--primary)";
         btn.style.borderColor = "var(--primary-container)";
       } else {
-        btn.textContent = "NO (Fails)";
+        btn.textContent = `NO: ${label.split(" ")[0]} (Fails)`;
         btn.style.color = "var(--error)";
         btn.style.borderColor = "var(--error-container)";
       }
     }
 
     function calculateEta() {
+      const exData = examples[activeEx];
+      const outcome = exData.calc(valAlarm, valResponse, valValve);
+
       stAlarm.textContent = valAlarm ? "YES" : "NO";
       stAlarm.className = valAlarm ? "text-primary font-bold" : "text-error font-bold";
 
@@ -2197,75 +2287,89 @@ function renderPartA(container) {
       stValve.textContent = valValve ? "YES" : "NO";
       stValve.className = valValve ? "text-primary font-bold" : "text-error font-bold";
 
-      // Determine outcome
-      let outcome = "";
-      let colorClass = "text-primary";
+      outcomeText.textContent = outcome.text;
+      outcomeText.className = `${outcome.color} font-bold font-serif text-sm leading-tight`;
+
+      summaryText.textContent = `Path: Init Event → ${exData.b1.split(" ")[0]} (${valAlarm?'Yes':'No'}) → ${exData.b2.split(" ")[0]} (${valResponse?'Yes':'No'}) → ${exData.b3.split(" ")[0]} (${valValve?'Yes':'No'})`;
       
-      if (valAlarm && valResponse) {
-        outcome = "NO HARM (Alarm triggered response)";
-        colorClass = "text-primary";
-      } else if (valAlarm && !valResponse && valValve) {
-        outcome = "MINOR HARM (Valve opened, alarm ignored)";
-        colorClass = "text-tertiary";
-      } else if (valAlarm && !valResponse && !valValve) {
-        outcome = "SERIOUS HARM (Barotrauma, alarm ignored + valve failed)";
-        colorClass = "text-error";
-      } else if (!valAlarm && valValve) {
-        outcome = "MODERATE HARM (Valve opened, no alarm)";
-        colorClass = "text-tertiary font-bold";
-      } else {
-        outcome = "CRITICAL HARM (Barotrauma, all barriers failed)";
-        colorClass = "text-error font-bold animate-pulse";
-      }
-
-      outcomeText.textContent = outcome;
-      outcomeText.className = `${colorClass} font-bold font-serif`;
-
-      summaryText.textContent = `Path: Sensor fails → Alarm (${valAlarm?'Yes':'No'}) → Clinician (${valResponse?'Yes':'No'}) → Valve (${valValve?'Yes':'No'})`;
+      toggleBtn(btnAlarm, valAlarm, exData.b1);
+      toggleBtn(btnResponse, valResponse, exData.b2);
+      toggleBtn(btnValve, valValve, exData.b3);
     }
 
-    btnAlarm.onclick = () => { valAlarm = !valAlarm; toggleBtn(btnAlarm, valAlarm); calculateEta(); };
-    btnResponse.onclick = () => { valResponse = !valResponse; toggleBtn(btnResponse, valResponse); calculateEta(); };
-    btnValve.onclick = () => { valValve = !valValve; toggleBtn(btnValve, valValve); calculateEta(); };
+    // Set up example selectors
+    const exampleBtns = document.querySelectorAll("#eta-example-selector button");
+    exampleBtns.forEach(btn => {
+      btn.onclick = () => {
+        exampleBtns.forEach(b => {
+          b.classList.remove("border-primary", "text-primary", "active");
+          b.classList.add("border-outline-variant", "text-on-surface-variant");
+        });
+        btn.classList.remove("border-outline-variant", "text-on-surface-variant");
+        btn.classList.add("border-primary", "text-primary", "active");
 
-    // Initial load
-    toggleBtn(btnAlarm, valAlarm);
-    toggleBtn(btnResponse, valResponse);
-    toggleBtn(btnValve, valValve);
+        activeEx = btn.getAttribute("data-ex");
+        const exData = examples[activeEx];
+
+        document.getElementById("eta-diagram-title").textContent = exData.title;
+        document.getElementById("eta-label-alarm").textContent = `1. ${exData.b1}`;
+        document.getElementById("eta-label-response").textContent = `2. ${exData.b2}`;
+        document.getElementById("eta-label-valve").textContent = `3. ${exData.b3}`;
+        document.getElementById("eta-footer-text").textContent = exData.footer;
+
+        calculateEta();
+      };
+    });
+
+    btnAlarm.onclick = () => { valAlarm = !valAlarm; calculateEta(); };
+    btnResponse.onclick = () => { valResponse = !valResponse; calculateEta(); };
+    btnValve.onclick = () => { valValve = !valValve; calculateEta(); };
+
     calculateEta();
   }
 
+
+
   // Interactivity: HAZOP matrix
-  function setupHazopInteractivity() {
+    function setupHazopInteractivity() {
     const selectorButtons = document.querySelectorAll("#hazop-selector button");
     const panelEl = document.getElementById("hazop-details-panel");
 
     const deviations = {
-      "Volume_Less": {
-        title: "Deviation: Less Volume (< 4.9 mL)",
+      "Flow_More": {
+        title: "Deviation: More Flow (Overdose)",
         body: `
-          <p class="mb-2"><strong>Possible Cause:</strong> Pump wear, air bubble in feed line, partial nozzle blockage.</p>
-          <p class="mb-2"><strong>Consequence:</strong> Underfill, leading to a sub-therapeutic dose being delivered to the patient.</p>
-          <p class="mb-2"><strong>Safeguard:</strong> In-line checkweigher, automatic checkweight reject station.</p>
-          <p class="text-primary"><strong>Action Required:</strong> Add bubble detector to inlet line to halt fill on bubbles.</p>
+          <p class="mb-2"><strong>Possible Cause:</strong> Software bug in stepping motor driver, siphon effect, or valve failure.</p>
+          <p class="mb-2"><strong>Consequence:</strong> Patient receives excessive insulin infusion, leading to severe clinical hypoglycemia (low blood sugar shock).</p>
+          <p class="mb-2"><strong>Safeguard:</strong> Dual redundant CPU verification checks, independent flow-sensor shutoff.</p>
+          <p class="text-primary"><strong>Action Required:</strong> Implement physical flow-limiting orifice in infusion catheter set.</p>
         `
       },
-      "Volume_More": {
-        title: "Deviation: More Volume (> 5.1 mL)",
+      "Flow_Less": {
+        title: "Deviation: Less Flow (Under-infusion)",
         body: `
-          <p class="mb-2"><strong>Possible Cause:</strong> Pump calibration drift, fill valve sticking open.</p>
-          <p class="mb-2"><strong>Consequence:</strong> Overfill, resulting in raw material waste and potential container overflow / sealing contamination.</p>
-          <p class="mb-2"><strong>Safeguard:</strong> In-line checkweigher, reject station.</p>
-          <p class="text-primary"><strong>Action Required:</strong> Validate checkweigher reject limit margins.</p>
+          <p class="mb-2"><strong>Possible Cause:</strong> Battery voltage depletion, internal drive friction drag.</p>
+          <p class="mb-2"><strong>Consequence:</strong> Under-infusion of insulin, leading to slow onset of hyperglycemia.</p>
+          <p class="mb-2"><strong>Safeguard:</strong> Daily self-test cycle measuring motor drive current and battery capacity.</p>
+          <p class="text-primary"><strong>Action Required:</strong> Code a low-voltage early warning battery alarm alert.</p>
         `
       },
-      "Temperature_More": {
-        title: "Deviation: More Temperature (> 22°C)",
+      "Flow_No": {
+        title: "Deviation: No Flow (Blockage)",
         body: `
-          <p class="mb-2"><strong>Possible Cause:</strong> Heat exchanger fault, high ambient cleanroom temperature.</p>
-          <p class="mb-2"><strong>Consequence:</strong> Active product degradation (denaturing of PLLA suspension carrier).</p>
-          <p class="mb-2"><strong>Safeguard:</strong> Continuous inline temperature sensor.</p>
-          <p class="text-primary"><strong>Action Required:</strong> Program automatic loop shutdown if temperature is exceeded for > 30 seconds.</p>
+          <p class="mb-2"><strong>Possible Cause:</strong> Catheter tubing kinked, needle dislodged, or catheter tip occlusion.</p>
+          <p class="mb-2"><strong>Consequence:</strong> Zero insulin delivered, causing rapid onset of diabetic ketoacidosis (DKA).</p>
+          <p class="mb-2"><strong>Safeguard:</strong> High-precision inline occlusion pressure alarm sensor.</p>
+          <p class="text-primary"><strong>Action Required:</strong> Redesign set connector collar to prevent accidental line compression.</p>
+        `
+      },
+      "Pressure_More": {
+        title: "Deviation: More Pressure (Occlusion build-up)",
+        body: `
+          <p class="mb-2"><strong>Possible Cause:</strong> Motor continues pushing against a blocked / kinked catheter line.</p>
+          <p class="mb-2"><strong>Consequence:</strong> Pump strain, line rupture, or sudden bolus delivery upon occlusion release.</p>
+          <p class="mb-2"><strong>Safeguard:</strong> Motor strain-gauge current sensor, high-pressure auto-halt software check.</p>
+          <p class="text-primary"><strong>Action Required:</strong> Program motor driver to perform 2 reverse steps to relieve line pressure upon occlusion alarm detection.</p>
         `
       }
     };
@@ -2278,51 +2382,77 @@ function renderPartA(container) {
         const p = btn.getAttribute("data-p");
         
         const dev = deviations[`${p}_${gw}`];
-        panelEl.innerHTML = `
-          <h3 class="font-serif text-headline-lg text-primary mb-2">${dev.title}</h3>
-          <div class="space-y-2 text-xs text-on-surface-variant">
-            ${dev.body}
-          </div>
-        `;
+        if (panelEl && dev) {
+          panelEl.innerHTML = `
+            <h3 class="font-serif text-headline-lg text-primary mb-2">${dev.title}</h3>
+            <div class="space-y-2 text-xs text-on-surface-variant">
+              ${dev.body}
+            </div>
+          `;
+        }
       };
     });
+
+    if (selectorButtons[0]) selectorButtons[0].click();
   }
 
+
+
   // HACCP Stepper Globals
-  window.showHaccp = (step) => {
+    window.showHaccp = (step) => {
     const details = document.getElementById("haccp-details");
-    if (step === 1) {
+    const steps = document.querySelectorAll(".haccp-step");
+    
+    steps.forEach(s => {
+      s.classList.remove("border-primary", "bg-primary/5", "text-primary");
+      const num = parseInt(s.getAttribute("data-step"));
+      if (num === step) {
+        s.classList.add("border-primary", "bg-primary/5", "text-primary");
+      }
+    });
+
+    const data = {
+      1: {
+        title: "Steam Sterilization (Autoclave) (CCP-1)",
+        content: `
+          <p class="mb-2"><strong>Biological Hazard:</strong> Bacterial spores survival, compromising sterile barrier.</p>
+          <p class="mb-2"><strong>Critical Limit:</strong> Chamber temperature &ge; 121.1&deg;C for at least 15 minutes.</p>
+          <p class="mb-2"><strong>Monitoring:</strong> Continuous calibrated thermocouple probe and pressure sensor recording for each autoclave batch.</p>
+          <p class="text-primary"><strong>Corrective Action:</strong> Quarantine the batch, run biological indicator strip analysis, and repeat autoclave cycle with corrected steam parameters.</p>
+        `
+      },
+      2: {
+        title: "Aseptic Assembly (CCP-2)",
+        content: `
+          <p class="mb-2"><strong>Particulate Hazard:</strong> Environmental contamination in cleanroom during component assembly.</p>
+          <p class="mb-2"><strong>Critical Limit:</strong> ISO Class 5 air quality (&lt; 3,520 particles/m&sup3; of size &ge; 0.5&micro;m).</p>
+          <p class="mb-2"><strong>Monitoring:</strong> Continuous real-time airborne particle counter probes placed at the filling line.</p>
+          <p class="text-primary"><strong>Corrective Action:</strong> Immediately stop assembly line, evacuate cleanroom, perform HEPA filter inspection, and run line clearance before restart.</p>
+        `
+      },
+      3: {
+        title: "Sterile Sealing (CCP-3)",
+        content: `
+          <p class="mb-2"><strong>Package Integrity Hazard:</strong> Incomplete sterile barrier seals, allowing microbial ingress.</p>
+          <p class="mb-2"><strong>Critical Limit:</strong> Seal width &ge; 6mm and seal peel strength &ge; 1.5 N/15mm.</p>
+          <p class="mb-2"><strong>Monitoring:</strong> Visual inspection of every pouch, and destructive peel test on 5 samples per batch.</p>
+          <p class="text-primary"><strong>Corrective Action:</strong> Halt packaging, quarantine affected pouches since last passed test, verify heating element temperature calibration, and re-pouch parts.</p>
+        `
+      }
+    };
+
+    const activeData = data[step];
+    if (details && activeData) {
       details.innerHTML = `
-        <h3 class="font-serif text-headline-lg text-primary mb-3">Sterile Filtration (CCP-1)</h3>
-        <div class="space-y-2 text-xs text-on-surface-variant">
-          <p><strong>Hazard:</strong> Bacterial bioburden / product contamination.</p>
-          <p><strong>Critical Limit:</strong> Integrity test bubble point ≥ 3,450 mbar.</p>
-          <p><strong>Monitoring:</strong> Pre- and post-use filter integrity test.</p>
-          <p><strong>Corrective Action:</strong> Quarantine batch, re-filter through a new sterile membrane.</p>
-        </div>
-      `;
-    } else if (step === 2) {
-      details.innerHTML = `
-        <h3 class="font-serif text-headline-lg text-primary mb-3">Aseptic Filling (CCP-2)</h3>
-        <div class="space-y-2 text-xs text-on-surface-variant">
-          <p><strong>Hazard:</strong> Particulate / environmental contamination.</p>
-          <p><strong>Critical Limit:</strong> ISO 5 environment; < 3,520 particles/m³ (≥ 0.5µm).</p>
-          <p><strong>Monitoring:</strong> Continuous particle counter.</p>
-          <p><strong>Corrective Action:</strong> Stop fill line, quarantine vials, perform media fill qualification.</p>
-        </div>
-      `;
-    } else if (step === 3) {
-      details.innerHTML = `
-        <h3 class="font-serif text-headline-lg text-primary mb-3">Freeze Drying (CCP-3)</h3>
-        <div class="space-y-2 text-xs text-on-surface-variant">
-          <p><strong>Hazard:</strong> Chemical / physical instability of reconstitution carrier.</p>
-          <p><strong>Critical Limit:</strong> Shelf temperature: -25°C to -20°C during primary drying.</p>
-          <p><strong>Monitoring:</strong> Continuous calibrated RTD sensors.</p>
-          <p><strong>Corrective Action:</strong> Quarantine batch, run stability verification before release.</p>
+        <h3 class="font-serif text-headline-lg text-primary mb-3">${activeData.title}</h3>
+        <div class="space-y-2 text-xs text-on-surface-variant font-sans">
+          ${activeData.content}
         </div>
       `;
     }
   };
+
+;
 
   // Render Quizzes Module
   function renderQuizzes(container) {
@@ -2616,7 +2746,7 @@ function renderPartA(container) {
     `;
 
     // Always bind these for the Back / Retry buttons in case celebration doesn't fire
-    window.goDashboard = () => navigateTo("dashboard");
+    window.backToQuizzes = () => navigateTo("quizzes");
     window.retryExam = (t) => renderExamStage(container, t);
 
     // Show congratulations overlay when BOTH exams have now been passed
