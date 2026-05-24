@@ -7,70 +7,68 @@
 /* Font Variables and Classes */
 :root {
   --font-serif: 'Merriweather', serif;
-  --font-sans: 'Poppins', sans-serif;
-  --font-mono: 'Poppins', monospace;
+  --font-sans: 'Inter', 'Poppins', sans-serif;
+  --font-mono: 'Inter', 'Poppins', monospace;
 
-  /* Orderly People Color System */
-  --primary: #839896;
-  --primary-container: #6b807e;
-  --primary-fixed-dim: #7a8f8d;
-  --primary-fixed: #9aada9;
-  --on-primary: #f8f5eb;
-  --on-primary-container: #f8f5eb;
-  --on-primary-fixed: #121615;
-  --on-primary-fixed-variant: #1e2423;
+  /* Orderly People Color System (New Light Corporate Theme) */
+  --primary: #1a365d;              /* Deep Navy Blue */
+  --primary-container: #edf2f7;    /* Slate-grey/blue container */
+  --primary-fixed-dim: #2b6cb0;    /* Muted accent blue */
+  --primary-fixed: #3182ce;
+  --on-primary: #ffffff;           /* White text on Navy */
+  --on-primary-container: #1a202c; /* Charcoal on slate container */
+  --on-primary-fixed: #ffffff;
+  --on-primary-fixed-variant: #ebf8ff;
   
-  --secondary: #b8c4c2;
-  --secondary-container: #2e3936;
-  --secondary-fixed: #c8d4d2;
-  --secondary-fixed-dim: #a8b4b2;
-  --on-secondary: #121615;
-  --on-secondary-container: #c8d4d2;
-  --on-secondary-fixed: #121615;
-  --on-secondary-fixed-variant: #2e3936;
+  --secondary: #4a5568;            /* Charcoal grey */
+  --secondary-container: #edf2f7;
+  --secondary-fixed: #e2e8f0;
+  --secondary-fixed-dim: #cbd5e1;
+  --on-secondary: #ffffff;
+  --on-secondary-container: #1a202c;
+  --on-secondary-fixed: #ffffff;
+  --on-secondary-fixed-variant: #e2e8f0;
   
-  --tertiary: #d4b896;
-  --tertiary-container: #a88060;
-  --tertiary-fixed: #e4c8a6;
-  --tertiary-fixed-dim: #c4a87c;
-  --on-tertiary: #121615;
-  --on-tertiary-container: #f8f5eb;
-  --on-tertiary-fixed: #121615;
-  --on-tertiary-fixed-variant: #2e2418;
+  --tertiary: #b7791f;             /* Subtle warm amber/gold for highlights */
+  --tertiary-container: #fefcbf;
+  --tertiary-fixed: #fef3c7;
+  --tertiary-fixed-dim: #fde68a;
+  --on-tertiary: #ffffff;
+  --on-tertiary-container: #1a202c;
+  --on-tertiary-fixed: #ffffff;
+  --on-tertiary-fixed-variant: #78350f;
 
-  --background: #121615;
-  --on-background: #f8f5eb;
+  --background: #f7fafc;           /* Off-white/Soft Grey background */
+  --on-background: #1a202c;        /* Charcoal text */
   
-  --surface: #121615;
-  --on-surface: #f8f5eb;
-  --on-surface-variant: #a8b4b0;
-  --surface-dim: #0e1210;
-  --surface-bright: #2a302d;
+  --surface: #ffffff;              /* Pure White surface for cards/sidebar */
+  --on-surface: #1a202c;           /* Charcoal text */
+  --on-surface-variant: #4a5568;   /* Medium grey */
+  --surface-dim: #d7dadc;          /* Dim grey */
+  --surface-bright: #ffffff;
   
-  --surface-container-lowest: #0a0d0b;
-  --surface-container-low: #181d1a;
-  --surface-container: #1e2421;
-  --surface-container-high: #262e2a;
-  --surface-container-highest: #303a35;
-  --surface-variant: #303a35;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f7fafc;
+  --surface-container: #ffffff;
+  --surface-container-high: #f7fafc;
+  --surface-container-highest: #edf2f7;
+  --surface-variant: #f7fafc;
   
-  --inverse-surface: #f0ede6;
-  --inverse-on-surface: #1e2421;
-  --inverse-primary: #4a5f5d;
+  --inverse-surface: #1a202c;
+  --inverse-on-surface: #ffffff;
+  --inverse-primary: #90cdf4;
 
-  --error: #f28b82;
-  --error-container: #7a1c1c;
-  --on-error: #1a0000;
-  --on-error-container: #ffd6d6;
+  --error: #c53030;                /* Soft corporate red */
+  --error-container: #fed7d7;
+  --on-error: #ffffff;
+  --on-error-container: #742a2a;
   
-  --outline: #6a7a76;
-  --outline-variant: #2e3a36;
-  --surface-tint: #839896;
+  --outline: #cbd5e1;              /* Outlines and borders */
+  --outline-variant: #cbd5e1;
+  --surface-tint: #1a365d;
 
-  /* Success/accent colors */
-  --success: #7ab89a;
-  --warning: #c4a87c;
-}
+  --success: #2f855a;              /* Corporate green */
+  --warning: #dd6b20;}
 
 /* Custom Base Overrides */
 body {
@@ -93,7 +91,7 @@ body {
 
 /* Shimmer Progress Indicator */
 .progress-bar-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(131, 152, 150, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(26, 54, 93, 0.2), transparent);
   background-size: 200% 100%;
   animation: shimmer 2s infinite linear;
 }
@@ -105,16 +103,16 @@ body {
 
 /* Ghost borders */
 .ghost-border {
-  border: 1px solid rgba(248, 245, 235, 0.08);
+  border: 1px solid rgba(26, 32, 44, 0.08);
 }
 
 .ghost-border-interactive {
-  border: 1px solid rgba(248, 245, 235, 0.08);
+  border: 1px solid rgba(26, 32, 44, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ghost-border-interactive:hover {
-  border-color: rgba(131, 152, 150, 0.3);
+  border-color: rgba(26, 54, 93, 0.15);
   background-color: var(--surface-container-high);
   transform: translateY(-2px);
 }
@@ -159,20 +157,20 @@ body {
 .match-card:active {
   cursor: grabbing;
   transform: scale(1.02);
-  box-shadow: 0 8px 24px rgba(131, 152, 150, 0.2);
+  box-shadow: 0 8px 24px rgba(26, 54, 93, 0.1);
 }
 
 .match-card.selected {
   border-color: var(--primary);
-  box-shadow: 0 0 12px rgba(131, 152, 150, 0.25);
-  background-color: rgba(131, 152, 150, 0.08);
+  box-shadow: 0 0 12px rgba(26, 54, 93, 0.1);
+  background-color: rgba(26, 54, 93, 0.05);
 }
 
 .match-card.matched {
   opacity: 0.45;
-  border-color: rgba(248, 245, 235, 0.05);
+  border-color: rgba(26, 32, 44, 0.03);
   cursor: not-allowed;
-  background-color: rgba(131, 152, 150, 0.05);
+  background-color: rgba(26, 54, 93, 0.03);
 }
 
 .drop-zone {
@@ -182,7 +180,7 @@ body {
 
 .drop-zone.dragover {
   border-color: var(--primary);
-  background-color: rgba(131, 152, 150, 0.07);
+  background-color: rgba(26, 54, 93, 0.04);
 }
 
 /* Benefit-Risk Scale Styling */
@@ -207,7 +205,7 @@ body {
 .matrix-cell:hover {
   transform: scale(1.05);
   z-index: 10;
-  box-shadow: 0 0 10px rgba(248, 245, 235, 0.1);
+  box-shadow: 0 0 10px rgba(26, 32, 44, 0.05);
 }
 
 /* Drag-and-drop ordering blocks */
@@ -230,9 +228,9 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: rgba(122, 184, 154, 0.15);
-  border: 1px solid rgba(122, 184, 154, 0.4);
-  color: #7ab89a;
+  background: rgba(47, 133, 90, 0.1);
+  border: 1px solid rgba(47, 133, 90, 0.3);
+  color: #2f855a;
   font-size: 10px;
   font-family: var(--font-sans);
   font-weight: 600;
@@ -312,7 +310,7 @@ body {
     height: 100%;
     background: white !important;
     color: black !important;
-    border: 20px double #121615 !important;
+    border: 20px double var(--primary) !important;
     padding: 40px !important;
     display: flex !important;
     flex-direction: column !important;
@@ -327,19 +325,19 @@ body {
 /* ===== TEC-14: VOI vs VOE Drag-and-Drop ===== */
 .match-card.selected {
   border-color: var(--primary) !important;
-  box-shadow: 0 0 0 2px rgba(131, 152, 150, 0.35);
+  box-shadow: 0 0 0 2px rgba(26, 54, 93, 0.2);
   cursor: grabbing;
 }
 .match-card.matched {
   opacity: 0.45;
-  border-color: rgba(122, 184, 154, 0.4) !important;
-  background: rgba(122, 184, 154, 0.06) !important;
+  border-color: rgba(47, 133, 90, 0.3) !important;
+  background: rgba(47, 133, 90, 0.05) !important;
   pointer-events: none;
 }
 .dragover {
   border-color: var(--primary) !important;
-  background: rgba(131, 152, 150, 0.08) !important;
-  box-shadow: 0 0 0 2px rgba(131, 152, 150, 0.3);
+  background: rgba(26, 54, 93, 0.05) !important;
+  box-shadow: 0 0 0 2px rgba(26, 54, 93, 0.15);
   transition: all 0.15s ease;
 }
 

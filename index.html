@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html class="light" lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -17,58 +17,62 @@
         extend: {
           "colors": {
             /* Orderly People brand: warm cream on deep dark, with slate teal accent */
-            "primary-fixed-dim": "#7a8f8d",
-            "secondary-fixed": "#c8d4d2",
-            "surface-tint": "#839896",
-            "on-tertiary": "#121615",
-            "on-secondary-fixed-variant": "#2e3936",
-            "secondary-fixed-dim": "#a8b4b2",
-            "outline-variant": "#2e3a36",
-            "on-primary-container": "#f8f5eb",
-            "primary-fixed": "#9aada9",
-            "on-tertiary-container": "#f8f5eb",
-            "secondary-container": "#2e3936",
-            "on-background": "#f8f5eb",
-            "on-error-container": "#ffd6d6",
-            "tertiary": "#d4b896",
-            "surface-container-low": "#181d1a",
-            "error": "#f28b82",
-            "on-secondary": "#121615",
-            "tertiary-fixed-dim": "#c4a87c",
-            "on-primary-fixed-variant": "#1e2423",
-            "on-surface": "#f8f5eb",
-            "surface-container-high": "#262e2a",
-            "tertiary-fixed": "#e4c8a6",
-            "surface-container": "#1e2421",
-            "outline": "#6a7a76",
-            "on-primary": "#f8f5eb",
-            "error-container": "#7a1c1c",
-            "on-tertiary-fixed-variant": "#2e2418",
-            "on-surface-variant": "#a8b4b0",
-            "inverse-on-surface": "#1e2421",
-            "inverse-surface": "#f0ede6",
-            "background": "#121615",
-            "secondary": "#b8c4c2",
-            "on-primary-fixed": "#121615",
-            "primary": "#839896",
-            "on-error": "#1a0000",
-            "surface-container-lowest": "#0a0d0b",
-            "surface-dim": "#0e1210",
-            "on-tertiary-fixed": "#121615",
-            "inverse-primary": "#4a5f5d",
-            "primary-container": "#6b807e",
-            "on-secondary-fixed": "#121615",
-            "surface": "#121615",
-            "surface-container-highest": "#303a35",
-            "on-secondary-container": "#c8d4d2",
-            "surface-variant": "#303a35",
-            "surface-bright": "#2a302d",
-            "tertiary-container": "#a88060"
+            "primary-fixed-dim": "#2b6cb0",
+            "secondary-fixed": "#e2e8f0",
+            "surface-tint": "#1a365d",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#4a5568",
+            "secondary-fixed-dim": "#cbd5e1",
+            "outline-variant": "#cbd5e1",
+            "on-primary-container": "#1a202c",
+            "primary-fixed": "#3182ce",
+            "on-tertiary-container": "#1a202c",
+            "secondary-container": "#edf2f7",
+            "on-background": "#1a202c",
+            "on-error-container": "#742a2a",
+            "tertiary": "#b7791f",
+            "surface-container-low": "#f7fafc",
+            "error": "#c53030",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#fde68a",
+            "on-primary-fixed-variant": "#ebf8ff",
+            "on-surface": "#1a202c",
+            "surface-container-high": "#f7fafc",
+            "tertiary-fixed": "#fef3c7",
+            "surface-container": "#ffffff",
+            "outline": "#cbd5e1",
+            "on-primary": "#ffffff",
+            "error-container": "#fed7d7",
+            "on-tertiary-fixed-variant": "#78350f",
+            "on-surface-variant": "#4a5568",
+            "inverse-on-surface": "#ffffff",
+            "inverse-surface": "#1a202c",
+            "background": "#f7fafc",
+            "secondary": "#4a5568",
+            "on-primary-fixed": "#ffffff",
+            "primary": "#1a365d",
+            "on-error": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#d7dadc",
+            "on-tertiary-fixed": "#ffffff",
+            "inverse-primary": "#90cdf4",
+            "primary-container": "#edf2f7",
+            "on-secondary-fixed": "#ffffff",
+            "surface": "#ffffff",
+            "surface-container-highest": "#edf2f7",
+            "on-secondary-container": "#1a202c",
+            "surface-variant": "#f7fafc",
+            "surface-bright": "#ffffff",
+            "tertiary-container": "#fefcbf"
           },
           "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
+            "DEFAULT": "4px",
+            "sm": "4px",
+            "md": "4px",
+            "lg": "4px",
+            "xl": "4px",
+            "2xl": "4px",
+            "3xl": "4px",
             "full": "9999px"
           },
           "spacing": {
@@ -119,7 +123,7 @@
     <!-- Orderly People Logo Header -->
     <div class="px-6 mb-8 flex items-center gap-4">
       <div class="flex flex-col">
-        <span class="font-serif text-primary text-lg font-bold tracking-tight leading-none">Orderly People</span>
+        <span class="font-sans text-primary text-lg font-bold tracking-tight leading-none">Orderly People</span>
         <span class="text-[10px] text-on-surface-variant font-sans tracking-widest uppercase mt-0.5">Risk Management Tutor</span>
       </div>
     </div>
@@ -192,7 +196,7 @@
 
   <!-- Mobile Top Header -->
   <header class="md:hidden flex justify-between items-center w-full px-margin-mobile py-4 bg-background/80 backdrop-blur-md border-b border-outline-variant sticky top-0 z-50 no-print">
-    <span class="font-serif text-base text-primary tracking-wider font-bold">Orderly People</span>
+    <span class="font-sans text-base text-primary tracking-wider font-bold">Orderly People</span>
     <button class="text-on-surface p-1" id="mobile-menu-btn">
       <span class="material-symbols-outlined">menu</span>
     </button>
@@ -217,7 +221,7 @@
     <!-- Footer Branding -->
     <footer class="w-full py-8 bg-surface-container-lowest border-t border-outline-variant mt-auto no-print">
       <div class="flex flex-col lg:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-max-width mx-auto gap-6 lg:gap-0">
-        <div class="font-serif text-sm text-primary tracking-wider font-bold">
+        <div class="font-sans text-sm text-primary tracking-wider font-bold">
           Orderly People Risk Tutor
         </div>
         <div class="flex flex-wrap justify-center gap-6 text-xs">

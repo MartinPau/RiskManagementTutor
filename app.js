@@ -519,31 +519,31 @@ const partASlides = [
                 <path d="M0,0 L0,7 L7,3.5 z" fill="#839896"/>
               </marker>
               <marker id="arr-g" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
-                <path d="M0,0 L0,7 L7,3.5 z" fill="#7ab89a"/>
+                <path d="M0,0 L0,7 L7,3.5 z" fill="var(--success)"/>
               </marker>
             </defs>
-            <rect x="95" y="8" width="90" height="28" rx="4" fill="#2a302d" stroke="#7ab89a" stroke-width="1.5"/>
-            <text x="140" y="25" text-anchor="middle" fill="#7ab89a" font-size="8" font-family="sans-serif" font-weight="bold">CONCEPT &amp; DESIGN</text>
+            <rect x="95" y="8" width="90" height="28" rx="4" fill="var(--surface-container-highest)" stroke="var(--success)" stroke-width="1.5"/>
+            <text x="140" y="25" text-anchor="middle" fill="var(--success)" font-size="8" font-family="sans-serif" font-weight="bold">CONCEPT &amp; DESIGN</text>
 
-            <rect x="190" y="80" width="80" height="28" rx="4" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="230" y="97" text-anchor="middle" fill="#f8f5eb" font-size="8" font-family="sans-serif">PRODUCTION</text>
+            <rect x="190" y="80" width="80" height="28" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="230" y="97" text-anchor="middle" fill="var(--on-surface)" font-size="8" font-family="sans-serif">PRODUCTION</text>
 
-            <rect x="95" y="152" width="90" height="28" rx="4" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="140" y="169" text-anchor="middle" fill="#f8f5eb" font-size="8" font-family="sans-serif">POST-MARKET</text>
+            <rect x="95" y="152" width="90" height="28" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="140" y="169" text-anchor="middle" fill="var(--on-surface)" font-size="8" font-family="sans-serif">POST-MARKET</text>
 
-            <rect x="10" y="80" width="80" height="28" rx="4" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="50" y="97" text-anchor="middle" fill="#f8f5eb" font-size="8" font-family="sans-serif">DISTRIBUTION</text>
+            <rect x="10" y="80" width="80" height="28" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="50" y="97" text-anchor="middle" fill="var(--on-surface)" font-size="8" font-family="sans-serif">DISTRIBUTION</text>
 
             <text x="140" y="98" text-anchor="middle" fill="#839896" font-size="9" font-family="sans-serif" font-style="italic">ISO 14971</text>
             <text x="140" y="112" text-anchor="middle" fill="#839896" font-size="9" font-family="sans-serif" font-style="italic">Lifecycle Risk</text>
             <text x="140" y="126" text-anchor="middle" fill="#839896" font-size="9" font-family="sans-serif" font-style="italic">Management</text>
 
-            <path d="M185 22 Q230 22 230 80" fill="none" stroke="#839896" stroke-width="1.5" marker-end="url(#arr-a)"/>
-            <path d="M230 108 Q230 166 185 166" fill="none" stroke="#839896" stroke-width="1.5" marker-end="url(#arr-a)"/>
-            <path d="M95 166 Q50 166 50 108" fill="none" stroke="#7ab89a" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-g)"/>
-            <path d="M50 80 Q50 22 95 22" fill="none" stroke="#7ab89a" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-g)"/>
+            <path d="M185 22 Q230 22 230 80" fill="none" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-a)"/>
+            <path d="M230 108 Q230 166 185 166" fill="none" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-a)"/>
+            <path d="M95 166 Q50 166 50 108" fill="none" stroke="var(--success)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-g)"/>
+            <path d="M50 80 Q50 22 95 22" fill="none" stroke="var(--success)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-g)"/>
 
-            <text x="18" y="135" fill="#7ab89a" font-size="7" font-family="sans-serif" transform="rotate(-90 18 135)">PMS Feedback</text>
+            <text x="18" y="135" fill="var(--success)" font-size="7" font-family="sans-serif" transform="rotate(-90 18 135)">PMS Feedback</text>
           </svg>
           <p class="text-[10px] text-on-surface-variant text-center mt-2">Risk management applies at every stage — never just once</p>
         </div>
@@ -586,37 +586,37 @@ const partASlides = [
           <svg viewBox="0 0 280 230" width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arr-b" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L6,3 z" fill="#7ab89a"/>
+                <path d="M0,0 L0,6 L6,3 z" fill="var(--success)"/>
               </marker>
             </defs>
-            <ellipse cx="140" cy="115" rx="50" ry="30" fill="#1a2a20" stroke="#7ab89a" stroke-width="2"/>
-            <text x="140" y="111" text-anchor="middle" fill="#7ab89a" font-size="9" font-family="sans-serif" font-weight="bold">ISO 14971</text>
-            <text x="140" y="124" text-anchor="middle" fill="#7ab89a" font-size="7" font-family="sans-serif">Risk Management</text>
+            <ellipse cx="140" cy="115" rx="50" ry="30" fill="var(--primary-container)" stroke="var(--success)" stroke-width="2"/>
+            <text x="140" y="111" text-anchor="middle" fill="var(--success)" font-size="9" font-family="sans-serif" font-weight="bold">ISO 14971</text>
+            <text x="140" y="124" text-anchor="middle" fill="var(--success)" font-size="7" font-family="sans-serif">Risk Management</text>
 
-            <rect x="8" y="8" width="84" height="32" rx="4" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="50" y="23" text-anchor="middle" fill="#f8f5eb" font-size="8" font-family="sans-serif">EU MDR 2017/745</text>
+            <rect x="8" y="8" width="84" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="50" y="23" text-anchor="middle" fill="var(--on-surface)" font-size="8" font-family="sans-serif">EU MDR 2017/745</text>
             <text x="50" y="34" text-anchor="middle" fill="#839896" font-size="6.5" font-family="sans-serif">GSPRs + Art. 10</text>
-            <line x1="80" y1="40" x2="104" y2="90" stroke="#7ab89a" stroke-width="1.2" marker-end="url(#arr-b)"/>
+            <line x1="80" y1="40" x2="104" y2="90" stroke="var(--success)" stroke-width="1.2" marker-end="url(#arr-b)"/>
 
-            <rect x="188" y="8" width="84" height="32" rx="4" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="230" y="23" text-anchor="middle" fill="#f8f5eb" font-size="8" font-family="sans-serif">ISO 13485:2016</text>
+            <rect x="188" y="8" width="84" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="230" y="23" text-anchor="middle" fill="var(--on-surface)" font-size="8" font-family="sans-serif">ISO 13485:2016</text>
             <text x="230" y="34" text-anchor="middle" fill="#839896" font-size="6.5" font-family="sans-serif">QMS §7.1</text>
-            <line x1="200" y1="40" x2="176" y2="90" stroke="#7ab89a" stroke-width="1.2" marker-end="url(#arr-b)"/>
+            <line x1="200" y1="40" x2="176" y2="90" stroke="var(--success)" stroke-width="1.2" marker-end="url(#arr-b)"/>
 
-            <rect x="8" y="182" width="84" height="32" rx="4" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="50" y="197" text-anchor="middle" fill="#f8f5eb" font-size="8" font-family="sans-serif">IEC 62366-1</text>
+            <rect x="8" y="182" width="84" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="50" y="197" text-anchor="middle" fill="var(--on-surface)" font-size="8" font-family="sans-serif">IEC 62366-1</text>
             <text x="50" y="208" text-anchor="middle" fill="#839896" font-size="6.5" font-family="sans-serif">Usability Eng.</text>
-            <line x1="80" y1="182" x2="104" y2="143" stroke="#7ab89a" stroke-width="1.2" marker-end="url(#arr-b)"/>
+            <line x1="80" y1="182" x2="104" y2="143" stroke="var(--success)" stroke-width="1.2" marker-end="url(#arr-b)"/>
 
-            <rect x="188" y="182" width="84" height="32" rx="4" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="230" y="197" text-anchor="middle" fill="#f8f5eb" font-size="8" font-family="sans-serif">US FDA QMSR</text>
+            <rect x="188" y="182" width="84" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="230" y="197" text-anchor="middle" fill="var(--on-surface)" font-size="8" font-family="sans-serif">US FDA QMSR</text>
             <text x="230" y="208" text-anchor="middle" fill="#839896" font-size="6.5" font-family="sans-serif">21 CFR 820</text>
-            <line x1="200" y1="182" x2="176" y2="143" stroke="#7ab89a" stroke-width="1.2" marker-end="url(#arr-b)"/>
+            <line x1="200" y1="182" x2="176" y2="143" stroke="var(--success)" stroke-width="1.2" marker-end="url(#arr-b)"/>
 
-            <rect x="102" y="160" width="76" height="28" rx="4" fill="#222e28" stroke="#4a6050" stroke-width="1"/>
+            <rect x="102" y="160" width="76" height="28" rx="4" fill="var(--primary-container)" stroke="var(--outline)" stroke-width="1"/>
             <text x="140" y="177" text-anchor="middle" fill="#839896" font-size="7.5" font-family="sans-serif">ISO/TR 24971</text>
-            <text x="140" y="185" text-anchor="middle" fill="#4a6050" font-size="6" font-family="sans-serif">Guidance &amp; examples</text>
-            <line x1="140" y1="160" x2="140" y2="145" stroke="#4a6050" stroke-width="1" stroke-dasharray="3,2"/>
+            <text x="140" y="185" text-anchor="middle" fill="var(--on-surface-variant)" font-size="6" font-family="sans-serif">Guidance &amp; examples</text>
+            <line x1="140" y1="160" x2="140" y2="145" stroke="var(--outline)" stroke-width="1" stroke-dasharray="3,2"/>
           </svg>
         </div>
       `
@@ -815,27 +815,27 @@ const partASlides = [
                 <path d="M0,0 L0,7 L7,3.5 z" fill="#839896"/>
               </marker>
             </defs>
-            <rect x="60" y="8" width="140" height="32" rx="4" fill="#2a302d" stroke="#d4b896" stroke-width="1.5"/>
-            <text x="130" y="22" text-anchor="middle" fill="#d4b896" font-size="9" font-family="sans-serif" font-weight="bold">HAZARD</text>
+            <rect x="60" y="8" width="140" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--tertiary)" stroke-width="1.5"/>
+            <text x="130" y="22" text-anchor="middle" fill="var(--tertiary)" font-size="9" font-family="sans-serif" font-weight="bold">HAZARD</text>
             <text x="130" y="34" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">e.g. sharp needle, bioburden</text>
-            <line x1="130" y1="40" x2="130" y2="60" stroke="#839896" stroke-width="1.5" marker-end="url(#arr-c)"/>
+            <line x1="130" y1="40" x2="130" y2="60" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-c)"/>
 
-            <rect x="40" y="60" width="180" height="36" rx="4" fill="#1e2a24" stroke="#4a6050" stroke-width="1"/>
+            <rect x="40" y="60" width="180" height="36" rx="4" fill="var(--primary-container)" stroke="var(--outline)" stroke-width="1"/>
             <text x="130" y="75" text-anchor="middle" fill="#839896" font-size="8" font-family="sans-serif">SEQUENCE OF EVENTS</text>
-            <text x="130" y="88" text-anchor="middle" fill="#4a6050" font-size="6.5" font-family="sans-serif">Foreseeable steps linking hazard to exposure</text>
-            <line x1="130" y1="96" x2="130" y2="116" stroke="#839896" stroke-width="1.5" marker-end="url(#arr-c)"/>
+            <text x="130" y="88" text-anchor="middle" fill="var(--on-surface-variant)" font-size="6.5" font-family="sans-serif">Foreseeable steps linking hazard to exposure</text>
+            <line x1="130" y1="96" x2="130" y2="116" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-c)"/>
 
-            <rect x="40" y="116" width="180" height="32" rx="4" fill="#2a302d" stroke="#d4b896" stroke-width="1.5"/>
-            <text x="130" y="130" text-anchor="middle" fill="#d4b896" font-size="9" font-family="sans-serif" font-weight="bold">HAZARDOUS SITUATION</text>
+            <rect x="40" y="116" width="180" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--tertiary)" stroke-width="1.5"/>
+            <text x="130" y="130" text-anchor="middle" fill="var(--tertiary)" font-size="9" font-family="sans-serif" font-weight="bold">HAZARDOUS SITUATION</text>
             <text x="130" y="142" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">Person/property exposed to hazard</text>
-            <line x1="130" y1="148" x2="130" y2="168" stroke="#839896" stroke-width="1.5" marker-end="url(#arr-c)"/>
+            <line x1="130" y1="148" x2="130" y2="168" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-c)"/>
 
-            <rect x="60" y="168" width="140" height="32" rx="4" fill="#1a2820" stroke="#e47070" stroke-width="1.5"/>
-            <text x="130" y="182" text-anchor="middle" fill="#e47070" font-size="9" font-family="sans-serif" font-weight="bold">HARM</text>
+            <rect x="60" y="168" width="140" height="32" rx="4" fill="#1a2820" stroke="var(--error)" stroke-width="1.5"/>
+            <text x="130" y="182" text-anchor="middle" fill="var(--error)" font-size="9" font-family="sans-serif" font-weight="bold">HARM</text>
             <text x="130" y="194" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">Injury / damage to health or property</text>
 
-            <text x="148" y="52" fill="#7ab89a" font-size="7" font-family="sans-serif">P1: Prob. to hazardous sit.</text>
-            <text x="148" y="160" fill="#7ab89a" font-size="7" font-family="sans-serif">P2: Prob. to harm from sit.</text>
+            <text x="148" y="52" fill="var(--success)" font-size="7" font-family="sans-serif">P1: Prob. to hazardous sit.</text>
+            <text x="148" y="160" fill="var(--success)" font-size="7" font-family="sans-serif">P2: Prob. to harm from sit.</text>
           </svg>
           <p class="text-[10px] text-on-surface-variant text-center">ISO 14971 uses a two-probability model: P1 (reaching the hazardous situation) and P2 (harm from that situation)</p>
         </div>
@@ -897,21 +897,21 @@ const partASlides = [
         <div class="h-full flex flex-col justify-center p-4">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">3-Tier Risk Control Hierarchy</h4>
           <svg viewBox="0 0 260 200" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="10,40 250,40 220,80 40,80" fill="#1a2a20" stroke="#7ab89a" stroke-width="1.5"/>
-            <text x="130" y="57" text-anchor="middle" fill="#7ab89a" font-size="9" font-family="sans-serif" font-weight="bold">1. INHERENT SAFETY BY DESIGN</text>
+            <polygon points="10,40 250,40 220,80 40,80" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1.5"/>
+            <text x="130" y="57" text-anchor="middle" fill="var(--success)" font-size="9" font-family="sans-serif" font-weight="bold">1. INHERENT SAFETY BY DESIGN</text>
             <text x="130" y="70" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">Eliminate or reduce the hazard at source</text>
-            <text x="8" y="62" fill="#7ab89a" font-size="8" font-family="sans-serif">★ BEST</text>
+            <text x="8" y="62" fill="var(--success)" font-size="8" font-family="sans-serif">★ BEST</text>
 
-            <polygon points="40,84 220,84 200,124 60,124" fill="#1e2e26" stroke="#d4b896" stroke-width="1.5"/>
-            <text x="130" y="101" text-anchor="middle" fill="#d4b896" font-size="9" font-family="sans-serif" font-weight="bold">2. PROTECTIVE MEASURES</text>
+            <polygon points="40,84 220,84 200,124 60,124" fill="var(--primary-container)" stroke="var(--tertiary)" stroke-width="1.5"/>
+            <text x="130" y="101" text-anchor="middle" fill="var(--tertiary)" font-size="9" font-family="sans-serif" font-weight="bold">2. PROTECTIVE MEASURES</text>
             <text x="130" y="114" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">Guards, alarms, interlocks in device or process</text>
 
-            <polygon points="60,128 200,128 190,168 70,168" fill="#221e1e" stroke="#e47070" stroke-width="1.5"/>
-            <text x="130" y="145" text-anchor="middle" fill="#e47070" font-size="9" font-family="sans-serif" font-weight="bold">3. INFORMATION FOR SAFETY</text>
+            <polygon points="60,128 200,128 190,168 70,168" fill="var(--error-container)" stroke="var(--error)" stroke-width="1.5"/>
+            <text x="130" y="145" text-anchor="middle" fill="var(--error)" font-size="9" font-family="sans-serif" font-weight="bold">3. INFORMATION FOR SAFETY</text>
             <text x="130" y="158" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">Warnings, contraindications, IFU — last resort</text>
-            <text x="206" y="152" fill="#e47070" font-size="7" font-family="sans-serif">⚠</text>
+            <text x="206" y="152" fill="var(--error)" font-size="7" font-family="sans-serif">⚠</text>
 
-            <line x1="10" y1="5" x2="10" y2="175" stroke="#839896" stroke-width="1.5" marker-end="url(#arr-a)"/>
+            <line x1="10" y1="5" x2="10" y2="175" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-a)"/>
             <text x="12" y="95" fill="#839896" font-size="7" font-family="sans-serif" transform="rotate(90 12 95)">PRIORITY (highest first)</text>
           </svg>
         </div>
@@ -987,25 +987,25 @@ const partASlides = [
           <h4 class="font-mono text-primary text-xs uppercase mb-8">Benefit-Risk Balance Scale</h4>
           <svg viewBox="0 0 300 200" class="w-full max-w-[260px] h-auto">
             <!-- Stand -->
-            <line x1="150" y1="180" x2="150" y2="70" stroke="#859490" stroke-width="4"></line>
-            <polygon points="120,180 180,180 160,195 140,195" fill="#3c4a46"></polygon>
-            <circle cx="150" cy="70" r="6" fill="#57f1db"></circle>
+            <line x1="150" y1="180" x2="150" y2="70" stroke="var(--secondary)" stroke-width="4"></line>
+            <polygon points="120,180 180,180 160,195 140,195" fill="var(--outline)"></polygon>
+            <circle cx="150" cy="70" r="6" fill="var(--primary)"></circle>
             <!-- Scale Beam -->
             <g class="scale-beam" id="scale-beam-group">
-              <line x1="50" y1="70" x2="250" y2="70" stroke="#859490" stroke-width="4"></line>
+              <line x1="50" y1="70" x2="250" y2="70" stroke="var(--secondary)" stroke-width="4"></line>
               <!-- Left Pan (Risk) -->
               <g class="scale-pan" id="scale-pan-left">
-                <line x1="50" y1="70" x2="20" y2="130" stroke="#3c4a46" stroke-width="2"></line>
-                <line x1="50" y1="70" x2="80" y2="130" stroke="#3c4a46" stroke-width="2"></line>
-                <polygon points="10,130 90,130 80,140 20,140" fill="#93000a"></polygon>
-                <text x="50" y="120" text-anchor="middle" fill="#ffdad6" font-size="10" font-family="Space Grotesk">RISK (S5)</text>
+                <line x1="50" y1="70" x2="20" y2="130" stroke="var(--outline)" stroke-width="2"></line>
+                <line x1="50" y1="70" x2="80" y2="130" stroke="var(--outline)" stroke-width="2"></line>
+                <polygon points="10,130 90,130 80,140 20,140" fill="var(--error)"></polygon>
+                <text x="50" y="120" text-anchor="middle" fill="var(--on-error-container)" font-size="10" font-family="Space Grotesk">RISK (S5)</text>
               </g>
               <!-- Right Pan (Benefit) -->
               <g class="scale-pan" id="scale-pan-right">
-                <line x1="250" y1="70" x2="220" y2="130" stroke="#3c4a46" stroke-width="2"></line>
-                <line x1="250" y1="70" x2="280" y2="130" stroke="#3c4a46" stroke-width="2"></line>
-                <polygon points="210,130 290,130 280,140 220,140" fill="#00574d"></polygon>
-                <text x="250" y="120" text-anchor="middle" fill="#57f1db" font-size="10" font-family="Space Grotesk">BENEFIT</text>
+                <line x1="250" y1="70" x2="220" y2="130" stroke="var(--outline)" stroke-width="2"></line>
+                <line x1="250" y1="70" x2="280" y2="130" stroke="var(--outline)" stroke-width="2"></line>
+                <polygon points="210,130 290,130 280,140 220,140" fill="var(--success)"></polygon>
+                <text x="250" y="120" text-anchor="middle" fill="var(--primary)" font-size="10" font-family="Space Grotesk">BENEFIT</text>
               </g>
             </g>
           </svg>
@@ -1046,41 +1046,41 @@ const partASlides = [
           <svg viewBox="0 0 260 240" width="100%" height="230" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arr-d" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
-                <path d="M0,0 L0,7 L7,3.5 z" fill="#7ab89a"/>
+                <path d="M0,0 L0,7 L7,3.5 z" fill="var(--success)"/>
               </marker>
               <marker id="arr-e" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
                 <path d="M0,0 L0,7 L7,3.5 z" fill="#839896"/>
               </marker>
             </defs>
-            <rect x="30" y="8" width="200" height="30" rx="4" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="130" y="22" text-anchor="middle" fill="#f8f5eb" font-size="9" font-family="sans-serif" font-weight="bold">PMS DATA COLLECTION (§10.2)</text>
+            <rect x="30" y="8" width="200" height="30" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="130" y="22" text-anchor="middle" fill="var(--on-surface)" font-size="9" font-family="sans-serif" font-weight="bold">PMS DATA COLLECTION (§10.2)</text>
             <text x="130" y="33" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">Complaints · PMCF · NCs · Literature</text>
-            <line x1="130" y1="38" x2="130" y2="58" stroke="#839896" stroke-width="1.5" marker-end="url(#arr-e)"/>
+            <line x1="130" y1="38" x2="130" y2="58" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
 
-            <rect x="50" y="58" width="160" height="28" rx="4" fill="#1e2a24" stroke="#d4b896" stroke-width="1"/>
-            <text x="130" y="73" text-anchor="middle" fill="#d4b896" font-size="9" font-family="sans-serif" font-weight="bold">TREND ANALYSIS</text>
+            <rect x="50" y="58" width="160" height="28" rx="4" fill="var(--primary-container)" stroke="var(--tertiary)" stroke-width="1"/>
+            <text x="130" y="73" text-anchor="middle" fill="var(--tertiary)" font-size="9" font-family="sans-serif" font-weight="bold">TREND ANALYSIS</text>
             <text x="130" y="82" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">MDR Art.88 reporting trigger</text>
-            <line x1="130" y1="86" x2="130" y2="106" stroke="#839896" stroke-width="1.5" marker-end="url(#arr-e)"/>
+            <line x1="130" y1="86" x2="130" y2="106" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
 
-            <rect x="30" y="106" width="200" height="28" rx="4" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="130" y="121" text-anchor="middle" fill="#f8f5eb" font-size="9" font-family="sans-serif" font-weight="bold">INFORMATION REVIEW (§10.3)</text>
+            <rect x="30" y="106" width="200" height="28" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="130" y="121" text-anchor="middle" fill="var(--on-surface)" font-size="9" font-family="sans-serif" font-weight="bold">INFORMATION REVIEW (§10.3)</text>
             <text x="130" y="130" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">New hazard? Changed probability?</text>
-            <line x1="130" y1="134" x2="130" y2="154" stroke="#839896" stroke-width="1.5" marker-end="url(#arr-e)"/>
+            <line x1="130" y1="134" x2="130" y2="154" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
 
-            <polygon points="130,154 180,175 130,196 80,175" fill="#1e2a24" stroke="#7ab89a" stroke-width="1.5"/>
-            <text x="130" y="171" text-anchor="middle" fill="#7ab89a" font-size="8" font-family="sans-serif" font-weight="bold">Risk changed?</text>
+            <polygon points="130,154 180,175 130,196 80,175" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1.5"/>
+            <text x="130" y="171" text-anchor="middle" fill="var(--success)" font-size="8" font-family="sans-serif" font-weight="bold">Risk changed?</text>
             <text x="130" y="182" text-anchor="middle" fill="#839896" font-size="6.5" font-family="sans-serif">YES / NO</text>
 
-            <line x1="80" y1="175" x2="20" y2="175" stroke="#7ab89a" stroke-width="1.5" marker-end="url(#arr-d)"/>
-            <text x="50" y="170" text-anchor="middle" fill="#7ab89a" font-size="7" font-family="sans-serif">YES</text>
-            <rect x="0" y="185" width="40" height="20" rx="3" fill="#1a2a20" stroke="#7ab89a" stroke-width="1"/>
-            <text x="20" y="199" text-anchor="middle" fill="#7ab89a" font-size="6.5" font-family="sans-serif">Update RMF</text>
+            <line x1="80" y1="175" x2="20" y2="175" stroke="var(--success)" stroke-width="1.5" marker-end="url(#arr-d)"/>
+            <text x="50" y="170" text-anchor="middle" fill="var(--success)" font-size="7" font-family="sans-serif">YES</text>
+            <rect x="0" y="185" width="40" height="20" rx="3" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1"/>
+            <text x="20" y="199" text-anchor="middle" fill="var(--success)" font-size="6.5" font-family="sans-serif">Update RMF</text>
 
-            <line x1="180" y1="175" x2="240" y2="175" stroke="#839896" stroke-width="1.5"/>
+            <line x1="180" y1="175" x2="240" y2="175" stroke="var(--outline)" stroke-width="1.5"/>
             <text x="210" y="170" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">NO</text>
             <text x="240" y="179" fill="#839896" font-size="7" font-family="sans-serif">✓ OK</text>
 
-            <path d="M 0 185 Q -20 100 30 38" fill="none" stroke="#7ab89a" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-d)"/>
+            <path d="M 0 185 Q -20 100 30 38" fill="none" stroke="var(--success)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-d)"/>
           </svg>
           <p class="text-[10px] text-on-surface-variant text-center mt-1">Closing the loop is a legal obligation — not optional</p>
         </div>
@@ -1114,24 +1114,24 @@ const partBSlides = [
         <div class="h-full flex flex-col justify-center p-4">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">Tool Box Comparison</h4>
           <svg viewBox="0 0 280 200" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="20" width="120" height="40" rx="3" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="70" y="40" text-anchor="middle" fill="#f8f5eb" font-size="9" font-family="sans-serif" font-weight="bold">PHA</text>
+            <rect x="10" y="20" width="120" height="40" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="70" y="40" text-anchor="middle" fill="var(--on-surface)" font-size="9" font-family="sans-serif" font-weight="bold">PHA</text>
             <text x="70" y="52" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">Early Concept baseline</text>
 
-            <rect x="150" y="20" width="120" height="40" rx="3" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="210" y="40" text-anchor="middle" fill="#f8f5eb" font-size="9" font-family="sans-serif" font-weight="bold">FMEA</text>
+            <rect x="150" y="20" width="120" height="40" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="210" y="40" text-anchor="middle" fill="var(--on-surface)" font-size="9" font-family="sans-serif" font-weight="bold">FMEA</text>
             <text x="210" y="52" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">Bottom-up components</text>
 
-            <rect x="10" y="80" width="120" height="40" rx="3" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="70" y="100" text-anchor="middle" fill="#f8f5eb" font-size="9" font-family="sans-serif" font-weight="bold">FTA / ETA</text>
+            <rect x="10" y="80" width="120" height="40" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="70" y="100" text-anchor="middle" fill="var(--on-surface)" font-size="9" font-family="sans-serif" font-weight="bold">FTA / ETA</text>
             <text x="70" y="112" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">System Logic &amp; Sequences</text>
 
-            <rect x="150" y="80" width="120" height="40" rx="3" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="210" y="100" text-anchor="middle" fill="#f8f5eb" font-size="9" font-family="sans-serif" font-weight="bold">HAZOP</text>
+            <rect x="150" y="80" width="120" height="40" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="210" y="100" text-anchor="middle" fill="var(--on-surface)" font-size="9" font-family="sans-serif" font-weight="bold">HAZOP</text>
             <text x="210" y="112" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">Process Guide-words</text>
 
-            <rect x="80" y="140" width="120" height="40" rx="3" fill="#1e2a24" stroke="#7ab89a" stroke-width="1.5"/>
-            <text x="140" y="160" text-anchor="middle" fill="#7ab89a" font-size="9" font-family="sans-serif" font-weight="bold">HACCP</text>
+            <rect x="80" y="140" width="120" height="40" rx="3" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1.5"/>
+            <text x="140" y="160" text-anchor="middle" fill="var(--success)" font-size="9" font-family="sans-serif" font-weight="bold">HACCP</text>
             <text x="140" y="172" text-anchor="middle" fill="#839896" font-size="7" font-family="sans-serif">Sterile line monitoring</text>
           </svg>
         </div>
@@ -1161,17 +1161,17 @@ const partBSlides = [
         <div class="h-full flex flex-col justify-center p-4">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">PHA Pacemaker Baseline</h4>
           <svg viewBox="0 0 280 200" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="20" width="240" height="40" rx="3" fill="#2a302d" stroke="#d4b896" stroke-width="1.2"/>
-            <text x="30" y="44" fill="#f8f5eb" font-size="8.5" font-family="sans-serif" font-weight="bold">1. MRI RF Field Exposure</text>
-            <text x="250" y="44" text-anchor="end" fill="#e47070" font-size="8" font-family="sans-serif" font-weight="bold">Severity: Critical</text>
+            <rect x="20" y="20" width="240" height="40" rx="3" fill="var(--surface-container-highest)" stroke="var(--tertiary)" stroke-width="1.2"/>
+            <text x="30" y="44" fill="var(--on-surface)" font-size="8.5" font-family="sans-serif" font-weight="bold">1. MRI RF Field Exposure</text>
+            <text x="250" y="44" text-anchor="end" fill="var(--error)" font-size="8" font-family="sans-serif" font-weight="bold">Severity: Critical</text>
 
-            <rect x="20" y="80" width="240" height="40" rx="3" fill="#2a302d" stroke="#d4b896" stroke-width="1.2"/>
-            <text x="30" y="104" fill="#f8f5eb" font-size="8.5" font-family="sans-serif" font-weight="bold">2. Lithium Battery Depletion</text>
-            <text x="250" y="104" text-anchor="end" fill="#e47070" font-size="8" font-family="sans-serif" font-weight="bold">Severity: Critical</text>
+            <rect x="20" y="80" width="240" height="40" rx="3" fill="var(--surface-container-highest)" stroke="var(--tertiary)" stroke-width="1.2"/>
+            <text x="30" y="104" fill="var(--on-surface)" font-size="8.5" font-family="sans-serif" font-weight="bold">2. Lithium Battery Depletion</text>
+            <text x="250" y="104" text-anchor="end" fill="var(--error)" font-size="8" font-family="sans-serif" font-weight="bold">Severity: Critical</text>
 
-            <rect x="20" y="140" width="240" height="40" rx="3" fill="#2a302d" stroke="#839896" stroke-width="1"/>
-            <text x="30" y="164" fill="#f8f5eb" font-size="8.5" font-family="sans-serif" font-weight="bold">3. Hermetic Seal Leakage</text>
-            <text x="250" y="164" text-anchor="end" fill="#e47070" font-size="8" font-family="sans-serif" font-weight="bold">Severity: Catastrophic</text>
+            <rect x="20" y="140" width="240" height="40" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="30" y="164" fill="var(--on-surface)" font-size="8.5" font-family="sans-serif" font-weight="bold">3. Hermetic Seal Leakage</text>
+            <text x="250" y="164" text-anchor="end" fill="var(--error)" font-size="8" font-family="sans-serif" font-weight="bold">Severity: Catastrophic</text>
           </svg>
         </div>
       `,
@@ -1200,24 +1200,24 @@ const partBSlides = [
         <div class="h-full flex flex-col justify-center p-4">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">FMEA Worksheet Snippet</h4>
           <svg viewBox="0 0 280 200" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="15" width="260" height="170" rx="3" fill="#181d1a" stroke="#839896" stroke-width="1"/>
-            <line x1="10" y1="50" x2="270" y2="50" stroke="#839896" stroke-width="1"/>
+            <rect x="10" y="15" width="260" height="170" rx="3" fill="var(--surface)" stroke="var(--outline)" stroke-width="1"/>
+            <line x1="10" y1="50" x2="270" y2="50" stroke="var(--outline)" stroke-width="1"/>
 
-            <text x="20" y="36" fill="#7ab89a" font-size="8.5" font-family="sans-serif" font-weight="bold">Item / Function</text>
-            <text x="110" y="36" fill="#7ab89a" font-size="8.5" font-family="sans-serif" font-weight="bold">Failure Mode</text>
-            <text x="210" y="36" fill="#7ab89a" font-size="8.5" font-family="sans-serif" font-weight="bold">Severity</text>
+            <text x="20" y="36" fill="var(--success)" font-size="8.5" font-family="sans-serif" font-weight="bold">Item / Function</text>
+            <text x="110" y="36" fill="var(--success)" font-size="8.5" font-family="sans-serif" font-weight="bold">Failure Mode</text>
+            <text x="210" y="36" fill="var(--success)" font-size="8.5" font-family="sans-serif" font-weight="bold">Severity</text>
 
-            <text x="20" y="80" fill="#f8f5eb" font-size="8" font-family="sans-serif">Catheter Tip</text>
-            <text x="110" y="80" fill="#f8f5eb" font-size="8" font-family="sans-serif">Tip detachment</text>
-            <text x="210" y="80" fill="#e47070" font-size="8" font-family="sans-serif">S4 Critical</text>
+            <text x="20" y="80" fill="var(--on-surface)" font-size="8" font-family="sans-serif">Catheter Tip</text>
+            <text x="110" y="80" fill="var(--on-surface)" font-size="8" font-family="sans-serif">Tip detachment</text>
+            <text x="210" y="80" fill="var(--error)" font-size="8" font-family="sans-serif">S4 Critical</text>
 
-            <text x="20" y="120" fill="#f8f5eb" font-size="8" font-family="sans-serif">Sheath Tube</text>
-            <text x="110" y="120" fill="#f8f5eb" font-size="8" font-family="sans-serif">Kinking during use</text>
-            <text x="210" y="120" fill="#d4b896" font-size="8" font-family="sans-serif">S2 Minor</text>
+            <text x="20" y="120" fill="var(--on-surface)" font-size="8" font-family="sans-serif">Sheath Tube</text>
+            <text x="110" y="120" fill="var(--on-surface)" font-size="8" font-family="sans-serif">Kinking during use</text>
+            <text x="210" y="120" fill="var(--tertiary)" font-size="8" font-family="sans-serif">S2 Minor</text>
 
-            <text x="20" y="160" fill="#f8f5eb" font-size="8" font-family="sans-serif">Handle Lock</text>
-            <text x="110" y="160" fill="#f8f5eb" font-size="8" font-family="sans-serif">Fails to engage</text>
-            <text x="210" y="160" fill="#d4b896" font-size="8" font-family="sans-serif">S2 Minor</text>
+            <text x="20" y="160" fill="var(--on-surface)" font-size="8" font-family="sans-serif">Handle Lock</text>
+            <text x="110" y="160" fill="var(--on-surface)" font-size="8" font-family="sans-serif">Fails to engage</text>
+            <text x="210" y="160" fill="var(--tertiary)" font-size="8" font-family="sans-serif">S2 Minor</text>
           </svg>
         </div>
       `,
@@ -1257,41 +1257,41 @@ const partBSlides = [
           <h4 class="font-mono text-primary text-xs uppercase mb-4">FTA Interactive Tree</h4>
           <svg viewBox="0 0 300 220" class="w-full max-w-[260px] h-auto">
             <!-- Top Event -->
-            <rect x="90" y="10" width="120" height="35" rx="2" fill="#2a2a2a" stroke="#859490" stroke-width="1.5" id="fta-top-rect"></rect>
-            <text x="150" y="25" text-anchor="middle" fill="#ffb4ab" font-size="8" font-family="Space Grotesk" id="fta-top-text">OVERDOSE DELIVERED</text>
+            <rect x="90" y="10" width="120" height="35" rx="2" fill="var(--surface-container-highest)" stroke="var(--secondary)" stroke-width="1.5" id="fta-top-rect"></rect>
+            <text x="150" y="25" text-anchor="middle" fill="var(--error)" font-size="8" font-family="Space Grotesk" id="fta-top-text">OVERDOSE DELIVERED</text>
             
             <!-- Connection Lines -->
-            <line x1="150" y1="45" x2="150" y2="70" stroke="#859490" stroke-width="1.5"></line>
-            <line x1="150" y1="70" x2="60" y2="70" stroke="#859490" stroke-width="1.5"></line>
-            <line x1="150" y1="70" x2="240" y2="70" stroke="#859490" stroke-width="1.5"></line>
+            <line x1="150" y1="45" x2="150" y2="70" stroke="var(--secondary)" stroke-width="1.5"></line>
+            <line x1="150" y1="70" x2="60" y2="70" stroke="var(--secondary)" stroke-width="1.5"></line>
+            <line x1="150" y1="70" x2="240" y2="70" stroke="var(--secondary)" stroke-width="1.5"></line>
             
-            <line x1="60" y1="70" x2="60" y2="120" stroke="#859490" stroke-width="1.5"></line>
-            <line x1="240" y1="70" x2="240" y2="100" stroke="#859490" stroke-width="1.5"></line>
-            <line x1="240" y1="120" x2="200" y2="120" stroke="#859490" stroke-width="1.5"></line>
-            <line x1="240" y1="120" x2="280" y2="120" stroke="#859490" stroke-width="1.5"></line>
-            <line x1="200" y1="120" x2="200" y2="160" stroke="#859490" stroke-width="1.5"></line>
-            <line x1="280" y1="120" x2="280" y2="160" stroke="#859490" stroke-width="1.5"></line>
+            <line x1="60" y1="70" x2="60" y2="120" stroke="var(--secondary)" stroke-width="1.5"></line>
+            <line x1="240" y1="70" x2="240" y2="100" stroke="var(--secondary)" stroke-width="1.5"></line>
+            <line x1="240" y1="120" x2="200" y2="120" stroke="var(--secondary)" stroke-width="1.5"></line>
+            <line x1="240" y1="120" x2="280" y2="120" stroke="var(--secondary)" stroke-width="1.5"></line>
+            <line x1="200" y1="120" x2="200" y2="160" stroke="var(--secondary)" stroke-width="1.5"></line>
+            <line x1="280" y1="120" x2="280" y2="160" stroke="var(--secondary)" stroke-width="1.5"></line>
 
             <!-- OR Gate (Left Branch) -->
-            <polygon points="45,95 75,95 60,78" fill="#3cddc7" id="fta-or-gate"></polygon>
-            <text x="60" y="110" text-anchor="middle" fill="#bacac5" font-size="8" font-family="Space Grotesk">OR</text>
+            <polygon points="45,95 75,95 60,78" fill="var(--primary)" id="fta-or-gate"></polygon>
+            <text x="60" y="110" text-anchor="middle" fill="var(--on-surface-variant)" font-size="8" font-family="Space Grotesk">OR</text>
 
             <!-- AND Gate (Right Branch) -->
-            <rect x="225" y="90" width="30" height="20" rx="2" fill="#57f1db" id="fta-and-gate"></rect>
+            <rect x="225" y="90" width="30" height="20" rx="2" fill="var(--primary)" id="fta-and-gate"></rect>
             <text x="240" y="102" text-anchor="middle" fill="#003731" font-size="8" font-family="Space Grotesk">AND</text>
 
             <!-- Node Boxes -->
             <!-- Software error -->
-            <rect x="15" y="145" width="90" height="30" rx="2" fill="#1c1b1b" stroke="#3c4a46" id="box-software"></rect>
-            <text x="60" y="163" text-anchor="middle" fill="#bacac5" font-size="7">Software Bug</text>
+            <rect x="15" y="145" width="90" height="30" rx="2" fill="var(--surface-container-highest)" stroke="var(--outline)" id="box-software"></rect>
+            <text x="60" y="163" text-anchor="middle" fill="var(--on-surface-variant)" font-size="7">Software Bug</text>
 
             <!-- Flow Sensor Fails -->
-            <rect x="155" y="145" width="90" height="30" rx="2" fill="#1c1b1b" stroke="#3c4a46" id="box-sensor"></rect>
-            <text x="200" y="163" text-anchor="middle" fill="#bacac5" font-size="7">Sensor Fails</text>
+            <rect x="155" y="145" width="90" height="30" rx="2" fill="var(--surface-container-highest)" stroke="var(--outline)" id="box-sensor"></rect>
+            <text x="200" y="163" text-anchor="middle" fill="var(--on-surface-variant)" font-size="7">Sensor Fails</text>
 
             <!-- Alarm fails -->
-            <rect x="250" y="145" width="45" height="30" rx="2" fill="#1c1b1b" stroke="#3c4a46" id="box-alarm"></rect>
-            <text x="272" y="163" text-anchor="middle" fill="#bacac5" font-size="7">Alarm Fails</text>
+            <rect x="250" y="145" width="45" height="30" rx="2" fill="var(--surface-container-highest)" stroke="var(--outline)" id="box-alarm"></rect>
+            <text x="272" y="163" text-anchor="middle" fill="var(--on-surface-variant)" font-size="7">Alarm Fails</text>
           </svg>
           <div class="mt-4 text-xs font-mono text-on-surface" id="fta-status-text">
             Status: Safe (No failures active)
@@ -1830,19 +1830,19 @@ function renderPartA(container) {
       if (!outcomeBadge) return;
       if (angle > 1) {
         outcomeBadge.textContent = "BENEFITS OUTWEIGH RESIDUAL RISK — Accepted per §7.4";
-        outcomeBadge.style.color = "#7ab89a";
-        outcomeBadge.style.borderColor = "#7ab89a";
-        outcomeBadge.style.backgroundColor = "rgba(122, 184, 154, 0.06)";
+        outcomeBadge.style.color = "var(--success)";
+        outcomeBadge.style.borderColor = "var(--success)";
+        outcomeBadge.style.backgroundColor = "rgba(47, 133, 90, 0.06)";
       } else if (angle < -1) {
         outcomeBadge.textContent = "RISK OUTWEIGHS BENEFITS — Still UNACCEPTABLE";
         outcomeBadge.style.color = "var(--error)";
         outcomeBadge.style.borderColor = "var(--error)";
-        outcomeBadge.style.backgroundColor = "rgba(242, 139, 130, 0.06)";
+        outcomeBadge.style.backgroundColor = "rgba(197, 48, 48, 0.06)";
       } else {
         outcomeBadge.textContent = "BALANCED — Borderline — additional evidence needed";
         outcomeBadge.style.color = "var(--tertiary)";
         outcomeBadge.style.borderColor = "var(--tertiary)";
-        outcomeBadge.style.backgroundColor = "rgba(212, 184, 150, 0.06)";
+        outcomeBadge.style.backgroundColor = "rgba(183, 121, 31, 0.06)";
       }
     }
 
@@ -2508,22 +2508,22 @@ function renderPartA(container) {
       </div>
 
       <!-- Printable Certificate with Orderly People branding -->
-      <div class="max-w-[800px] mx-auto mt-12 p-12 bg-white text-slate-900 border-[16px] border-double border-[#121615] flex flex-col justify-center items-center text-center relative shadow-2xl" id="print-certificate-container">
+      <div class="max-w-[800px] mx-auto mt-12 p-12 bg-white text-slate-900 border-[16px] border-double border-[var(--primary)] flex flex-col justify-center items-center text-center relative shadow-2xl" id="print-certificate-container">
         <!-- Corner decorations -->
-        <div class="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-[#121615]"></div>
-        <div class="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-[#121615]"></div>
-        <div class="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-[#121615]"></div>
-        <div class="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-[#121615]"></div>
+        <div class="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-[var(--primary)]"></div>
+        <div class="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-[var(--primary)]"></div>
+        <div class="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-[var(--primary)]"></div>
+        <div class="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-[var(--primary)]"></div>
 
         <!-- Orderly People Logo -->
         <img src="orderly_logo.png" alt="Orderly People" class="h-14 mb-6 opacity-80" style="filter: invert(1) brightness(0);" onerror="this.style.display='none'">
 
         <h4 style="font-family:'Georgia',serif; font-size:11px; letter-spacing:0.25em; color:#6a7a76; text-transform:uppercase; margin-bottom:28px;">Certificate of Completion</h4>
-        <h1 style="font-family:'Georgia',serif; font-size:38px; font-weight:bold; color:#121615; margin-bottom:6px;">ISO 14971 Compliance</h1>
+        <h1 style="font-family:'Georgia',serif; font-size:38px; font-weight:bold; color:var(--primary); margin-bottom:6px;">ISO 14971 Compliance</h1>
         <h3 style="font-family:'Georgia',serif; font-size:12px; letter-spacing:0.12em; color:#6a7a76; text-transform:uppercase; margin-bottom:28px;">Risk Management of Medical Devices</h3>
         
         <p style="font-family:'Georgia',serif; font-style:italic; font-size:14px; color:#4a5a56; margin-bottom:14px;">This document certifies that</p>
-        <h2 style="font-family:'Georgia',serif; font-size:30px; font-weight:bold; color:#121615; border-bottom:2px solid #c8d4d2; padding:0 32px 8px; margin-bottom:22px;" id="cert-display-name">${state.userName || '[YOUR NAME]'}</h2>
+        <h2 style="font-family:'Georgia',serif; font-size:30px; font-weight:bold; color:var(--primary); border-bottom:2px solid #c8d4d2; padding:0 32px 8px; margin-bottom:22px;" id="cert-display-name">${state.userName || '[YOUR NAME]'}</h2>
         
         <p style="font-family:'Georgia',serif; color:#4a5a56; max-width:500px; line-height:1.7; font-size:13px; margin-bottom:36px;">
           has successfully completed the interactive training curriculum and passed all examination requirements for <strong>Certified ISO 14971 Practitioner</strong>, demonstrating competence in applying <strong>ISO 14971:2019</strong> standard workflows and risk analysis techniques under the Orderly People Risk Management Training Programme.
