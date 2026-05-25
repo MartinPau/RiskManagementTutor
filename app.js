@@ -637,23 +637,37 @@ const partASlides = [
       infographic: `
         <div class="h-full flex flex-col justify-center p-4">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">3-Tier Risk Control Hierarchy</h4>
-          <svg viewBox="0 0 260 200" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="10,40 250,40 220,80 40,80" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1.5"/>
-            <text x="130" y="57" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif" font-weight="bold">1. INHERENT SAFETY BY DESIGN</text>
-            <text x="130" y="70" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">Eliminate or reduce the hazard at source</text>
-            <text x="8" y="62" fill="var(--success)" font-size="12" font-family="sans-serif">★ BEST</text>
+          <svg viewBox="0 0 270 200" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arr-priority" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <path d="M3,0 L6,6 L0,6 z" fill="var(--outline)"/>
+              </marker>
+            </defs>
 
-            <polygon points="40,84 220,84 200,124 60,124" fill="var(--primary-container)" stroke="var(--tertiary)" stroke-width="1.5"/>
-            <text x="130" y="101" text-anchor="middle" fill="var(--tertiary)" font-size="11" font-family="sans-serif" font-weight="bold">2. PROTECTIVE MEASURES</text>
-            <text x="130" y="114" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">Guards, alarms, interlocks in device or process</text>
+            <!-- Priority Axis -->
+            <line x1="15" y1="180" x2="15" y2="20" stroke="var(--outline)" stroke-width="2" marker-end="url(#arr-priority)"/>
+            <text x="8" y="100" fill="#839896" font-size="9" font-family="sans-serif" font-weight="bold" transform="rotate(-90 8 100)" text-anchor="middle">HIGHER PRIORITY</text>
 
-            <polygon points="60,128 200,128 190,168 70,168" fill="var(--error-container)" stroke="var(--error)" stroke-width="1.5"/>
-            <text x="130" y="145" text-anchor="middle" fill="var(--error)" font-size="11" font-family="sans-serif" font-weight="bold">3. INFORMATION FOR SAFETY</text>
-            <text x="130" y="158" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">Warnings, contraindications, IFU — last resort</text>
-            <text x="206" y="152" fill="var(--error)" font-size="11" font-family="sans-serif">⚠</text>
+            <!-- Card 1: DESIGN -->
+            <rect x="35" y="10" width="225" height="52" rx="4" fill="var(--surface)" stroke="var(--success)" stroke-width="1.5"/>
+            <text x="45" y="28" fill="var(--success)" font-size="10" font-family="sans-serif" font-weight="bold">1. INHERENT SAFETY BY DESIGN</text>
+            <text x="45" y="44" fill="var(--on-surface-variant)" font-size="9.5" font-family="sans-serif">Eliminate or reduce the hazard at source</text>
+            <rect x="200" y="18" width="50" height="14" rx="2" fill="var(--success)" opacity="0.1"/>
+            <text x="225" y="29" fill="var(--success)" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle">★ BEST</text>
 
-            <line x1="10" y1="5" x2="10" y2="175" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-a)"/>
-            <text x="12" y="95" fill="#839896" font-size="11" font-family="sans-serif" transform="rotate(90 12 95)">PRIORITY (highest first)</text>
+            <!-- Card 2: PROTECTIVE -->
+            <rect x="35" y="72" width="225" height="52" rx="4" fill="var(--surface)" stroke="var(--tertiary)" stroke-width="1.5"/>
+            <text x="45" y="90" fill="var(--tertiary)" font-size="10" font-family="sans-serif" font-weight="bold">2. PROTECTIVE MEASURES</text>
+            <text x="45" y="106" fill="var(--on-surface-variant)" font-size="9.5" font-family="sans-serif">Guards, alarms, and safety interlocks</text>
+            <rect x="200" y="80" width="50" height="14" rx="2" fill="var(--tertiary)" opacity="0.1"/>
+            <text x="225" y="91" fill="var(--tertiary)" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle">SHIELD</text>
+
+            <!-- Card 3: INFO FOR SAFETY -->
+            <rect x="35" y="134" width="225" height="52" rx="4" fill="var(--surface)" stroke="var(--error)" stroke-width="1.5"/>
+            <text x="45" y="152" fill="var(--error)" font-size="10" font-family="sans-serif" font-weight="bold">3. INFORMATION FOR SAFETY</text>
+            <text x="45" y="168" fill="var(--on-surface-variant)" font-size="9.5" font-family="sans-serif">Warnings, IFU labeling — last resort</text>
+            <rect x="200" y="142" width="50" height="14" rx="2" fill="var(--error)" opacity="0.1"/>
+            <text x="225" y="153" fill="var(--error)" font-size="7.5" font-family="sans-serif" font-weight="bold" text-anchor="middle">⚠ WARNING</text>
           </svg>
         </div>
       `
@@ -1037,46 +1051,70 @@ const partBSlides = [
             <rect x="80" y="140" width="120" height="40" rx="3" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1.5"/>
             <text x="140" y="160" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif" font-weight="bold">HACCP</text>
             <text x="140" y="172" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">Sterile line monitoring</text>
-          </svg>
-        </div>
-      `,
-      isWide: false
-    },
-    {
+        {
       title: `Preliminary Hazard Analysis (PHA)`,
       section: `pha`,
       content: `
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Early Design Stage Baseline</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          PHA is a qualitative technique used at the very beginning of the design phase (before detailed schematics exist). It helps establish a baseline of known hazards, guided by historical data, standards, and competitor complaints.
+          A <strong>Preliminary Hazard Analysis (PHA)</strong> is a qualitative technique used at the very beginning of the design phase (before detailed schematics exist). It helps establish a baseline of known hazards, guided by historical data, standards, and competitor complaints.
         </p>
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Pacemaker PHA Example</h4>
+        <div class="p-3 bg-surface-container-high rounded border border-outline-variant mb-3">
+          <span class="text-xs text-primary font-mono uppercase block mb-1">Methodology Tip: ISO/TR 24971 Annex A</span>
+          <p class="text-xs text-on-surface-variant">
+            A highly recommended method for finding applicable hazards during a PHA is to walk through the questions in <strong>ISO/TR 24971:2020 Annex A</strong>. It contains a systematic checklist of safety characteristics, hazards (biological, environmental, operational, etc.), and hazardous situations.
+          </p>
+        </div>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          A PHA is conducted on a new implantable pacemaker to identify high-level hazards (e.g., electromagnetic interference, lead migration, battery depletion) and define baseline safety requirements before mechanical drawings are drafted.
+          For a <strong>steerable catheter system</strong> (used in cardiovascular or electrophysiology procedures), a PHA identifies high-level hazards related to steerability, tissue contact, sterility, and energy delivery, laying down safety requirements for the engineering team.
         </p>
-        <ul class="list-disc pl-5 mb-4 text-on-surface-variant text-sm space-y-1">
-          <li><strong>Hazard:</strong> Bleeding / pocket haematoma during insertion.</li>
-          <li><strong>Hazard:</strong> Inadequate battery longevity leading to sudden failure.</li>
-          <li><strong>Hazard:</strong> Pacemaker pocket infection.</li>
-          <li><strong>Hazard:</strong> Incompatibility with MRI magnetic fields.</li>
-        </ul>
       `,
       infographic: `
         <div class="h-full flex flex-col justify-center p-4">
-          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">PHA Pacemaker Baseline</h4>
-          <svg viewBox="0 0 280 200" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="20" width="240" height="40" rx="3" fill="var(--surface-container-highest)" stroke="var(--tertiary)" stroke-width="1.2"/>
-            <text x="30" y="44" fill="var(--on-surface)" font-size="10.5" font-family="sans-serif" font-weight="bold">1. MRI RF Field Exposure</text>
-            <text x="250" y="44" text-anchor="end" fill="var(--error)" font-size="12" font-family="sans-serif" font-weight="bold">Severity: Critical</text>
-
-            <rect x="20" y="80" width="240" height="40" rx="3" fill="var(--surface-container-highest)" stroke="var(--tertiary)" stroke-width="1.2"/>
-            <text x="30" y="104" fill="var(--on-surface)" font-size="10.5" font-family="sans-serif" font-weight="bold">2. Lithium Battery Depletion</text>
-            <text x="250" y="104" text-anchor="end" fill="var(--error)" font-size="12" font-family="sans-serif" font-weight="bold">Severity: Critical</text>
-
-            <rect x="20" y="140" width="240" height="40" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="30" y="164" fill="var(--on-surface)" font-size="10.5" font-family="sans-serif" font-weight="bold">3. Hermetic Seal Leakage</text>
-            <text x="250" y="164" text-anchor="end" fill="var(--error)" font-size="12" font-family="sans-serif" font-weight="bold">Severity: Catastrophic</text>
-          </svg>
+          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">PHA Steerable Catheter Baseline</h4>
+          <div class="w-full overflow-x-auto">
+            <table class="w-full text-left border-collapse text-[10px]">
+              <thead>
+                <tr class="bg-primary text-on-primary">
+                  <th class="p-2 border border-outline font-sans font-semibold">Category</th>
+                  <th class="p-2 border border-outline font-sans font-semibold">Hazard &amp; Source</th>
+                  <th class="p-2 border border-outline font-sans font-semibold">Hazardous Situation</th>
+                  <th class="p-2 border border-outline font-sans font-semibold">Harm</th>
+                  <th class="p-2 border border-outline font-sans font-semibold">Severity</th>
+                </tr>
+              </thead>
+              <tbody class="text-on-surface-variant font-sans">
+                <tr class="bg-surface-container hover:bg-surface-container-high transition-colors">
+                  <td class="p-2 border border-outline-variant font-semibold">Mechanical</td>
+                  <td class="p-2 border border-outline-variant">Distal tip stiffness / steering force</td>
+                  <td class="p-2 border border-outline-variant">Advancing catheter under high steering angle in tortuous anatomy</td>
+                  <td class="p-2 border border-outline-variant">Vessel perforation, internal hemorrhage</td>
+                  <td class="p-2 border border-outline-variant text-error font-semibold">Critical</td>
+                </tr>
+                <tr class="bg-surface hover:bg-surface-container-high transition-colors">
+                  <td class="p-2 border border-outline-variant font-semibold">Thermal</td>
+                  <td class="p-2 border border-outline-variant">RF ablation tip overheating (>50°C)</td>
+                  <td class="p-2 border border-outline-variant">Ablation energy delivered with blocked irrigation ports</td>
+                  <td class="p-2 border border-outline-variant">Myocardial charring, thrombus, stroke</td>
+                  <td class="p-2 border border-outline-variant text-error font-semibold">Critical</td>
+                </tr>
+                <tr class="bg-surface-container hover:bg-surface-container-high transition-colors">
+                  <td class="p-2 border border-outline-variant font-semibold">Usability</td>
+                  <td class="p-2 border border-outline-variant">Reversed dial steering orientation</td>
+                  <td class="p-2 border border-outline-variant">Physician turns dial clockwise, tip curves counter-clockwise</td>
+                  <td class="p-2 border border-outline-variant font-semibold">Prolonged procedure, tissue puncture</td>
+                  <td class="p-2 border border-outline-variant text-warning font-semibold">Serious</td>
+                </tr>
+                <tr class="bg-surface hover:bg-surface-container-high transition-colors">
+                  <td class="p-2 border border-outline-variant font-semibold">Biological</td>
+                  <td class="p-2 border border-outline-variant">Endotoxin residue / bioburden</td>
+                  <td class="p-2 border border-outline-variant">Sterile barrier compromise or inadequate cleaning validation</td>
+                  <td class="p-2 border border-outline-variant">Pyrogenic reaction, septic shock, sepsis</td>
+                  <td class="p-2 border border-outline-variant text-error font-semibold">Catastrophic</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       `,
       isWide: false
@@ -1087,42 +1125,57 @@ const partBSlides = [
       content: `
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Bottom-Up Reliability Analysis</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          FMEA is a structured, inductive (bottom-up) technique that analyzes component failure modes, their causes, and their effects on device function. FMEA is highly effective at finding design and process reliability weaknesses.
+          A <strong>Failure Mode and Effects Analysis (FMEA)</strong> is a structured, inductive (bottom-up) technique that analyzes component failure modes, their potential causes, and their effects on device function. It is highly effective at identifying design and process reliability weaknesses.
         </p>
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Design FMEA for Catheter Assembly</h4>
+        <div class="p-3 bg-surface-container-high rounded border border-outline-variant mb-3">
+          <span class="text-xs text-primary font-mono uppercase block mb-1">Methodology Note: RPN Reduction &amp; ISO 14971</span>
+          <p class="text-xs text-on-surface-variant">
+            Traditional FMEA uses a <strong>Risk Priority Number (RPN) = Severity (S) × Occurrence (O) × Detection (D)</strong>. Introducing a risk control reduces the RPN mathematically by lowering Occurrence (preventative design changes) or improving Detection (100% inspections). Note that under ISO 14971, risk reduction is evaluated by estimating the actual probability of occurrence and severity of harm; however, FMEA RPN remains an excellent tool for engineering teams to prioritize design work.
+          </p>
+        </div>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          FMEA is performed on a steerable catheter to analyze catheter tip detachment during deployment in the femoral artery. Adhesive bonding failure (Cause) results in arterial embolisation (Effect).
+          The spreadsheet on the right shows a Design FMEA snippet for a steerable catheter assembly, demonstrating how a critical adhesive bond failure is mathematically mitigated.
         </p>
-        <ul class="list-disc pl-5 mb-4 text-on-surface-variant text-sm space-y-1">
-          <li><strong>Failure Mode:</strong> Catheter distal tip detachment.</li>
-          <li><strong>Local Effect:</strong> Tip remains in blood vessel (embolisation).</li>
-          <li><strong>Clinical Consequence:</strong> Vascular occlusion or stroke (Severity: S4).</li>
-          <li><strong>Risk Control:</strong> Add 100% mechanical pull-testing in production.</li>
-        </ul>
       `,
       infographic: `
         <div class="h-full flex flex-col justify-center p-4">
-          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">FMEA Worksheet Snippet</h4>
-          <svg viewBox="0 0 280 200" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="15" width="260" height="170" rx="3" fill="var(--surface)" stroke="var(--outline)" stroke-width="1"/>
-            <line x1="10" y1="50" x2="270" y2="50" stroke="var(--outline)" stroke-width="1"/>
-
-            <text x="20" y="36" fill="var(--success)" font-size="10.5" font-family="sans-serif" font-weight="bold">Item / Function</text>
-            <text x="110" y="36" fill="var(--success)" font-size="10.5" font-family="sans-serif" font-weight="bold">Failure Mode</text>
-            <text x="210" y="36" fill="var(--success)" font-size="10.5" font-family="sans-serif" font-weight="bold">Severity</text>
-
-            <text x="20" y="80" fill="var(--on-surface)" font-size="12" font-family="sans-serif">Catheter Tip</text>
-            <text x="110" y="80" fill="var(--on-surface)" font-size="12" font-family="sans-serif">Tip detachment</text>
-            <text x="210" y="80" fill="var(--error)" font-size="12" font-family="sans-serif">S4 Critical</text>
-
-            <text x="20" y="120" fill="var(--on-surface)" font-size="12" font-family="sans-serif">Sheath Tube</text>
-            <text x="110" y="120" fill="var(--on-surface)" font-size="12" font-family="sans-serif">Kinking during use</text>
-            <text x="210" y="120" fill="var(--tertiary)" font-size="12" font-family="sans-serif">S2 Minor</text>
-
-            <text x="20" y="160" fill="var(--on-surface)" font-size="12" font-family="sans-serif">Handle Lock</text>
-            <text x="110" y="160" fill="var(--on-surface)" font-size="12" font-family="sans-serif">Fails to engage</text>
-            <text x="210" y="160" fill="var(--tertiary)" font-size="12" font-family="sans-serif">S2 Minor</text>
-          </svg>
+          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-3 text-center">FMEA Worksheet (Catheter Shaft Assembly)</h4>
+          <div class="w-full overflow-x-auto">
+            <table class="w-full text-left border-collapse text-[9.5px]">
+              <thead>
+                <tr class="bg-primary text-on-primary">
+                  <th class="p-1.5 border border-outline font-sans font-semibold">Failure Mode</th>
+                  <th class="p-1.5 border border-outline font-sans font-semibold">Cause / Effect</th>
+                  <th class="p-1.5 border border-outline font-sans font-semibold text-center">Pre-Control (S×O×D)</th>
+                  <th class="p-1.5 border border-outline font-sans font-semibold">Risk Control Measure</th>
+                  <th class="p-1.5 border border-outline font-sans font-semibold text-center">Post-Control (S×O×D)</th>
+                </tr>
+              </thead>
+              <tbody class="text-on-surface-variant font-sans">
+                <tr class="bg-surface-container hover:bg-surface-container-high transition-colors">
+                  <td class="p-1.5 border border-outline-variant font-semibold">Distal tip detachment</td>
+                  <td class="p-1.5 border border-outline-variant">Cause: Adhesive bond degradation.<br>Effect: Embolization, vascular occlusion, stroke.</td>
+                  <td class="p-1.5 border border-outline-variant text-center font-mono">S: 4<br>O: 3<br>D: 4<br><span class="text-error font-bold">RPN: 48</span></td>
+                  <td class="p-1.5 border border-outline-variant">Introduce mechanical lock-ring joint + 100% tensile pull-test in production.</td>
+                  <td class="p-1.5 border border-outline-variant text-center font-mono">S: 4<br>O: 1<br>D: 1<br><span class="text-success font-bold">RPN: 4</span></td>
+                </tr>
+                <tr class="bg-surface hover:bg-surface-container-high transition-colors">
+                  <td class="p-1.5 border border-outline-variant font-semibold">Sheath kink during flexion</td>
+                  <td class="p-1.5 border border-outline-variant">Cause: Polyurethane wall thickness variation.<br>Effect: Inability to deliver therapy, prolonged procedure.</td>
+                  <td class="p-1.5 border border-outline-variant text-center font-mono">S: 2<br>O: 4<br>D: 3<br><span class="text-warning font-bold">RPN: 24</span></td>
+                  <td class="p-1.5 border border-outline-variant">Add stainless steel braid reinforcement to the sheath extrusion process.</td>
+                  <td class="p-1.5 border border-outline-variant text-center font-mono">S: 2<br>O: 1<br>D: 2<br><span class="text-success font-bold">RPN: 4</span></td>
+                </tr>
+                <tr class="bg-surface-container hover:bg-surface-container-high transition-colors">
+                  <td class="p-1.5 border border-outline-variant font-semibold">Handle lock slip</td>
+                  <td class="p-1.5 border border-outline-variant">Cause: Wear of plastic locking teeth.<br>Effect: Distal tip drifts, loss of targeted position.</td>
+                  <td class="p-1.5 border border-outline-variant text-center font-mono">S: 2<br>O: 3<br>D: 3<br><span class="text-warning font-bold">RPN: 18</span></td>
+                  <td class="p-1.5 border border-outline-variant">Upgrade handle lock teeth material from polycarbonate to brass.</td>
+                  <td class="p-1.5 border border-outline-variant text-center font-mono">S: 2<br>O: 1<br>D: 1<br><span class="text-success font-bold">RPN: 2</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       `,
       isWide: false
@@ -1137,65 +1190,106 @@ const partBSlides = [
         </p>
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Logical Gates &amp; Risk Estimation</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          An AND gate indicates that all input events must occur for the output to happen. An OR gate indicates that any single input event is sufficient. This helps identify single points of failure (OR gates) versus redundant protections (AND gates).
+          An AND gate indicates that all input events must occur for the output to happen (redundancy). An OR gate indicates that any single input event is sufficient (single point of failure). Adding layers of gates helps trace complex, multi-stage failure propagation.
         </p>
         <p class="text-xs text-primary font-mono uppercase mb-2">Interactive Simulator: Infusion Pump Overdose</p>
-        <p class="text-xs text-on-surface-variant mb-4">Toggle the failure switches below to see how they impact the top event.</p>
+        <p class="text-xs text-on-surface-variant mb-4">Toggle the failure switches below or click directly on the diagram boxes to simulate faults.</p>
         <div class="space-y-2 bg-surface-container-high p-4 rounded border border-outline-variant">
           <label class="flex items-center justify-between text-xs cursor-pointer">
-            <span class="text-on-surface-variant">Flow Sensor Fails</span>
-            <input type="checkbox" id="fta-sensor" class="fta-toggle form-checkbox rounded text-primary">
+            <span class="text-on-surface-variant font-medium">Free Flow (Siphon Effect)</span>
+            <input type="checkbox" id="fta-freeflow" class="fta-toggle form-checkbox rounded text-primary">
           </label>
           <label class="flex items-center justify-between text-xs cursor-pointer">
-            <span class="text-on-surface-variant">Occlusion Alarm Fails</span>
-            <input type="checkbox" id="fta-alarm" class="fta-toggle form-checkbox rounded text-primary">
+            <span class="text-on-surface-variant font-medium">Pinch Valve Stuck Open</span>
+            <input type="checkbox" id="fta-valvestuck" class="fta-toggle form-checkbox rounded text-primary">
           </label>
           <label class="flex items-center justify-between text-xs cursor-pointer">
-            <span class="text-on-surface-variant">Software Dosing calculation bug</span>
-            <input type="checkbox" id="fta-software" class="fta-toggle form-checkbox rounded text-primary">
+            <span class="text-on-surface-variant font-medium">Dosing Calculation Bug</span>
+            <input type="checkbox" id="fta-dosingbug" class="fta-toggle form-checkbox rounded text-primary">
+          </label>
+          <label class="flex items-center justify-between text-xs cursor-pointer">
+            <span class="text-on-surface-variant font-medium">RAM Bit Flip (No ECC memory)</span>
+            <input type="checkbox" id="fta-bitflip" class="fta-toggle form-checkbox rounded text-primary">
+          </label>
+          <label class="flex items-center justify-between text-xs cursor-pointer">
+            <span class="text-on-surface-variant font-medium">Occlusion / High Flow Alarm Fails</span>
+            <input type="checkbox" id="fta-alarmfails" class="fta-toggle form-checkbox rounded text-primary">
           </label>
         </div>
       `,
       infographic: `
         <div class="h-full flex flex-col justify-center items-center p-4">
-          <h4 class="font-mono text-primary text-xs uppercase mb-4">FTA Interactive Tree</h4>
-          <svg viewBox="0 0 300 220" class="w-full max-w-[260px] h-auto">
-            <!-- Top Event -->
-            <rect x="90" y="10" width="120" height="35" rx="2" fill="var(--surface-container-highest)" stroke="var(--secondary)" stroke-width="1.5" id="fta-top-rect"></rect>
-            <text x="150" y="25" text-anchor="middle" fill="var(--error)" font-size="12" font-family="Space Grotesk" id="fta-top-text">OVERDOSE DELIVERED</text>
-            
+          <h4 class="font-mono text-primary text-xs uppercase mb-2">FTA Interactive Fault Tree</h4>
+          <p class="text-[9.5px] text-on-surface-variant text-center mb-4">Click basic event boxes in the diagram or toggles on the left to activate failures.</p>
+          <svg viewBox="0 0 400 280" class="w-full max-w-[380px] h-auto">
             <!-- Connection Lines -->
-            <line x1="150" y1="45" x2="150" y2="70" stroke="var(--secondary)" stroke-width="1.5"></line>
-            <line x1="150" y1="70" x2="60" y2="70" stroke="var(--secondary)" stroke-width="1.5"></line>
-            <line x1="150" y1="70" x2="240" y2="70" stroke="var(--secondary)" stroke-width="1.5"></line>
+            <!-- Top Event to G1 -->
+            <line x1="200" y1="45" x2="200" y2="60" stroke="var(--secondary)" stroke-width="1.5" id="line-top-to-g1"></line>
             
-            <line x1="60" y1="70" x2="60" y2="120" stroke="var(--secondary)" stroke-width="1.5"></line>
-            <line x1="240" y1="70" x2="240" y2="100" stroke="var(--secondary)" stroke-width="1.5"></line>
-            <line x1="240" y1="120" x2="200" y2="120" stroke="var(--secondary)" stroke-width="1.5"></line>
-            <line x1="240" y1="120" x2="280" y2="120" stroke="var(--secondary)" stroke-width="1.5"></line>
-            <line x1="200" y1="120" x2="200" y2="160" stroke="var(--secondary)" stroke-width="1.5"></line>
-            <line x1="280" y1="120" x2="280" y2="160" stroke="var(--secondary)" stroke-width="1.5"></line>
+            <!-- G1 to G2 and G3 -->
+            <line x1="200" y1="75" x2="200" y2="85" stroke="var(--secondary)" stroke-width="1.5" id="line-g1-down"></line>
+            <line x1="100" y1="85" x2="300" y2="85" stroke="var(--secondary)" stroke-width="1.5" id="line-g1-horizontal"></line>
+            <line x1="100" y1="85" x2="100" y2="100" stroke="var(--secondary)" stroke-width="1.5" id="line-g1-to-g2"></line>
+            <line x1="300" y1="85" x2="300" y2="100" stroke="var(--secondary)" stroke-width="1.5" id="line-g1-to-g3"></line>
 
-            <!-- OR Gate (Left Branch) -->
-            <polygon points="45,95 75,95 60,78" fill="var(--primary)" id="fta-or-gate"></polygon>
-            <text x="60" y="110" text-anchor="middle" fill="var(--on-surface-variant)" font-size="12" font-family="Space Grotesk">OR</text>
+            <!-- G2 to E11 and E12 -->
+            <line x1="100" y1="115" x2="100" y2="125" stroke="var(--secondary)" stroke-width="1.5" id="line-g2-down"></line>
+            <line x1="55" y1="125" x2="145" y2="125" stroke="var(--secondary)" stroke-width="1.5" id="line-g2-horizontal"></line>
+            <line x1="55" y1="125" x2="55" y2="140" stroke="var(--secondary)" stroke-width="1.5" id="line-g2-to-freeflow"></line>
+            <line x1="145" y1="125" x2="145" y2="140" stroke="var(--secondary)" stroke-width="1.5" id="line-g2-to-valvestuck"></line>
 
-            <!-- AND Gate (Right Branch) -->
-            <rect x="225" y="90" width="30" height="20" rx="2" fill="var(--primary)" id="fta-and-gate"></rect>
-            <text x="240" y="102" text-anchor="middle" fill="#003731" font-size="12" font-family="Space Grotesk">AND</text>
+            <!-- G3 to G4 and E22 -->
+            <line x1="300" y1="115" x2="300" y2="125" stroke="var(--secondary)" stroke-width="1.5" id="line-g3-down"></line>
+            <line x1="250" y1="125" x2="345" y2="125" stroke="var(--secondary)" stroke-width="1.5" id="line-g3-horizontal"></line>
+            <line x1="250" y1="125" x2="250" y2="140" stroke="var(--secondary)" stroke-width="1.5" id="line-g3-to-g4"></line>
+            <line x1="345" y1="125" x2="345" y2="140" stroke="var(--secondary)" stroke-width="1.5" id="line-g3-to-alarmfails"></line>
 
-            <!-- Node Boxes -->
-            <!-- Software error -->
-            <rect x="15" y="145" width="90" height="30" rx="2" fill="var(--surface-container-highest)" stroke="var(--outline)" id="box-software"></rect>
-            <text x="60" y="163" text-anchor="middle" fill="var(--on-surface-variant)" font-size="11">Software Bug</text>
+            <!-- G4 to E21a and E21b -->
+            <line x1="250" y1="155" x2="250" y2="185" stroke="var(--secondary)" stroke-width="1.5" id="line-g4-down"></line>
+            <line x1="225" y1="185" x2="305" y2="185" stroke="var(--secondary)" stroke-width="1.5" id="line-g4-horizontal"></line>
+            <line x1="225" y1="185" x2="225" y2="200" stroke="var(--secondary)" stroke-width="1.5" id="line-g4-to-dosingbug"></line>
+            <line x1="305" y1="185" x2="305" y2="200" stroke="var(--secondary)" stroke-width="1.5" id="line-g4-to-bitflip"></line>
 
-            <!-- Flow Sensor Fails -->
-            <rect x="155" y="145" width="90" height="30" rx="2" fill="var(--surface-container-highest)" stroke="var(--outline)" id="box-sensor"></rect>
-            <text x="200" y="163" text-anchor="middle" fill="var(--on-surface-variant)" font-size="11">Sensor Fails</text>
+            <!-- Top Event Box -->
+            <rect x="120" y="10" width="160" height="35" rx="3" fill="var(--surface)" stroke="var(--outline)" stroke-width="1.5" id="fta-top-rect"></rect>
+            <text x="200" y="32" text-anchor="middle" fill="var(--primary)" font-size="11" font-family="sans-serif" font-weight="bold" id="fta-top-text">SAFE OPERATION</text>
 
-            <!-- Alarm fails -->
-            <rect x="250" y="145" width="45" height="30" rx="2" fill="var(--surface-container-highest)" stroke="var(--outline)" id="box-alarm"></rect>
-            <text x="272" y="163" text-anchor="middle" fill="var(--on-surface-variant)" font-size="11">Alarm Fails</text>
+            <!-- G1: OR Gate -->
+            <rect x="185" y="60" width="30" height="15" rx="2" fill="var(--secondary)" id="fta-g1-gate"></rect>
+            <text x="200" y="71" text-anchor="middle" fill="var(--on-secondary)" font-size="9" font-family="sans-serif" font-weight="bold" id="fta-g1-text">OR</text>
+
+            <!-- G2: AND Gate -->
+            <rect x="85" y="100" width="30" height="15" rx="2" fill="var(--primary)" id="fta-g2-gate"></rect>
+            <text x="100" y="111" text-anchor="middle" fill="var(--on-primary)" font-size="9" font-family="sans-serif" font-weight="bold" id="fta-g2-text">AND</text>
+
+            <!-- G3: AND Gate -->
+            <rect x="285" y="100" width="30" height="15" rx="2" fill="var(--primary)" id="fta-g3-gate"></rect>
+            <text x="300" y="111" text-anchor="middle" fill="var(--on-primary)" font-size="9" font-family="sans-serif" font-weight="bold" id="fta-g3-text">AND</text>
+
+            <!-- G4: OR Gate -->
+            <rect x="235" y="140" width="30" height="15" rx="2" fill="var(--secondary)" id="fta-g4-gate"></rect>
+            <text x="250" y="151" text-anchor="middle" fill="var(--on-secondary)" font-size="9" font-family="sans-serif" font-weight="bold" id="fta-g4-text">OR</text>
+
+            <!-- Basic Event Boxes -->
+            <!-- E11: Free Flow -->
+            <rect x="15" y="140" width="80" height="30" rx="2" fill="var(--surface-container-highest)" stroke="var(--outline)" id="box-freeflow"></rect>
+            <text x="55" y="158" text-anchor="middle" fill="var(--on-surface-variant)" font-size="9" font-weight="semibold">Free Flow</text>
+
+            <!-- E12: Valve Stuck -->
+            <rect x="105" y="140" width="80" height="30" rx="2" fill="var(--surface-container-highest)" stroke="var(--outline)" id="box-valvestuck"></rect>
+            <text x="145" y="158" text-anchor="middle" fill="var(--on-surface-variant)" font-size="9" font-weight="semibold">Valve Stuck</text>
+
+            <!-- E22: Alarm Fails -->
+            <rect x="305" y="140" width="80" height="30" rx="2" fill="var(--surface-container-highest)" stroke="var(--outline)" id="box-alarmfails"></rect>
+            <text x="345" y="158" text-anchor="middle" fill="var(--on-surface-variant)" font-size="9" font-weight="semibold">Alarm Fails</text>
+
+            <!-- E21a: Dosing Bug -->
+            <rect x="185" y="200" width="80" height="30" rx="2" fill="var(--surface-container-highest)" stroke="var(--outline)" id="box-dosingbug"></rect>
+            <text x="225" y="218" text-anchor="middle" fill="var(--on-surface-variant)" font-size="9" font-weight="semibold">Dosing Bug</text>
+
+            <!-- E21b: RAM Bit Flip -->
+            <rect x="265" y="200" width="80" height="30" rx="2" fill="var(--surface-container-highest)" stroke="var(--outline)" id="box-bitflip"></rect>
+            <text x="305" y="218" text-anchor="middle" fill="var(--on-surface-variant)" font-size="9" font-weight="semibold">RAM Bit Flip</text>
           </svg>
           <div class="mt-4 text-xs font-mono text-on-surface" id="fta-status-text">
             Status: Safe (No failures active)
@@ -1460,17 +1554,13 @@ function renderPartA(container) {
     };
 
     // Attach Interactivity handlers based on current slide
-    if (state.partASlide === 2) {
-      setupTermsInteractivity();
-    } else if (state.partASlide === 4) {
-      setupMatrixInteractivity();
-    } else if (state.partASlide === 6) {
+    if (state.partASlide === 1) {
       setupDelphiInteractivity();
-    } else if (state.partASlide === 8) {
+    } else if (state.partASlide === 3) {
       setupMatchGame();
-    } else if (state.partASlide === 9) {
+    } else if (state.partASlide === 4) {
       setupSpeedBumpInteractivity();
-    } else if (state.partASlide === 10) {
+    } else if (state.partASlide === 5) {
       setupScaleInteractivity();
     }
   }
@@ -1817,14 +1907,14 @@ function renderPartA(container) {
 
       // Apply transforms — beam rotates around center (150, 70)
       if (scaleBeam) {
-        scaleBeam.setAttribute("transform", `rotate(${angle}, 150, 70)`);
+        scaleBeam.style.transform = `rotate(${angle}deg)`;
       }
       // Counter-rotate pans around their respective pivot points to stay horizontal (gravity effect)
       if (panLeft) {
-        panLeft.setAttribute("transform", `rotate(${-angle}, 50, 70)`);
+        panLeft.style.transform = `rotate(${-angle}deg)`;
       }
       if (panRight) {
-        panRight.setAttribute("transform", `rotate(${-angle}, 250, 70)`);
+        panRight.style.transform = `rotate(${-angle}deg)`;
       }
 
       if (!outcomeBadge) return;
@@ -1969,88 +2059,199 @@ function renderPartA(container) {
 
   // Interactivity: FTA Switches (TEC-17 — SVG nodes directly clickable)
   function setupFtaInteractivity() {
-    const swSensor = document.getElementById("fta-sensor");
-    const swAlarm = document.getElementById("fta-alarm");
-    const swSoftware = document.getElementById("fta-software");
+    const swFreeFlow = document.getElementById("fta-freeflow");
+    const swValveStuck = document.getElementById("fta-valvestuck");
+    const swDosingBug = document.getElementById("fta-dosingbug");
+    const swBitFlip = document.getElementById("fta-bitflip");
+    const swAlarmFails = document.getElementById("fta-alarmfails");
 
     const topRect = document.getElementById("fta-top-rect");
     const topText = document.getElementById("fta-top-text");
     const statusText = document.getElementById("fta-status-text");
 
-    const andGate = document.getElementById("fta-and-gate");
-    const orGate = document.getElementById("fta-or-gate");
+    const g1Gate = document.getElementById("fta-g1-gate");
+    const g2Gate = document.getElementById("fta-g2-gate");
+    const g3Gate = document.getElementById("fta-g3-gate");
+    const g4Gate = document.getElementById("fta-g4-gate");
 
-    const boxSoftware = document.getElementById("box-software");
-    const boxSensor = document.getElementById("box-sensor");
-    const boxAlarm = document.getElementById("box-alarm");
+    const g1Text = document.getElementById("fta-g1-text");
+    const g2Text = document.getElementById("fta-g2-text");
+    const g3Text = document.getElementById("fta-g3-text");
+    const g4Text = document.getElementById("fta-g4-text");
 
-    // Make SVG node boxes directly clickable to toggle (TEC-17) with hover highlights
+    const boxFreeFlow = document.getElementById("box-freeflow");
+    const boxValveStuck = document.getElementById("box-valvestuck");
+    const boxDosingBug = document.getElementById("box-dosingbug");
+    const boxBitFlip = document.getElementById("box-bitflip");
+    const boxAlarmFails = document.getElementById("box-alarmfails");
+
+    // Line references
+    const lineTopToG1 = document.getElementById("line-top-to-g1");
+    const lineG1Down = document.getElementById("line-g1-down");
+    const lineG1Horizontal = document.getElementById("line-g1-horizontal");
+    const lineG1ToG2 = document.getElementById("line-g1-to-g2");
+    const lineG1ToG3 = document.getElementById("line-g1-to-g3");
+
+    const lineG2Down = document.getElementById("line-g2-down");
+    const lineG2Horizontal = document.getElementById("line-g2-horizontal");
+    const lineG2ToFreeFlow = document.getElementById("line-g2-to-freeflow");
+    const lineG2ToValveStuck = document.getElementById("line-g2-to-valvestuck");
+
+    const lineG3Down = document.getElementById("line-g3-down");
+    const lineG3Horizontal = document.getElementById("line-g3-horizontal");
+    const lineG3ToG4 = document.getElementById("line-g3-to-g4");
+    const lineG3ToAlarmFails = document.getElementById("line-g3-to-alarmfails");
+
+    const lineG4Down = document.getElementById("line-g4-down");
+    const lineG4Horizontal = document.getElementById("line-g4-horizontal");
+    const lineG4ToDosingBug = document.getElementById("line-g4-to-dosingbug");
+    const lineG4ToBitFlip = document.getElementById("line-g4-to-bitflip");
+
     const ftaBoxes = [
-      { el: boxSoftware, sw: swSoftware },
-      { el: boxSensor, sw: swSensor },
-      { el: boxAlarm, sw: swAlarm }
+      { el: boxFreeFlow, sw: swFreeFlow },
+      { el: boxValveStuck, sw: swValveStuck },
+      { el: boxDosingBug, sw: swDosingBug },
+      { el: boxBitFlip, sw: swBitFlip },
+      { el: boxAlarmFails, sw: swAlarmFails }
     ];
+
     ftaBoxes.forEach(b => {
       if (b.el) {
         b.el.style.cursor = 'pointer';
-        b.el.addEventListener('click', () => {
-          if (b.sw) { b.sw.checked = !b.sw.checked; updateFta(); }
-        });
+        b.el.onclick = () => {
+          if (b.sw) {
+            b.sw.checked = !b.sw.checked;
+            updateFta();
+          }
+        };
         b.el.addEventListener('mouseover', () => {
           b.el.style.strokeWidth = "2.5px";
           b.el.style.filter = "drop-shadow(0 2px 4px rgba(26,54,93,0.15))";
         });
         b.el.addEventListener('mouseout', () => {
-          b.el.style.strokeWidth = "1.5px";
+          b.el.style.strokeWidth = "1px";
           b.el.style.filter = "";
         });
       }
     });
 
     function updateFta() {
-      const sensorFailed = swSensor && swSensor.checked;
-      const alarmFailed = swAlarm && swAlarm.checked;
-      const softwareFailed = swSoftware && swSoftware.checked;
+      const freeFlow = swFreeFlow && swFreeFlow.checked;
+      const valveStuck = swValveStuck && swValveStuck.checked;
+      const dosingBug = swDosingBug && swDosingBug.checked;
+      const bitFlip = swBitFlip && swBitFlip.checked;
+      const alarmFails = swAlarmFails && swAlarmFails.checked;
 
-      // Update node boxes colors
-      if (boxSoftware) boxSoftware.style.stroke = softwareFailed ? "#f28b82" : "var(--outline-variant)";
-      if (boxSensor) boxSensor.style.stroke = sensorFailed ? "#f28b82" : "var(--outline-variant)";
-      if (boxAlarm) boxAlarm.style.stroke = alarmFailed ? "#f28b82" : "var(--outline-variant)";
+      // Propagate gate states
+      const g2Active = freeFlow && valveStuck; // AND
+      const g4Active = dosingBug || bitFlip;   // OR
+      const g3Active = g4Active && alarmFails; // AND
+      const g1Active = g2Active || g3Active;   // OR (Top)
 
-      if (boxSoftware) boxSoftware.style.fill = softwareFailed ? "rgba(242,139,130,0.18)" : "";
-      if (boxSensor) boxSensor.style.fill = sensorFailed ? "rgba(242,139,130,0.18)" : "";
-      if (boxAlarm) boxAlarm.style.fill = alarmFailed ? "rgba(242,139,130,0.18)" : "";
-
-      // AND gate logic
-      const andActive = sensorFailed && alarmFailed;
-      if (andGate) andGate.style.fill = andActive ? "#f28b82" : "var(--primary)";
-
-      // OR gate logic (software fails OR AND-gate active)
-      const topActive = softwareFailed || andActive;
-      if (orGate) orGate.style.fill = topActive ? "#f28b82" : "var(--primary-container)";
-
-      if (topActive) {
-        if (topRect) { topRect.style.stroke = "#f28b82"; topRect.style.fill = "rgba(122,0,10,0.2)"; }
-        if (topText) topText.textContent = "OVERDOSE DELIVERED!";
-        if (statusText) statusText.innerHTML = `<span style="color:#f28b82;font-weight:bold">⚠️ HAZARD ACTIVE: ${softwareFailed ? 'Software Bug' : 'Dual Sensor+Alarm Failure'} triggered the overdose.</span>`;
-      } else {
-        if (topRect) { topRect.style.stroke = "var(--outline)"; topRect.style.fill = "var(--surface-container-high)"; }
-        if (topText) topText.textContent = "SAFE OPERATION";
-        let subText = "Safe. ";
-        if (sensorFailed && !alarmFailed) {
-          subText += "Flow sensor failed, but Occlusion Alarm blocked the overdose (AND gate protection).";
-        } else if (!sensorFailed && alarmFailed) {
-          subText += "Alarm failed, but Flow Sensor remains active — AND gate safe.";
-        } else {
-          subText += "No failures active. Click the node boxes above or use the toggles to simulate failures.";
+      // Color nodes
+      const highlightBox = (el, active) => {
+        if (el) {
+          el.style.stroke = active ? "#c53030" : "var(--outline)";
+          el.style.strokeWidth = active ? "1.5px" : "1px";
+          el.style.fill = active ? "rgba(197, 48, 48, 0.12)" : "var(--surface-container-highest)";
         }
-        if (statusText) statusText.innerHTML = `<span style="color:var(--primary)">${subText}</span>`;
+      };
+
+      highlightBox(boxFreeFlow, freeFlow);
+      highlightBox(boxValveStuck, valveStuck);
+      highlightBox(boxDosingBug, dosingBug);
+      highlightBox(boxBitFlip, bitFlip);
+      highlightBox(boxAlarmFails, alarmFails);
+
+      // Color gates
+      const highlightGate = (gateEl, textEl, active, isOr) => {
+        if (gateEl) {
+          gateEl.style.fill = active ? "#c53030" : (isOr ? "var(--secondary)" : "var(--primary)");
+        }
+        if (textEl) {
+          textEl.style.fill = "#ffffff";
+        }
+      };
+
+      highlightGate(g1Gate, g1Text, g1Active, true);
+      highlightGate(g2Gate, g2Text, g2Active, false);
+      highlightGate(g3Gate, g3Text, g3Active, false);
+      highlightGate(g4Gate, g4Text, g4Active, true);
+
+      // Color lines
+      const highlightLine = (lineEl, active) => {
+        if (lineEl) {
+          lineEl.style.stroke = active ? "#c53030" : "var(--secondary)";
+          lineEl.style.strokeWidth = active ? "2px" : "1.5px";
+        }
+      };
+
+      highlightLine(lineTopToG1, g1Active);
+      highlightLine(lineG1Down, g1Active);
+      highlightLine(lineG1Horizontal, g2Active || g3Active);
+      highlightLine(lineG1ToG2, g2Active);
+      highlightLine(lineG1ToG3, g3Active);
+
+      highlightLine(lineG2Down, g2Active);
+      highlightLine(lineG2Horizontal, freeFlow || valveStuck);
+      highlightLine(lineG2ToFreeFlow, freeFlow);
+      highlightLine(lineG2ToValveStuck, valveStuck);
+
+      highlightLine(lineG3Down, g3Active);
+      highlightLine(lineG3Horizontal, g4Active || alarmFails);
+      highlightLine(lineG3ToG4, g4Active);
+      highlightLine(lineG3ToAlarmFails, alarmFails);
+
+      highlightLine(lineG4Down, g4Active);
+      highlightLine(lineG4Horizontal, dosingBug || bitFlip);
+      highlightLine(lineG4ToDosingBug, dosingBug);
+      highlightLine(lineG4ToBitFlip, bitFlip);
+
+      // Top Event Box
+      if (topRect) {
+        topRect.style.stroke = g1Active ? "#c53030" : "var(--outline)";
+        topRect.style.strokeWidth = g1Active ? "2px" : "1.5px";
+        topRect.style.fill = g1Active ? "var(--error-container)" : "var(--surface)";
+      }
+      if (topText) {
+        topText.textContent = g1Active ? "OVERDOSE DELIVERED" : "SAFE OPERATION";
+        topText.style.fill = g1Active ? "var(--on-error-container)" : "var(--primary)";
+      }
+
+      // Status text message
+      if (statusText) {
+        if (g1Active) {
+          let causeMsg = "";
+          if (g2Active && g3Active) {
+            causeMsg = "Both Hardware Free-Flow and Software Fault with Alarm failure occurred.";
+          } else if (g2Active) {
+            causeMsg = "Mechanical Siphon Free-Flow AND Pinch Valve failure occurred (Single Point of Protection breached).";
+          } else {
+            causeMsg = `Software Bug or Bit Flip occurred AND the Occlusion Alarm failed to mitigate it.`;
+          }
+          statusText.innerHTML = `<span class="text-error font-bold">⚠️ OVERDOSE ACTIVE: ${causeMsg}</span>`;
+        } else {
+          let statusMsgs = [];
+          if (freeFlow) statusMsgs.push("Siphon Free-Flow active (blocked by Pinch Valve)");
+          if (valveStuck) statusMsgs.push("Pinch Valve failed open (blocked by siphon prevention)");
+          if (dosingBug) statusMsgs.push("Dosing Bug active (mitigated by Occlusion Alarm)");
+          if (bitFlip) statusMsgs.push("RAM Bit Flip active (mitigated by Occlusion Alarm)");
+          if (alarmFails) statusMsgs.push("Occlusion Alarm failed (mitigated by software self-checks)");
+
+          if (statusMsgs.length > 0) {
+            statusText.innerHTML = `<span class="text-primary font-medium font-sans">Safe. Active single failures: ${statusMsgs.join(", ")}. Redundancies holding.</span>`;
+          } else {
+            statusText.innerHTML = `<span class="text-primary font-medium font-sans">Safe. No failures active. Click boxes or toggles to test.</span>`;
+          }
+        }
       }
     }
 
-    if (swSensor) swSensor.onchange = updateFta;
-    if (swAlarm) swAlarm.onchange = updateFta;
-    if (swSoftware) swSoftware.onchange = updateFta;
+    if (swFreeFlow) swFreeFlow.onchange = updateFta;
+    if (swValveStuck) swValveStuck.onchange = updateFta;
+    if (swDosingBug) swDosingBug.onchange = updateFta;
+    if (swBitFlip) swBitFlip.onchange = updateFta;
+    if (swAlarmFails) swAlarmFails.onchange = updateFta;
 
     updateFta();
   }
