@@ -637,7 +637,7 @@ const partASlides = [
       infographic: `
         <div class="h-full flex flex-col justify-center p-4">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">3-Tier Risk Control Hierarchy</h4>
-          <svg viewBox="0 0 270 200" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 320 200" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arr-priority" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
                 <path d="M3,0 L6,6 L0,6 z" fill="var(--outline)"/>
@@ -649,25 +649,25 @@ const partASlides = [
             <text x="8" y="100" fill="#839896" font-size="9" font-family="sans-serif" font-weight="bold" transform="rotate(-90 8 100)" text-anchor="middle">HIGHER PRIORITY</text>
 
             <!-- Card 1: DESIGN -->
-            <rect x="35" y="10" width="225" height="52" rx="4" fill="var(--surface)" stroke="var(--success)" stroke-width="1.5"/>
-            <text x="45" y="28" fill="var(--success)" font-size="10" font-family="sans-serif" font-weight="bold">1. INHERENT SAFETY BY DESIGN</text>
-            <text x="45" y="44" fill="var(--on-surface-variant)" font-size="9.5" font-family="sans-serif">Eliminate or reduce the hazard at source</text>
-            <rect x="200" y="18" width="50" height="14" rx="2" fill="var(--success)" opacity="0.1"/>
-            <text x="225" y="29" fill="var(--success)" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle">★ BEST</text>
+            <rect x="35" y="10" width="275" height="52" rx="4" fill="var(--surface)" stroke="var(--success)" stroke-width="1.5"/>
+            <text x="45" y="29" fill="var(--success)" font-size="11" font-family="sans-serif" font-weight="bold">1. INHERENT SAFETY BY DESIGN</text>
+            <text x="45" y="45" fill="var(--on-surface-variant)" font-size="10" font-family="sans-serif">Eliminate or reduce the hazard at source</text>
+            <rect x="250" y="18" width="50" height="14" rx="2" fill="var(--success)" opacity="0.1"/>
+            <text x="275" y="29" fill="var(--success)" font-size="8.5" font-family="sans-serif" font-weight="bold" text-anchor="middle">★ BEST</text>
 
             <!-- Card 2: PROTECTIVE -->
-            <rect x="35" y="72" width="225" height="52" rx="4" fill="var(--surface)" stroke="var(--tertiary)" stroke-width="1.5"/>
-            <text x="45" y="90" fill="var(--tertiary)" font-size="10" font-family="sans-serif" font-weight="bold">2. PROTECTIVE MEASURES</text>
-            <text x="45" y="106" fill="var(--on-surface-variant)" font-size="9.5" font-family="sans-serif">Guards, alarms, and safety interlocks</text>
-            <rect x="200" y="80" width="50" height="14" rx="2" fill="var(--tertiary)" opacity="0.1"/>
-            <text x="225" y="91" fill="var(--tertiary)" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle">SHIELD</text>
+            <rect x="35" y="72" width="275" height="52" rx="4" fill="var(--surface)" stroke="var(--tertiary)" stroke-width="1.5"/>
+            <text x="45" y="91" fill="var(--tertiary)" font-size="11" font-family="sans-serif" font-weight="bold">2. PROTECTIVE MEASURES</text>
+            <text x="45" y="107" fill="var(--on-surface-variant)" font-size="10" font-family="sans-serif">Guards, alarms, and safety interlocks</text>
+            <rect x="250" y="80" width="50" height="14" rx="2" fill="var(--tertiary)" opacity="0.1"/>
+            <text x="275" y="91" fill="var(--tertiary)" font-size="8.5" font-family="sans-serif" font-weight="bold" text-anchor="middle">SHIELD</text>
 
             <!-- Card 3: INFO FOR SAFETY -->
-            <rect x="35" y="134" width="225" height="52" rx="4" fill="var(--surface)" stroke="var(--error)" stroke-width="1.5"/>
-            <text x="45" y="152" fill="var(--error)" font-size="10" font-family="sans-serif" font-weight="bold">3. INFORMATION FOR SAFETY</text>
-            <text x="45" y="168" fill="var(--on-surface-variant)" font-size="9.5" font-family="sans-serif">Warnings, IFU labeling — last resort</text>
-            <rect x="200" y="142" width="50" height="14" rx="2" fill="var(--error)" opacity="0.1"/>
-            <text x="225" y="153" fill="var(--error)" font-size="7.5" font-family="sans-serif" font-weight="bold" text-anchor="middle">⚠ WARNING</text>
+            <rect x="35" y="134" width="275" height="52" rx="4" fill="var(--surface)" stroke="var(--error)" stroke-width="1.5"/>
+            <text x="45" y="153" fill="var(--error)" font-size="11" font-family="sans-serif" font-weight="bold">3. INFORMATION FOR SAFETY</text>
+            <text x="45" y="169" fill="var(--on-surface-variant)" font-size="10" font-family="sans-serif">Warnings, IFU labeling — last resort</text>
+            <rect x="250" y="142" width="50" height="14" rx="2" fill="var(--error)" opacity="0.1"/>
+            <text x="275" y="153" fill="var(--error)" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle">⚠ WARNING</text>
           </svg>
         </div>
       `
@@ -684,26 +684,33 @@ const partASlides = [
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
           VOE gathers clinical or testing evidence demonstrating that the control measure successfully reduces the probability of occurrence of harm or the severity of that harm.
         </p>
-        <p class="text-xs text-primary font-mono uppercase mb-2">Interactive Match Game</p>
-        <p class="text-xs text-on-surface-variant mb-4">Drag each verification record card from the right and drop it into the correct container (VOI or VOE) on the left, or click a card to select it and then click the container.</p>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="drop-zone border border-dashed border-outline-variant p-4 rounded text-center min-h-[90px] flex flex-col justify-center" id="voi-drop">
-            <span class="text-xs font-mono text-primary uppercase block mb-1">VOI Container</span>
-            <div class="text-[10px] text-on-surface-variant space-y-1" id="voi-list"></div>
-          </div>
-          <div class="drop-zone border border-dashed border-outline-variant p-4 rounded text-center min-h-[90px] flex flex-col justify-center" id="voe-drop">
-            <span class="text-xs font-mono text-primary uppercase block mb-1">VOE Container</span>
-            <div class="text-[10px] text-on-surface-variant space-y-1" id="voe-list"></div>
-          </div>
+        <div class="p-3 bg-surface-container-high rounded border border-outline-variant mb-3 mt-4">
+          <span class="text-xs text-primary font-mono uppercase block mb-1">Why VOI vs. VOE Matters</span>
+          <p class="text-xs text-on-surface-variant">
+            A risk control measure that is implemented (VOI passes) but ineffective (VOE fails) does not protect patients. Regulatory compliance requires solid evidence for both stages.
+          </p>
         </div>
       `,
       infographic: `
         <div class="h-full flex flex-col justify-between p-4 bg-surface-container-high rounded border border-outline-variant">
-          <h4 class="font-mono text-xs text-primary uppercase border-b border-outline-variant pb-2">Verification Records</h4>
-          <div class="flex-1 flex flex-col gap-2 justify-center py-4" id="match-cards-container">
+          <h4 class="font-mono text-xs text-primary uppercase border-b border-outline-variant pb-2">Verification Match Game</h4>
+          <p class="text-[11px] text-on-surface-variant my-2 font-sans">
+            Drag each card below into its correct container (or click card then container):
+          </p>
+          <div class="grid grid-cols-2 gap-2 mb-3">
+            <div class="drop-zone border border-dashed border-outline-variant p-2 rounded text-center min-h-[80px] flex flex-col justify-center transition-colors" id="voi-drop">
+              <span class="text-xs font-mono text-primary uppercase block mb-1">VOI Container</span>
+              <div class="text-[10px] text-on-surface-variant space-y-1" id="voi-list"></div>
+            </div>
+            <div class="drop-zone border border-dashed border-outline-variant p-2 rounded text-center min-h-[80px] flex flex-col justify-center transition-colors" id="voe-drop">
+              <span class="text-xs font-mono text-primary uppercase block mb-1">VOE Container</span>
+              <div class="text-[10px] text-on-surface-variant space-y-1" id="voe-list"></div>
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col gap-2 justify-center py-2" id="match-cards-container">
             <!-- Cards injected by JS -->
           </div>
-          <div class="text-xs text-center text-on-surface-variant" id="game-feedback">
+          <div class="text-xs text-center text-on-surface-variant mt-2 font-mono" id="game-feedback">
             Sort all 4 cards to complete this check.
           </div>
         </div>
@@ -961,7 +968,7 @@ const partASlides = [
       infographic: `
         <div class="h-full flex flex-col justify-center p-4">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">PMS → Risk Management Feedback Loop</h4>
-          <svg viewBox="0 0 260 240" width="100%" height="230" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 360 250" width="100%" height="240" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arr-d" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
                 <path d="M0,0 L0,7 L7,3.5 z" fill="var(--success)"/>
@@ -970,35 +977,44 @@ const partASlides = [
                 <path d="M0,0 L0,7 L7,3.5 z" fill="#839896"/>
               </marker>
             </defs>
-            <rect x="30" y="8" width="200" height="30" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="130" y="22" text-anchor="middle" fill="var(--on-surface)" font-size="11" font-family="sans-serif" font-weight="bold">PMS DATA COLLECTION (§10.2)</text>
-            <text x="130" y="33" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">Complaints · PMCF · NCs · Literature</text>
-            <line x1="130" y1="38" x2="130" y2="58" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
+            
+            <!-- Top Box: PMS Data Collection -->
+            <rect x="30" y="8" width="300" height="36" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="180" y="22" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif" font-weight="bold">PMS DATA COLLECTION (§10.2)</text>
+            <text x="180" y="34" text-anchor="middle" fill="#839896" font-size="10" font-family="sans-serif">Complaints · PMCF · NCs · Literature</text>
+            <line x1="180" y1="44" x2="180" y2="64" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
 
-            <rect x="50" y="58" width="160" height="28" rx="4" fill="var(--primary-container)" stroke="var(--tertiary)" stroke-width="1"/>
-            <text x="130" y="73" text-anchor="middle" fill="var(--tertiary)" font-size="11" font-family="sans-serif" font-weight="bold">TREND ANALYSIS</text>
-            <text x="130" y="82" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">MDR Art.88 reporting trigger</text>
-            <line x1="130" y1="86" x2="130" y2="106" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
+            <!-- Middle Box 1: Trend Analysis -->
+            <rect x="60" y="64" width="240" height="32" rx="4" fill="var(--primary-container)" stroke="var(--tertiary)" stroke-width="1"/>
+            <text x="180" y="78" text-anchor="middle" fill="var(--tertiary)" font-size="12" font-family="sans-serif" font-weight="bold">TREND ANALYSIS</text>
+            <text x="180" y="89" text-anchor="middle" fill="#839896" font-size="10" font-family="sans-serif">MDR Art.88 reporting trigger</text>
+            <line x1="180" y1="96" x2="180" y2="116" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
 
-            <rect x="30" y="106" width="200" height="28" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="130" y="121" text-anchor="middle" fill="var(--on-surface)" font-size="11" font-family="sans-serif" font-weight="bold">INFORMATION REVIEW (§10.3)</text>
-            <text x="130" y="130" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">New hazard? Changed probability?</text>
-            <line x1="130" y1="134" x2="130" y2="154" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
+            <!-- Middle Box 2: Info Review -->
+            <rect x="30" y="116" width="300" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="180" y="130" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif" font-weight="bold">INFORMATION REVIEW (§10.3)</text>
+            <text x="180" y="141" text-anchor="middle" fill="#839896" font-size="10" font-family="sans-serif">New hazard? Changed probability?</text>
+            <line x1="180" y1="148" x2="180" y2="168" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
 
-            <polygon points="130,154 180,175 130,196 80,175" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1.5"/>
-            <text x="130" y="171" text-anchor="middle" fill="var(--success)" font-size="12" font-family="sans-serif" font-weight="bold">Risk changed?</text>
-            <text x="130" y="182" text-anchor="middle" fill="#839896" font-size="10.5" font-family="sans-serif">YES / NO</text>
+            <!-- Decision Diamond -->
+            <polygon points="180,168 230,189 180,210 130,189" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1.5"/>
+            <text x="180" y="184" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif" font-weight="bold">Risk changed?</text>
+            <text x="180" y="196" text-anchor="middle" fill="#839896" font-size="9" font-family="sans-serif">YES / NO</text>
 
-            <line x1="80" y1="175" x2="20" y2="175" stroke="var(--success)" stroke-width="1.5" marker-end="url(#arr-d)"/>
-            <text x="50" y="170" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif">YES</text>
-            <rect x="0" y="185" width="40" height="20" rx="3" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1"/>
-            <text x="20" y="199" text-anchor="middle" fill="var(--success)" font-size="10.5" font-family="sans-serif">Update RMF</text>
+            <!-- YES Branch (Left) -->
+            <line x1="130" y1="189" x2="75" y2="189" stroke="var(--success)" stroke-width="1.5" marker-end="url(#arr-d)"/>
+            <text x="100" y="183" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif">YES</text>
+            
+            <rect x="5" y="174" width="70" height="30" rx="3" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1"/>
+            <text x="40" y="192" text-anchor="middle" fill="var(--success)" font-size="10" font-family="sans-serif" font-weight="bold">Update RMF</text>
 
-            <line x1="180" y1="175" x2="240" y2="175" stroke="var(--outline)" stroke-width="1.5"/>
-            <text x="210" y="170" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">NO</text>
-            <text x="240" y="179" fill="#839896" font-size="11" font-family="sans-serif">✓ OK</text>
+            <!-- NO Branch (Right) -->
+            <line x1="230" y1="189" x2="295" y2="189" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="260" y="183" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">NO</text>
+            <text x="310" y="193" fill="#839896" font-size="11" font-family="sans-serif" font-weight="bold">✓ OK</text>
 
-            <path d="M 0 185 Q -20 100 30 38" fill="none" stroke="var(--success)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-d)"/>
+            <!-- Feedback Loop Arrow -->
+            <path d="M 5 189 Q -15 100 30 23" fill="none" stroke="var(--success)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-d)"/>
           </svg>
           <p class="text-[10px] text-on-surface-variant text-center mt-1">Closing the loop is a legal obligation — not optional</p>
         </div>
