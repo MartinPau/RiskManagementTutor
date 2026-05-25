@@ -538,330 +538,42 @@ const partASlides = [
       `,
       infographic: `
         <div class="h-full flex flex-col justify-center p-4">
-          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">The Device Lifecycle Loop</h4>
-          <svg viewBox="0 0 280 220" width="100%" height="210" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <marker id="arr-a" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
-                <path d="M0,0 L0,7 L7,3.5 z" fill="#839896"/>
-              </marker>
-              <marker id="arr-g" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
-                <path d="M0,0 L0,7 L7,3.5 z" fill="var(--success)"/>
-              </marker>
-            </defs>
-            <rect x="95" y="8" width="90" height="28" rx="4" fill="var(--surface-container-highest)" stroke="var(--success)" stroke-width="1.5"/>
-            <text x="140" y="25" text-anchor="middle" fill="var(--success)" font-size="12" font-family="sans-serif" font-weight="bold">CONCEPT &amp; DESIGN</text>
-
-            <rect x="190" y="80" width="80" height="28" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="230" y="97" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif">PRODUCTION</text>
-
-            <rect x="95" y="152" width="90" height="28" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="140" y="169" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif">POST-MARKET</text>
-
-            <rect x="10" y="80" width="80" height="28" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="50" y="97" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif">DISTRIBUTION</text>
-
-            <text x="140" y="98" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif" font-style="italic">ISO 14971</text>
-            <text x="140" y="112" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif" font-style="italic">Lifecycle Risk</text>
-            <text x="140" y="126" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif" font-style="italic">Management</text>
-
-            <path d="M185 22 Q230 22 230 80" fill="none" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-a)"/>
-            <path d="M230 108 Q230 166 185 166" fill="none" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-a)"/>
-            <path d="M95 166 Q50 166 50 108" fill="none" stroke="var(--success)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-g)"/>
-            <path d="M50 80 Q50 22 95 22" fill="none" stroke="var(--success)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-g)"/>
-
-            <text x="18" y="135" fill="var(--success)" font-size="11" font-family="sans-serif" transform="rotate(-90 18 135)">PMS Feedback</text>
-          </svg>
-          <p class="text-[10px] text-on-surface-variant text-center mt-2">Risk management applies at every stage — never just once</p>
-        </div>
-      `
-    },
-    {
-      title: `The Regulatory Landscape`,
-      section: `intro`,
-      content: `
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Where ISO 14971 Fits</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          ISO 14971 does not exist in isolation — it is the linchpin that connects a family of
-          regulatory requirements. Understanding where it sits helps you build a compliant Quality
-          Management System efficiently.
-        </p>
-        <ul class="list-disc pl-5 mb-4 text-on-surface-variant text-sm space-y-1">
-          <li><strong>EU MDR 2017/745</strong> — Annex I GSPRs 1–9 and Article 10(2) require a
-            documented risk management system. ISO 14971 is the primary compliance pathway.</li>
-          <li><strong>ISO 13485:2016</strong> — The QMS standard explicitly links to ISO 14971
-            in §7.1 (planning of product realisation).</li>
-          <li><strong>IEC 62366-1</strong> — Usability engineering feeds directly into risk analysis;
-            use-errors and misuse scenarios identified here become inputs to ISO 14971.</li>
-          <li><strong>US FDA QMSR (21 CFR 820)</strong> — The QMSR incorporates
-            ISO 13485:2016 by reference, making ISO 14971 the expected risk management method for
-            the US market too.</li>
-        </ul>
-        <div class="p-3 bg-surface-container-high rounded border border-outline-variant mb-3">
-          <span class="text-xs text-primary font-mono uppercase block mb-1">Key GSPRs to Know</span>
-          <p class="text-xs text-on-surface-variant">
-            GSPR 1: risks must be acceptable vs. benefits &nbsp;|&nbsp;
-            GSPR 2: reduce risks as far as possible &nbsp;|&nbsp;
-            GSPR 3: risk management system required &nbsp;|&nbsp;
-            GSPR 4: design first, then guards, then IFU warnings.
-          </p>
-        </div>
-      `,
-      infographic: `
-        <div class="h-full flex flex-col justify-center p-4">
-          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">Regulatory Ecosystem</h4>
-          <svg viewBox="0 0 280 230" width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <marker id="arr-b" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L6,3 z" fill="var(--success)"/>
-              </marker>
-            </defs>
-            <ellipse cx="140" cy="115" rx="50" ry="30" fill="var(--primary-container)" stroke="var(--success)" stroke-width="2"/>
-            <text x="140" y="111" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif" font-weight="bold">ISO 14971</text>
-            <text x="140" y="124" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif">Risk Management</text>
-
-            <rect x="8" y="8" width="84" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="50" y="23" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif">EU MDR 2017/745</text>
-            <text x="50" y="34" text-anchor="middle" fill="#839896" font-size="10.5" font-family="sans-serif">GSPRs + Art. 10</text>
-            <line x1="80" y1="40" x2="104" y2="90" stroke="var(--success)" stroke-width="1.2" marker-end="url(#arr-b)"/>
-
-            <rect x="188" y="8" width="84" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="230" y="23" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif">ISO 13485:2016</text>
-            <text x="230" y="34" text-anchor="middle" fill="#839896" font-size="10.5" font-family="sans-serif">QMS §7.1</text>
-            <line x1="200" y1="40" x2="176" y2="90" stroke="var(--success)" stroke-width="1.2" marker-end="url(#arr-b)"/>
-
-            <rect x="8" y="182" width="84" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="50" y="197" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif">IEC 62366-1</text>
-            <text x="50" y="208" text-anchor="middle" fill="#839896" font-size="10.5" font-family="sans-serif">Usability Eng.</text>
-            <line x1="80" y1="182" x2="104" y2="143" stroke="var(--success)" stroke-width="1.2" marker-end="url(#arr-b)"/>
-
-            <rect x="188" y="182" width="84" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="230" y="197" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif">US FDA QMSR</text>
-            <text x="230" y="208" text-anchor="middle" fill="#839896" font-size="10.5" font-family="sans-serif">21 CFR 820</text>
-            <line x1="200" y1="182" x2="176" y2="143" stroke="var(--success)" stroke-width="1.2" marker-end="url(#arr-b)"/>
-
-            <rect x="102" y="160" width="76" height="28" rx="4" fill="var(--primary-container)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="140" y="177" text-anchor="middle" fill="#839896" font-size="11.5" font-family="sans-serif">ISO/TR 24971</text>
-            <text x="140" y="185" text-anchor="middle" fill="var(--on-surface-variant)" font-size="12" font-family="sans-serif">Guidance &amp; examples</text>
-            <line x1="140" y1="160" x2="140" y2="145" stroke="var(--outline)" stroke-width="1" stroke-dasharray="3,2"/>
-          </svg>
-        </div>
-      `
-    },
-    {
-      title: `Key Terms & Definitions`,
-      section: `terms`,
-      content: `
-        <p class="mb-6 text-sm text-on-surface-variant leading-relaxed">Understanding the terminology is critical for auditing and compliance. ISO 14971 establishes precise boundaries between hazards, sequences of events, situations, and harm.</p>
-        <div class="grid grid-cols-2 gap-4" id="definitions-selector">
-          <button class="p-3 bg-surface-container-high rounded text-left border border-outline-variant hover:border-primary text-sm font-mono active" data-def="risk">RISK</button>
-          <button class="p-3 bg-surface-container-high rounded text-left border border-outline-variant hover:border-primary text-sm font-mono" data-def="hazard">HAZARD</button>
-          <button class="p-3 bg-surface-container-high rounded text-left border border-outline-variant hover:border-primary text-sm font-mono" data-def="sequence">SEQUENCE OF EVENTS</button>
-          <button class="p-3 bg-surface-container-high rounded text-left border border-outline-variant hover:border-primary text-sm font-mono" data-def="situation">HAZARDOUS SITUATION</button>
-          <button class="p-3 bg-surface-container-high rounded text-left border border-outline-variant hover:border-primary text-sm font-mono" data-def="harm">HARM</button>
-          <button class="p-3 bg-surface-container-high rounded text-left border border-outline-variant hover:border-primary text-sm font-mono" data-def="misuse">FORESEEABLE MISUSE</button>
-        </div>
-      `,
-      infographic: `
-        <div class="h-full flex flex-col justify-center p-6 bg-surface-container-high rounded border border-outline-variant" id="definition-details">
-          <h3 class="font-serif text-headline-lg text-primary mb-3" id="def-title">Risk</h3>
-          <p class="text-on-surface-variant text-sm mb-4" id="def-body">Combination of the probability of occurrence of harm and the severity of that harm (S × P).</p>
-          <div class="p-3 bg-surface-container rounded border border-outline-variant">
-            <span class="text-xs text-primary font-mono uppercase block mb-1">Clinical Example</span>
-            <p class="text-xs text-on-surface-variant" id="def-example">A syringe injection carrying a specific combination of occlusion probability and tissue trauma severity.</p>
-          </div>
-        </div>
-      `
-    },
-    {
-      title: `General Requirements (§4)`,
-      section: `general`,
-      content: `
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">The Risk Management Plan (§4.4)</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          Before any risk analysis begins, the manufacturer must produce a <strong>Risk Management Plan</strong> — a document that governs the entire process. Think of it as the rulebook you agree on before the game starts.
-        </p>
-        <ul class="list-disc pl-5 mb-4 text-on-surface-variant text-sm space-y-1">
-          <li>Scope and description of the device</li>
-          <li>Criteria for risk acceptability (the risk policy)</li>
-          <li>Methods and tools to be used for each phase</li>
-          <li>Activities for verification of risk control measures (VOI &amp; VOE)</li>
-          <li>Activities for gathering post-production information</li>
-        </ul>
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">The Risk Management File (§4.5)</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          The RMF is the central repository for all records produced during the risk management process. It provides the traceability and documented evidence that auditors and notified bodies look for.
-        </p>
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Top Management &amp; Competence (§4.2–4.3)</h4>
-        <ul class="list-disc pl-5 mb-4 text-on-surface-variant text-sm space-y-1">
-          <li>Top management must allocate adequate resources and appoint qualified personnel</li>
-          <li>They must define and document a policy for risk acceptability criteria</li>
-          <li>Personnel performing risk management must be demonstrably competent — records of education, training, skills, and experience are required</li>
-        </ul>
-      `,
-      infographic: `
-        <div class="h-full flex flex-col justify-center p-4">
-          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-3 text-center">Risk Management File — Document Stack</h4>
-          <div class="space-y-2">
-            <div class="flex items-center gap-3 p-2 rounded border" style="border-color:#7ab89a;background:rgba(122,184,154,0.08)">
-              <span class="material-symbols-outlined text-primary text-[20px]">assignment</span>
-              <div>
-                <div class="text-xs font-bold text-on-surface">Risk Management Plan</div>
-                <div class="text-[10px] text-on-surface-variant">Scope, criteria, responsibilities (§4.4)</div>
-              </div>
-            </div>
-            <div class="flex items-center gap-3 p-2 rounded border" style="border-color:#839896;background:rgba(131,152,150,0.07)">
-              <span class="material-symbols-outlined text-primary text-[20px]">search</span>
-              <div>
-                <div class="text-xs font-bold text-on-surface">Risk Analysis Records</div>
-                <div class="text-[10px] text-on-surface-variant">Hazards, hazardous situations, estimation (§5)</div>
-              </div>
-            </div>
-            <div class="flex items-center gap-3 p-2 rounded border" style="border-color:#6b807e;background:rgba(107,128,126,0.06)">
-              <span class="material-symbols-outlined text-primary text-[20px]">balance</span>
-              <div>
-                <div class="text-xs font-bold text-on-surface">Risk Evaluation Records</div>
-                <div class="text-[10px] text-on-surface-variant">Acceptability decisions + rationale (§6)</div>
-              </div>
-            </div>
-            <div class="flex items-center gap-3 p-2 rounded border" style="border-color:#5a7070;background:rgba(90,112,112,0.05)">
-              <span class="material-symbols-outlined text-primary text-[20px]">shield</span>
-              <div>
-                <div class="text-xs font-bold text-on-surface">Risk Control Records</div>
-                <div class="text-[10px] text-on-surface-variant">Measures, VOI/VOE verification (§7)</div>
-              </div>
-            </div>
-            <div class="flex items-center gap-3 p-2 rounded border" style="border-color:#7ab89a;background:rgba(122,184,154,0.07)">
-              <span class="material-symbols-outlined" style="color:#7ab89a;font-size:20px">verified</span>
-              <div>
-                <div class="text-xs font-bold" style="color:#7ab89a">RM Review Report</div>
-                <div class="text-[10px] text-on-surface-variant">Completeness check before release (§9)</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      `
-    },
-    {
-      title: `Risk Policy &amp; Acceptability Criteria`,
-      section: `general`,
-      content: `
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Defining Acceptability Criteria</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          Top management must define a policy for establishing criteria for risk acceptability. This policy guides whether a risk is acceptable or unacceptable.
-        </p>
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Risk Evaluation Matrix</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          A visual mapping tool where the estimated risk (S × P) is cross-referenced. The matrix is divided into acceptable regions (ACC) and unacceptable regions (NOT-ACC) requiring risk control.
-        </p>
-        <div class="p-3 bg-surface-container-high rounded border border-outline-variant mt-2">
-          <span class="text-xs text-primary font-mono uppercase block mb-1">Matrix Status</span>
-          <p class="text-sm text-on-surface-variant" id="matrix-status-text">Hover or click a matrix cell on the right to examine its risk classification.</p>
-        </div>
-      `,
-      infographic: `
-        <div class="h-full flex flex-col justify-center items-center p-4">
-          <h4 class="font-mono text-primary text-xs uppercase mb-2">Figure 1.0: Acceptability Schematic</h4>
-          <div class="relative w-full aspect-[4/3] border border-outline-variant bg-surface-container flex flex-col p-4 rounded" style="max-width:320px;">
-            <!-- Y Axis -->
-            <div class="absolute left-1 top-1/2 -translate-y-1/2 -rotate-90 origin-center text-[10px] text-on-surface-variant tracking-wider font-mono">Severity →</div>
-            <!-- X Axis -->
-            <div class="absolute bottom-1 left-1/2 -translate-x-1/2 text-[10px] text-on-surface-variant tracking-wider font-mono">Probability →</div>
-            
-            <div class="w-full h-full ml-4 mb-4 grid grid-cols-5 grid-rows-5 gap-1 bg-surface-container-high border border-outline-variant p-1 rounded">
-              <!-- R5 -->
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="5" data-c="1" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="5" data-c="2" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-tertiary-container/80 border border-outline-variant rounded-sm flex items-center justify-center text-[8px] text-on-tertiary-container font-mono" data-r="5" data-c="3" data-zone="Unacceptable">HIGH</div>
-              <div class="matrix-cell bg-tertiary-container/80 border border-outline-variant rounded-sm flex items-center justify-center text-[8px] text-on-tertiary-container font-mono" data-r="5" data-c="4" data-zone="Unacceptable">HIGH</div>
-              <div class="matrix-cell bg-tertiary-container/80 border border-outline-variant rounded-sm flex items-center justify-center text-[8px] text-on-tertiary-container font-mono" data-r="5" data-c="5" data-zone="Unacceptable">HIGH</div>
-              <!-- R4 -->
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="4" data-c="1" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="4" data-c="2" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="4" data-c="3" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-tertiary-container/80 border border-outline-variant rounded-sm flex items-center justify-center text-[8px] text-on-tertiary-container font-mono" data-r="4" data-c="4" data-zone="Unacceptable">HIGH</div>
-              <div class="matrix-cell bg-tertiary-container/80 border border-outline-variant rounded-sm flex items-center justify-center text-[8px] text-on-tertiary-container font-mono" data-r="4" data-c="5" data-zone="Unacceptable">HIGH</div>
-              <!-- R3 -->
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="3" data-c="1" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="3" data-c="2" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="3" data-c="3" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="3" data-c="4" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-tertiary-container/80 border border-outline-variant rounded-sm flex items-center justify-center text-[8px] text-on-tertiary-container font-mono" data-r="3" data-c="5" data-zone="Unacceptable">HIGH</div>
-              <!-- R2 -->
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="2" data-c="1" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="2" data-c="2" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="2" data-c="3" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="2" data-c="4" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="2" data-c="5" data-zone="Acceptable"></div>
-              <!-- R1 -->
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="1" data-c="1" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="1" data-c="2" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="1" data-c="3" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="1" data-c="4" data-zone="Acceptable"></div>
-              <div class="matrix-cell bg-surface-container-highest border border-outline-variant rounded-sm" data-r="1" data-c="5" data-zone="Acceptable"></div>
-            </div>
-          </div>
-          <div class="mt-4 flex gap-4 justify-center text-[10px]">
-            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 bg-surface-container-highest border border-outline-variant rounded-sm"></span> Acceptable</span>
-            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 bg-tertiary-container rounded-sm"></span> Unacceptable</span>
-          </div>
-        </div>
-      `
-    },
-    {
-      title: `Risk Analysis (§5) — Identifying Hazards`,
-      section: `analysis`,
-      content: `
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Step 1: Define Intended Use &amp; Foreseeable Misuse</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          Risk analysis starts with a clear description of what the device is intended to do
-          and in what clinical context. Crucially, ISO 14971 requires you to also consider
-          <strong>reasonably foreseeable misuse</strong> — uses that are not intended but that
-          a competent regulator or clinical expert would recognise as predictable human behaviour.
-        </p>
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Step 2: Safety-Related Characteristics (§5.3)</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          ISO 14971 Annex C provides a comprehensive checklist of safety-related characteristics
-          to consider: intended use, energy hazards, biological hazards, usability issues, software
-          interactions, single-use status, sterility, etc.
-        </p>
-        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Step 3: Identify Hazards &amp; Hazardous Situations</h4>
-        <ul class="list-disc pl-5 mb-4 text-on-surface-variant text-sm space-y-1">
-          <li>List each hazard (potential source of harm)</li>
-          <li>Describe the sequence of events that leads a hazard to exposure</li>
-          <li>Define the resulting hazardous situation (hazard + exposure)</li>
-          <li>Identify the harm(s) that could result if the situation continues</li>
-        </ul>
-      `,
-      infographic: `
-        <div class="h-full flex flex-col justify-center p-4">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">Hazard → Harm Chain</h4>
-          <svg viewBox="0 0 260 230" width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 360 230" width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arr-c" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
                 <path d="M0,0 L0,7 L7,3.5 z" fill="#839896"/>
               </marker>
             </defs>
-            <rect x="60" y="8" width="140" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--tertiary)" stroke-width="1.5"/>
-            <text x="130" y="22" text-anchor="middle" fill="var(--tertiary)" font-size="11" font-family="sans-serif" font-weight="bold">HAZARD</text>
-            <text x="130" y="34" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">e.g. sharp needle, bioburden</text>
-            <line x1="130" y1="40" x2="130" y2="60" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-c)"/>
+            
+            <!-- Center is at X=180 -->
+            
+            <!-- HAZARD Box -->
+            <rect x="100" y="8" width="160" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--tertiary)" stroke-width="1.5"/>
+            <text x="180" y="22" text-anchor="middle" fill="var(--tertiary)" font-size="11" font-family="sans-serif" font-weight="bold">HAZARD</text>
+            <text x="180" y="34" text-anchor="middle" fill="#839896" font-size="9" font-family="sans-serif">e.g. sharp needle, bioburden</text>
+            <line x1="180" y1="40" x2="180" y2="60" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-c)"/>
 
-            <rect x="40" y="60" width="180" height="36" rx="4" fill="var(--primary-container)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="130" y="75" text-anchor="middle" fill="#839896" font-size="12" font-family="sans-serif">SEQUENCE OF EVENTS</text>
-            <text x="130" y="88" text-anchor="middle" fill="var(--on-surface-variant)" font-size="10.5" font-family="sans-serif">Foreseeable steps linking hazard to exposure</text>
-            <line x1="130" y1="96" x2="130" y2="116" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-c)"/>
+            <!-- SEQUENCE OF EVENTS Box -->
+            <rect x="60" y="60" width="240" height="36" rx="4" fill="var(--primary-container)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="180" y="74" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif" font-weight="bold">SEQUENCE OF EVENTS</text>
+            <text x="180" y="87" text-anchor="middle" fill="var(--on-surface-variant)" font-size="9" font-family="sans-serif">Foreseeable steps linking hazard to exposure</text>
+            <line x1="180" y1="96" x2="180" y2="116" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-c)"/>
 
-            <rect x="40" y="116" width="180" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--tertiary)" stroke-width="1.5"/>
-            <text x="130" y="130" text-anchor="middle" fill="var(--tertiary)" font-size="11" font-family="sans-serif" font-weight="bold">HAZARDOUS SITUATION</text>
-            <text x="130" y="142" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">Person/property exposed to hazard</text>
-            <line x1="130" y1="148" x2="130" y2="168" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-c)"/>
+            <!-- HAZARDOUS SITUATION Box -->
+            <rect x="60" y="116" width="240" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--tertiary)" stroke-width="1.5"/>
+            <text x="180" y="129" text-anchor="middle" fill="var(--tertiary)" font-size="10" font-family="sans-serif" font-weight="bold">HAZARDOUS SITUATION</text>
+            <text x="180" y="141" text-anchor="middle" fill="#839896" font-size="9.5" font-family="sans-serif">Person/property exposed to hazard</text>
+            <line x1="180" y1="148" x2="180" y2="168" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-c)"/>
 
-            <rect x="60" y="168" width="140" height="32" rx="4" fill="#1a2820" stroke="var(--error)" stroke-width="1.5"/>
-            <text x="130" y="182" text-anchor="middle" fill="var(--error)" font-size="11" font-family="sans-serif" font-weight="bold">HARM</text>
-            <text x="130" y="194" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">Injury / damage to health or property</text>
+            <!-- HARM Box -->
+            <rect x="90" y="168" width="180" height="32" rx="4" fill="#1a2820" stroke="var(--error)" stroke-width="1.5"/>
+            <text x="180" y="181" text-anchor="middle" fill="var(--error)" font-size="11" font-family="sans-serif" font-weight="bold">HARM</text>
+            <text x="180" y="193" text-anchor="middle" fill="#839896" font-size="9" font-family="sans-serif">Injury / damage to health or property</text>
 
-            <text x="148" y="52" fill="var(--success)" font-size="11" font-family="sans-serif">P1: Prob. to hazardous sit.</text>
-            <text x="148" y="160" fill="var(--success)" font-size="11" font-family="sans-serif">P2: Prob. to harm from sit.</text>
+            <!-- Probability Annotations (Shifted Right) -->
+            <text x="205" y="52" fill="var(--success)" font-size="9.5" font-family="sans-serif" font-weight="bold" text-anchor="start">P1: Prob. of exposure</text>
+            <text x="205" y="160" fill="var(--success)" font-size="9.5" font-family="sans-serif" font-weight="bold" text-anchor="start">P2: Prob. of harm</text>
           </svg>
           <p class="text-[10px] text-on-surface-variant text-center">ISO 14971 uses a two-probability model: P1 (reaching the hazardous situation) and P2 (harm from that situation)</p>
         </div>
@@ -875,15 +587,18 @@ const partASlides = [
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
           Estimating probabilities and severities is often subjective, especially for novel devices without historical clinical data. To avoid individual bias, teams use consensus methods.
         </p>
+        <div class="mb-3 rounded border border-outline-variant overflow-hidden bg-surface-container">
+          <img src="delphi_consensus.png" alt="Delphi Consensus Illustration" class="w-full h-[120px] object-cover">
+        </div>
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">The Delphi Consensus Method</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
           A structured, iterative communication technique where a panel of experts answers questionnaires in two or more rounds. After each round, a facilitator provides an anonymous summary. This encourages experts to revise their earlier answers and converges toward consensus.
         </p>
-        <p class="mb-4 font-semibold text-primary">Simulation: Dermal Filler Off-label Injection Risk Estimation</p>
+        <p class="mb-3 font-semibold text-primary text-xs">Simulation: Dermal Filler Off-label Injection Risk Estimation</p>
         <div class="p-3 bg-surface-container-high rounded border border-outline-variant flex flex-col gap-3" id="delphi-box">
-          <p class="text-xs text-on-surface-variant">Step through a real Delphi process with 5 anonymous experts.</p>
+          <p class="text-xs text-on-surface-variant font-sans">Step through a real Delphi process with 5 anonymous experts.</p>
           <div class="flex justify-between items-center">
-            <span class="text-xs font-mono text-primary" id="delphi-step-label">Current: Round 1</span>
+            <span class="text-xs font-mono text-primary font-bold" id="delphi-step-label">Current: Round 1</span>
             <button class="px-4 py-1.5 bg-primary text-background font-mono text-xs uppercase font-semibold rounded hover:bg-primary-container transition-colors" id="delphi-next-btn">Start Delphi</button>
           </div>
         </div>
@@ -988,21 +703,28 @@ const partASlides = [
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
           Under ISO 14971 §7.2 and §7.5, you must evaluate whether any risk control measure introduces <strong>new hazards</strong> or affects previously estimated risks.
         </p>
-        <div class="p-3 bg-surface-container-high rounded border border-outline-variant mb-3">
-          <span class="text-xs text-primary font-mono uppercase block mb-1">Real-World Analogy (The Speed Bump)</span>
-          <p class="text-xs text-on-surface-variant leading-relaxed">
-            <strong>Initial Hazard:</strong> Fast-moving cars at a pedestrian crosswalk (hazardous situation).<br>
-            <strong>Risk Mitigation:</strong> Install speed bumps (control measure) to force drivers to slow down.<br>
-            <strong>Side Effect Hazard:</strong> Speed bumps can damage car suspensions, cause sudden swerving, or delay emergency vehicles (new hazard/risk).
-          </p>
-        </div>
-        <p class="text-xs text-on-surface-variant leading-relaxed">
-          In medical devices, a software warning box (control) might cause alarm fatigue (new hazard), or a protective mechanical shield might pinch a user's finger. You must re-analyze these controls using the same risk management process.
+        <p class="text-xs text-primary font-mono uppercase mb-2 font-bold">Interactive Case Study: The Speed Bump</p>
+        <p class="text-xs text-on-surface-variant mb-3 font-sans">
+          Step through the sequence below to analyze how introducing a risk control introduces new risks:
         </p>
+        <div class="flex flex-col gap-1.5 mb-4" id="speedbump-selector">
+          <button class="p-2 text-left bg-surface-container border border-primary text-primary font-sans text-xs uppercase font-semibold rounded active" data-step="1">
+            Step 1: Initial Risk (No Speed Bump)
+          </button>
+          <button class="p-2 text-left bg-surface-container border border-outline-variant text-on-surface-variant font-sans text-xs uppercase rounded" data-step="2">
+            Step 2: Applied Control (Speed Bump)
+          </button>
+          <button class="p-2 text-left bg-surface-container border border-outline-variant text-on-surface-variant font-sans text-xs uppercase rounded" data-step="3">
+            Step 3: New Hazard (Wrong-Side Driving)
+          </button>
+        </div>
+        <div class="p-3 bg-surface-container-high rounded border border-outline-variant text-xs text-on-surface-variant leading-relaxed" id="speedbump-text-summary">
+          Loading steps...
+        </div>
       `,
       infographic: `
         <div class="h-full flex flex-col justify-center p-4">
-          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">Speed Bump Risk Analogy</h4>
+          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2 text-center">Interactive Speed Bump Sequence</h4>
           <svg viewBox="0 0 280 200" width="100%" height="180" xmlns="http://www.w3.org/2000/svg">
             <!-- Road background -->
             <rect x="5" y="5" width="270" height="190" fill="#f1f3f5" rx="6" stroke="var(--outline-variant)" stroke-width="1.5"/>
@@ -1017,49 +739,121 @@ const partASlides = [
             <rect x="125" y="105" width="30" height="15" fill="#ffffff"/>
             <rect x="125" y="135" width="30" height="15" fill="#ffffff"/>
             <rect x="125" y="165" width="30" height="15" fill="#ffffff"/>
-            <text x="140" y="185" text-anchor="middle" fill="#64748b" font-size="8" font-weight="bold">Crosswalk</text>
+            <text x="140" y="188" text-anchor="middle" fill="#64748b" font-size="8" font-weight="bold">Crosswalk</text>
 
-            <!-- Speed Bumps (Risk Mitigations) -->
-            <!-- Left Speed Bump -->
-            <rect x="60" y="10" width="25" height="80" rx="3" fill="#991b1b" stroke="#7f1d1d" stroke-width="1"/>
-            <path d="M 65 20 L 80 30 M 65 40 L 80 50 M 65 60 L 80 70" stroke="#ffffff" stroke-width="1.5"/>
-            <text x="72.5" y="96" text-anchor="middle" fill="#991b1b" font-size="7" font-weight="bold">Speed Bump</text>
-            <text x="72.5" y="104" text-anchor="middle" fill="#64748b" font-size="6" font-style="italic">(Mitigation)</text>
-
-            <!-- Right Speed Bump -->
-            <rect x="195" y="110" width="25" height="80" rx="3" fill="#991b1b" stroke="#7f1d1d" stroke-width="1"/>
-            <path d="M 200 120 L 215 130 M 200 140 L 215 150 M 200 160 L 215 170" stroke="#ffffff" stroke-width="1.5"/>
-            <text x="207.5" y="101" text-anchor="middle" fill="#991b1b" font-size="7" font-weight="bold">Speed Bump</text>
-            <text x="207.5" y="109" text-anchor="middle" fill="#64748b" font-size="6" font-style="italic">(Mitigation)</text>
-
-            <!-- Car -->
-            <g id="svg-car" transform="translate(10, 40)">
-              <rect x="0" y="5" width="40" height="20" rx="3" fill="var(--primary)" stroke="var(--primary-container)" stroke-width="1"/>
-              <rect x="25" y="8" width="10" height="14" rx="1" fill="#e2e8f0"/>
-              <rect x="5" y="2" width="8" height="3" fill="#000000" rx="1"/>
-              <rect x="27" y="2" width="8" height="3" fill="#000000" rx="1"/>
-              <rect x="5" y="25" width="8" height="3" fill="#000000" rx="1"/>
-              <rect x="27" y="25" width="8" height="3" fill="#000000" rx="1"/>
-              <line x1="45" y1="15" x2="60" y2="15" stroke="var(--tertiary)" stroke-width="1.5" marker-end="url(#arr-f)"/>
+            <!-- Speed Bumps (Risk Mitigations) - Controlled by Group Visibility -->
+            <g id="sb-bump-group">
+              <rect x="60" y="10" width="25" height="80" rx="3" fill="#991b1b" stroke="#7f1d1d" stroke-width="1"/>
+              <path d="M 65 20 L 80 30 M 65 40 L 80 50 M 65 60 L 80 70" stroke="#ffffff" stroke-width="1.5"/>
+              <rect x="195" y="110" width="25" height="80" rx="3" fill="#991b1b" stroke="#7f1d1d" stroke-width="1"/>
+              <path d="M 200 120 L 215 130 M 200 140 L 215 150 M 200 160 L 215 170" stroke="#ffffff" stroke-width="1.5"/>
+              <text x="72.5" y="96" text-anchor="middle" fill="#991b1b" font-size="7" font-weight="bold">Speed Bump</text>
+              <text x="207.5" y="102" text-anchor="middle" fill="#991b1b" font-size="7" font-weight="bold">Speed Bump</text>
             </g>
 
-            <!-- Labels -->
-            <rect x="30" y="152" width="85" height="35" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="72.5" y="163" text-anchor="middle" fill="var(--on-surface)" font-size="7" font-weight="bold">Hazardous Situation</text>
-            <text x="72.5" y="172" text-anchor="middle" fill="var(--on-surface-variant)" font-size="6">Car approaching crosswalk</text>
-            <text x="72.5" y="181" text-anchor="middle" fill="var(--on-surface-variant)" font-size="6">with pedestrian crossing</text>
+            <!-- Step 1 Elements -->
+            <g id="sb-step-1">
+              <!-- Fast Car 1 (Blue) -->
+              <g transform="translate(15, 130)">
+                <rect x="0" y="5" width="40" height="20" rx="3" fill="var(--primary)" stroke="var(--primary-container)" stroke-width="1"/>
+                <rect x="25" y="8" width="10" height="14" rx="1" fill="#e2e8f0"/>
+                <rect x="5" y="2" width="8" height="3" fill="#000000" rx="1"/>
+                <rect x="27" y="2" width="8" height="3" fill="#000000" rx="1"/>
+                <rect x="5" y="25" width="8" height="3" fill="#000000" rx="1"/>
+                <rect x="27" y="25" width="8" height="3" fill="#000000" rx="1"/>
+                <!-- Speed arrow -->
+                <path d="M 45 15 L 60 15 M 54 10 L 60 15 L 54 20" stroke="var(--error)" stroke-width="1.5" fill="none"/>
+              </g>
+              <!-- Unsafe Pedestrian -->
+              <g transform="translate(135, 130)">
+                <circle cx="5" cy="5" r="4" fill="#ef4444"/>
+                <line x1="5" y1="9" x2="5" y2="20" stroke="#ef4444" stroke-width="2"/>
+                <line x1="5" y1="20" x2="1" y2="30" stroke="#ef4444" stroke-width="1.5"/>
+                <line x1="5" y1="20" x2="9" y2="30" stroke="#ef4444" stroke-width="1.5"/>
+                <line x1="5" y1="12" x2="0" y2="18" stroke="#ef4444" stroke-width="1.5"/>
+                <line x1="5" y1="12" x2="10" y2="18" stroke="#ef4444" stroke-width="1.5"/>
+                <!-- Danger Warning badge -->
+                <rect x="-15" y="-20" width="40" height="12" rx="2" fill="#ef4444" />
+                <text x="5" y="-11" text-anchor="middle" fill="#ffffff" font-size="7" font-weight="bold">EXPOSED</text>
+              </g>
+              <rect x="20" y="20" width="80" height="28" rx="2" fill="var(--error-container)" stroke="var(--error)" stroke-width="1"/>
+              <text x="60" y="30" text-anchor="middle" fill="var(--error)" font-size="7" font-weight="bold">Hazardous Situation</text>
+              <text x="60" y="41" text-anchor="middle" fill="var(--on-error-container)" font-size="6.5">Fast traffic, crossing pedestrian</text>
+            </g>
 
-            <rect x="175" y="10" width="90" height="38" rx="3" fill="var(--error-container)" stroke="var(--error)" stroke-width="1"/>
-            <text x="220" y="21" text-anchor="middle" fill="var(--error)" font-size="7" font-weight="bold">New Hazards Introduced</text>
-            <text x="220" y="30" text-anchor="middle" fill="var(--on-error-container)" font-size="6">• Vehicle suspension damage</text>
-            <text x="220" y="38" text-anchor="middle" fill="var(--on-error-container)" font-size="6">• Sudden braking / swerving</text>
-            <text x="220" y="46" text-anchor="middle" fill="var(--on-error-container)" font-size="6">• Emergency vehicle delays</text>
-            
-            <defs>
-              <marker id="arr-f" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L6,3 z" fill="var(--tertiary)"/>
-              </marker>
-            </defs>
+            <!-- Step 2 Elements -->
+            <g id="sb-step-2" style="display: none;">
+              <!-- Slow Car 1 (Blue) -->
+              <g transform="translate(10, 130)">
+                <rect x="0" y="5" width="40" height="20" rx="3" fill="var(--primary)" stroke="var(--primary-container)" stroke-width="1"/>
+                <rect x="25" y="8" width="10" height="14" rx="1" fill="#e2e8f0"/>
+                <rect x="5" y="2" width="8" height="3" fill="#000000" rx="1"/>
+                <rect x="27" y="2" width="8" height="3" fill="#000000" rx="1"/>
+                <rect x="5" y="25" width="8" height="3" fill="#000000" rx="1"/>
+                <rect x="27" y="25" width="8" height="3" fill="#000000" rx="1"/>
+                <!-- Brake indicator -->
+                <circle cx="2" cy="7" r="1.5" fill="#ef4444"/>
+                <circle cx="2" cy="23" r="1.5" fill="#ef4444"/>
+                <!-- Slow arrow -->
+                <path d="M 45 15 L 52 15" stroke="var(--success)" stroke-width="1.5"/>
+              </g>
+              <!-- Safe Pedestrian -->
+              <g transform="translate(135, 130)">
+                <circle cx="5" cy="5" r="4" fill="#22c55e"/>
+                <line x1="5" y1="9" x2="5" y2="20" stroke="#22c55e" stroke-width="2"/>
+                <line x1="5" y1="20" x2="1" y2="30" stroke="#22c55e" stroke-width="1.5"/>
+                <line x1="5" y1="20" x2="9" y2="30" stroke="#22c55e" stroke-width="1.5"/>
+                <line x1="5" y1="12" x2="1" y2="7" stroke="#22c55e" stroke-width="1.5"/>
+                <line x1="5" y1="12" x2="9" y2="7" stroke="#22c55e" stroke-width="1.5"/>
+                <!-- Safe badge -->
+                <rect x="-10" y="-20" width="30" height="12" rx="2" fill="#22c55e" />
+                <text x="5" y="-11" text-anchor="middle" fill="#ffffff" font-size="7" font-weight="bold">SAFE</text>
+              </g>
+              <rect x="20" y="20" width="80" height="28" rx="2" fill="rgba(34,197,94,0.1)" stroke="var(--success)" stroke-width="1"/>
+              <text x="60" y="30" text-anchor="middle" fill="var(--success)" font-size="7" font-weight="bold">Primary Risk Reduced</text>
+              <text x="60" y="41" text-anchor="middle" fill="var(--on-surface-variant)" font-size="6.5">Cars slow down for bump</text>
+            </g>
+
+            <!-- Step 3 Elements -->
+            <g id="sb-step-3" style="display: none;">
+              <!-- Swerving Car 1 (Blue) inside oncoming lane -->
+              <g transform="translate(85, 45) rotate(-6)">
+                <rect x="0" y="5" width="40" height="20" rx="3" fill="var(--primary)" stroke="var(--primary-container)" stroke-width="1"/>
+                <rect x="25" y="8" width="10" height="14" rx="1" fill="#e2e8f0"/>
+                <rect x="5" y="2" width="8" height="3" fill="#000000" rx="1"/>
+                <rect x="27" y="2" width="8" height="3" fill="#000000" rx="1"/>
+                <rect x="5" y="25" width="8" height="3" fill="#000000" rx="1"/>
+                <rect x="27" y="25" width="8" height="3" fill="#000000" rx="1"/>
+                <!-- Swerve path arrow -->
+                <path d="M -25 35 Q -5 35 -5 15 Q -5 -5 15 -5" fill="none" stroke="var(--error)" stroke-width="1.5" stroke-dasharray="3,3"/>
+              </g>
+              <!-- Oncoming Car 2 (Green) inside its lane -->
+              <g transform="translate(175, 35)">
+                <rect x="0" y="5" width="40" height="20" rx="3" fill="#15803d" stroke="#166534" stroke-width="1"/>
+                <rect x="5" y="8" width="10" height="14" rx="1" fill="#e2e8f0"/>
+                <rect x="5" y="2" width="8" height="3" fill="#000000" rx="1"/>
+                <rect x="27" y="2" width="8" height="3" fill="#000000" rx="1"/>
+                <rect x="5" y="25" width="8" height="3" fill="#000000" rx="1"/>
+                <rect x="27" y="25" width="8" height="3" fill="#000000" rx="1"/>
+              </g>
+              
+              <!-- Collision Starburst -->
+              <path d="M 135 40 L 140 28 L 148 40 L 160 35 L 152 46 L 162 53 L 148 53 L 142 64 L 135 50 L 123 48 L 130 42 Z" fill="#ef4444" stroke="#7f1d1d" stroke-width="1"/>
+              <text x="141" y="49" text-anchor="middle" fill="#ffffff" font-size="6.5" font-weight="bold">CRASH!</text>
+              
+              <!-- Pedestrian stands safely on side -->
+              <g transform="translate(135, 140)">
+                <circle cx="5" cy="5" r="4" fill="#22c55e"/>
+                <line x1="5" y1="9" x2="5" y2="20" stroke="#22c55e" stroke-width="2"/>
+                <line x1="5" y1="20" x2="1" y2="30" stroke="#22c55e" stroke-width="1.5"/>
+                <line x1="5" y1="20" x2="9" y2="30" stroke="#22c55e" stroke-width="1.5"/>
+              </g>
+
+              <!-- Secondary Risk Badge -->
+              <rect x="90" y="115" width="100" height="28" rx="2" fill="var(--error-container)" stroke="var(--error)" stroke-width="1"/>
+              <text x="140" y="125" text-anchor="middle" fill="var(--error)" font-size="7" font-weight="bold">New Hazard Introduced</text>
+              <text x="140" y="136" text-anchor="middle" fill="var(--on-error-container)" font-size="6.5">Wrong-side driving collision</text>
+            </g>
           </svg>
         </div>
       `
@@ -1674,6 +1468,8 @@ function renderPartA(container) {
       setupDelphiInteractivity();
     } else if (state.partASlide === 8) {
       setupMatchGame();
+    } else if (state.partASlide === 9) {
+      setupSpeedBumpInteractivity();
     } else if (state.partASlide === 10) {
       setupScaleInteractivity();
     }
@@ -1935,6 +1731,64 @@ function renderPartA(container) {
         }, 700);
       }
     }
+  }
+
+  // Interactivity: Speed Bump Control Sequence (TEC-36)
+  function setupSpeedBumpInteractivity() {
+    const buttons = document.querySelectorAll("#speedbump-selector button");
+    const textSummary = document.getElementById("speedbump-text-summary");
+    
+    const bumpGroup = document.getElementById("sb-bump-group");
+    const step1Group = document.getElementById("sb-step-1");
+    const step2Group = document.getElementById("sb-step-2");
+    const step3Group = document.getElementById("sb-step-3");
+    
+    const stepData = {
+      1: {
+        text: "<strong>Initial Hazard:</strong> Cars traveling at high speed near a pedestrian crosswalk.<br><strong>Exposure:</strong> Pedestrian crossing the street.<br><strong>Harm:</strong> High-severity impact. The initial risk is unacceptable.",
+        showBump: false,
+        activeGroup: 1
+      },
+      2: {
+        text: "<strong>Risk Mitigation:</strong> Install speed bumps (control measure) to force drivers to slow down.<br><strong>Result:</strong> Cars slow down before crosswalk.<br><strong>Outcome:</strong> Pedestrians cross safely, reducing primary traffic risk.",
+        showBump: true,
+        activeGroup: 2
+      },
+      3: {
+        text: "<strong>Secondary Hazard (Side-Effect):</strong> Drivers swerve into the opposite (oncoming) lane to avoid the bumps.<br><strong>New Risk:</strong> Oncoming traffic collision.<br><strong>Outcome:</strong> Head-on crash! A new high-severity risk is introduced.",
+        showBump: true,
+        activeGroup: 3
+      }
+    };
+    
+    buttons.forEach(btn => {
+      btn.onclick = () => {
+        buttons.forEach(b => {
+          b.classList.remove("active", "border-primary", "text-primary");
+          b.classList.add("border-outline-variant", "text-on-surface-variant");
+        });
+        btn.classList.remove("border-outline-variant", "text-on-surface-variant");
+        btn.classList.add("active", "border-primary", "text-primary");
+        
+        const step = parseInt(btn.getAttribute("data-step"));
+        const data = stepData[step];
+        
+        if (textSummary) {
+          textSummary.innerHTML = data.text;
+        }
+        
+        if (bumpGroup) {
+          bumpGroup.style.display = data.showBump ? "block" : "none";
+        }
+        
+        if (step1Group) step1Group.style.display = data.activeGroup === 1 ? "block" : "none";
+        if (step2Group) step2Group.style.display = data.activeGroup === 2 ? "block" : "none";
+        if (step3Group) step3Group.style.display = data.activeGroup === 3 ? "block" : "none";
+      };
+    });
+    
+    // Set initial state
+    if (buttons[0]) buttons[0].click();
   }
 
   // Interactivity: Benefit-Risk Scale (TEC-15 — fixed gravity animation)
