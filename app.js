@@ -1,5 +1,6 @@
 // App logic for ISO 14971 Risk Management Tutor
-document.addEventListener("DOMContentLoaded", () => {
+function initApp() {
+  console.log("App initApp started");
   // Safe LocalStorage helpers to prevent SecurityError under file:// protocol
   function safeGetItem(key) {
     try {
@@ -349,6 +350,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Calculate & Update Progress Indicator
   function updateProgress() {
+    if (!overallProgressBar) return;
     const totalA = state.slidesViewed.partA.length;
     const totalB = state.slidesViewed.partB.length;
     const totalQuizzes = 2; // Quiz A and Quiz B
@@ -364,17 +366,22 @@ document.addEventListener("DOMContentLoaded", () => {
     overallProgressBar.style.width = `${percentage}%`;
 
     // Update SideBar Certificate level label
-    if (quizzesDone === 2 && state.quizState.quizAScore >= PASS_THRESHOLD && state.quizState.quizBScore >= PASS_THRESHOLD) {
-      certUserText.textContent = "Certified ISO 14971 Practitioner";
-      certUserText.parentElement.querySelector("h2").textContent = "Risk Expert";
-    } else {
-      certUserText.textContent = "Trainee";
-      certUserText.parentElement.querySelector("h2").textContent = "Risk Engineer";
+    if (certUserText) {
+      const parent = certUserText.parentElement;
+      const h2 = parent ? parent.querySelector("h2") : null;
+      if (quizzesDone === 2 && state.quizState.quizAScore >= PASS_THRESHOLD && state.quizState.quizBScore >= PASS_THRESHOLD) {
+        certUserText.textContent = "Certified ISO 14971 Practitioner";
+        if (h2) h2.textContent = "Risk Expert";
+      } else {
+        certUserText.textContent = "Trainee";
+        if (h2) h2.textContent = "Risk Engineer";
+      }
     }
   }
 
   // Main Render View Router
   function renderView() {
+    if (!contentCanvas) return;
     contentCanvas.innerHTML = "";
     const container = document.createElement("div");
     container.className = "view-transition w-full";
@@ -2996,4 +3003,10 @@ function renderPartA(container) {
 
   // Load initial view
   navigateTo("dashboard");
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initApp);
+} else {
+  initApp();
+}

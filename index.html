@@ -11,6 +11,7 @@
   
   <!-- Tailwind Config — Orderly People brand palette -->
   <script id="tailwind-config">
+    if (typeof tailwind !== 'undefined') {
     tailwind.config = {
       darkMode: "class",
       theme: {
@@ -100,14 +101,15 @@
           }
         },
       },
+    };
     }
   </script>
   
   <!-- Custom Stylesheet overrides (Animations, scale variables, print rules) -->
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="app.css?v=2.0.0">
   
   <!-- App JS logic -->
-  <script src="app.js" defer></script>
+  <script src="app.js?v=2.0.0" defer></script>
 </head>
 <body class="bg-background text-on-surface min-h-screen flex flex-col md:flex-row selection:bg-primary selection:text-background font-sans">
 
