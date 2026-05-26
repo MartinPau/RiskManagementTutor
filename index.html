@@ -16,52 +16,52 @@
       theme: {
         extend: {
           "colors": {
-            /* Orderly People brand: warm cream on deep dark, with slate teal accent */
-            "primary-fixed-dim": "#2b6cb0",
+            /* Orderly People brand: slate teal (#839796), deep dark (#121615), warm cream (#f8f5eb) */
+            "primary-fixed-dim": "#839796",
             "secondary-fixed": "#e2e8f0",
-            "surface-tint": "#1a365d",
+            "surface-tint": "#121615",
             "on-tertiary": "#ffffff",
-            "on-secondary-fixed-variant": "#4a5568",
+            "on-secondary-fixed-variant": "#4a5464",
             "secondary-fixed-dim": "#cbd5e1",
-            "outline-variant": "#cbd5e1",
-            "on-primary-container": "#1a202c",
-            "primary-fixed": "#3182ce",
-            "on-tertiary-container": "#1a202c",
+            "outline-variant": "#dcdfe3",
+            "on-primary-container": "#121615",
+            "primary-fixed": "#839796",
+            "on-tertiary-container": "#121615",
             "secondary-container": "#edf2f7",
-            "on-background": "#1a202c",
+            "on-background": "#121615",
             "on-error-container": "#742a2a",
             "tertiary": "#b7791f",
-            "surface-container-low": "#f7fafc",
+            "surface-container-low": "#fbfaf7",
             "error": "#c53030",
             "on-secondary": "#ffffff",
             "tertiary-fixed-dim": "#fde68a",
-            "on-primary-fixed-variant": "#ebf8ff",
-            "on-surface": "#1a202c",
-            "surface-container-high": "#f7fafc",
+            "on-primary-fixed-variant": "#f8f5eb",
+            "on-surface": "#121615",
+            "surface-container-high": "#fbfaf7",
             "tertiary-fixed": "#fef3c7",
             "surface-container": "#ffffff",
             "outline": "#cbd5e1",
             "on-primary": "#ffffff",
             "error-container": "#fed7d7",
             "on-tertiary-fixed-variant": "#78350f",
-            "on-surface-variant": "#4a5568",
+            "on-surface-variant": "#4a5464",
             "inverse-on-surface": "#ffffff",
-            "inverse-surface": "#1a202c",
-            "background": "#f7fafc",
-            "secondary": "#4a5568",
+            "inverse-surface": "#121615",
+            "background": "#f8f5eb",
+            "secondary": "#839796",
             "on-primary-fixed": "#ffffff",
-            "primary": "#1a365d",
+            "primary": "#121615",
             "on-error": "#ffffff",
             "surface-container-lowest": "#ffffff",
-            "surface-dim": "#d7dadc",
+            "surface-dim": "#e8e5da",
             "on-tertiary-fixed": "#ffffff",
-            "inverse-primary": "#90cdf4",
-            "primary-container": "#edf2f7",
+            "inverse-primary": "#839796",
+            "primary-container": "#e8ecec",
             "on-secondary-fixed": "#ffffff",
             "surface": "#ffffff",
-            "surface-container-highest": "#edf2f7",
-            "on-secondary-container": "#1a202c",
-            "surface-variant": "#f7fafc",
+            "surface-container-highest": "#e8e5da",
+            "on-secondary-container": "#121615",
+            "surface-variant": "#fbfaf7",
             "surface-bright": "#ffffff",
             "tertiary-container": "#fefcbf"
           },
@@ -119,94 +119,95 @@
   </div>
 
   <!-- Desktop SideNavBar -->
-  <nav class="hidden md:flex flex-col h-screen w-64 bg-surface-container border-r border-outline-variant py-8 fixed left-0 top-0 z-40 no-print">
+  <nav class="hidden md:flex flex-col h-screen w-64 bg-[#839796] border-r border-[#839796] py-8 fixed left-0 top-0 z-40 no-print text-[#121615]">
     <!-- Orderly People Logo Header -->
-    <div class="px-6 mb-8 flex items-center gap-4">
-      <div class="flex flex-col">
-        <span class="font-sans text-primary text-lg font-bold tracking-tight leading-none">Orderly People</span>
-        <span class="text-[10px] text-on-surface-variant font-sans tracking-widest uppercase mt-0.5">Risk Management Tutor</span>
-      </div>
+    <div class="px-6 mb-8 flex flex-col gap-0.5">
+      <span class="font-sans text-[#121615] text-xl font-bold tracking-tight leading-none">Orderly People</span>
+      <span class="text-[11px] text-white font-sans font-medium">We are order & grit</span>
     </div>
     
     <!-- Trainee Badge -->
     <div class="px-6 mb-6">
-      <div class="bg-surface-container-high rounded p-3 flex items-center gap-3 ghost-border">
-        <span class="material-symbols-outlined text-primary text-[22px]">account_circle</span>
+      <div class="bg-white/30 backdrop-blur-sm rounded p-3 flex items-center gap-3 border border-white/20">
+        <span class="material-symbols-outlined text-[#121615] text-[22px]">account_circle</span>
         <div>
-          <h2 class="font-sans text-[11px] text-on-surface uppercase font-bold tracking-wider" id="sidebar-role-label">Risk Engineer</h2>
-          <p class="font-sans text-[10px] text-on-surface-variant mt-0.5" id="cert-user-level">Trainee</p>
+          <h2 class="font-sans text-[11px] text-[#121615] uppercase font-bold tracking-wider" id="sidebar-role-label">Risk Engineer</h2>
+          <p class="font-sans text-[10px] text-[#121615]/80 mt-0.5" id="cert-user-level">Trainee</p>
         </div>
       </div>
     </div>
     
     <!-- Nav Links -->
     <div class="flex-grow px-4 space-y-1">
-      <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="dashboard" href="#">
+      <a class="flex items-center gap-3 px-4 py-3 text-[#121615]/80 hover:text-[#121615] hover:bg-[#121615]/8 transition-all duration-300 rounded" data-view="dashboard" href="#">
         <span class="material-symbols-outlined text-[20px]">grid_view</span>
         <span class="font-sans text-sm font-medium">Dashboard</span>
       </a>
       <div>
-        <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="partA" href="#">
+        <a class="flex items-center gap-3 px-4 py-3 text-[#121615]/80 hover:text-[#121615] hover:bg-[#121615]/8 transition-all duration-300 rounded" data-view="partA" href="#">
           <span class="material-symbols-outlined text-[20px]">menu_book</span>
           <span class="font-sans text-sm font-medium">Module A: Standard</span>
         </a>
         <div id="partA-sections" class="pl-9 pr-4 py-1 space-y-1 hidden transition-all">
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="intro" href="#">1. Introduction</a>
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="analysis" href="#">2. Risk Estimation</a>
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="evaluation" href="#">3. Risk Evaluation & Control</a>
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="control" href="#">4. Risk Verification</a>
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="residual" href="#">5. Benefit-Risk Analysis</a>
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="postmarket" href="#">6. Post-Market Feedback</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="intro" href="#">1. Introduction</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="analysis" href="#">2. Risk Estimation</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="evaluation" href="#">3. Risk Evaluation & Control</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="control" href="#">4. Risk Verification</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="residual" href="#">5. Benefit-Risk Analysis</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="postmarket" href="#">6. Post-Market Feedback</a>
         </div>
       </div>
       <div>
-        <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="partB" href="#">
+        <a class="flex items-center gap-3 px-4 py-3 text-[#121615]/80 hover:text-[#121615] hover:bg-[#121615]/8 transition-all duration-300 rounded" data-view="partB" href="#">
           <span class="material-symbols-outlined text-[20px]">biotech</span>
           <span class="font-sans text-sm font-medium">Module B: Analysis</span>
         </a>
         <div id="partB-sections" class="pl-9 pr-4 py-1 space-y-1 hidden transition-all">
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="overview" href="#">1. Overview</a>
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="pha" href="#">2. PHA</a>
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="fmea" href="#">3. FMEA</a>
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="fta" href="#">4. FTA (interactive)</a>
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="eta" href="#">5. ETA (interactive)</a>
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="hazop" href="#">6. HAZOP (interactive)</a>
-          <a class="block py-1 px-2 text-[11px] text-on-surface-variant hover:text-on-surface font-sans rounded hover:bg-surface-container-high/50" data-section-link="haccp" href="#">7. HACCP (interactive)</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="overview" href="#">1. Overview</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="pha" href="#">2. PHA</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="fmea" href="#">3. FMEA</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="fta" href="#">4. FTA (interactive)</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="eta" href="#">5. ETA (interactive)</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="hazop" href="#">6. HAZOP (interactive)</a>
+          <a class="block py-1 px-2 text-[11px] text-[#121615]/75 hover:text-[#121615] font-sans rounded hover:bg-[#121615]/5 transition-all" data-section-link="haccp" href="#">7. HACCP (interactive)</a>
         </div>
       </div>
-      <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="quizzes" href="#">
+      <a class="flex items-center gap-3 px-4 py-3 text-[#121615]/80 hover:text-[#121615] hover:bg-[#121615]/8 transition-all duration-300 rounded" data-view="quizzes" href="#">
         <span class="material-symbols-outlined text-[20px]">quiz</span>
         <span class="font-sans text-sm font-medium">Competence Exams</span>
       </a>
-      <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-300 rounded" data-view="certificate" href="#">
+      <a class="flex items-center gap-3 px-4 py-3 text-[#121615]/80 hover:text-[#121615] hover:bg-[#121615]/8 transition-all duration-300 rounded" data-view="certificate" href="#">
         <span class="material-symbols-outlined text-[20px]">workspace_premium</span>
         <span class="font-sans text-sm font-medium">Certificate</span>
       </a>
     </div>
 
     <!-- Quick Action Launch Exams -->
-    <div class="px-6 mb-4 mt-auto border-t border-outline-variant pt-6">
-      <button class="w-full py-2.5 px-4 border border-primary text-primary font-sans text-[11px] uppercase tracking-wider hover:bg-primary hover:text-background transition-all duration-300 rounded font-semibold" onclick="window.startQuizzes()">
+    <div class="px-6 mb-4 mt-auto border-t border-[#121615]/20 pt-6">
+      <button class="w-full py-2.5 px-4 border border-[#121615] text-[#121615] font-sans text-[11px] uppercase tracking-wider hover:bg-[#121615] hover:text-[#839796] transition-all duration-300 rounded font-semibold" onclick="window.startQuizzes()">
         Open Quizzes
       </button>
     </div>
   </nav>
 
   <!-- Mobile Top Header -->
-  <header class="md:hidden flex justify-between items-center w-full px-margin-mobile py-4 bg-background/80 backdrop-blur-md border-b border-outline-variant sticky top-0 z-50 no-print">
-    <span class="font-sans text-base text-primary tracking-wider font-bold">Orderly People</span>
-    <button class="text-on-surface p-1" id="mobile-menu-btn">
+  <header class="md:hidden flex justify-between items-center w-full px-margin-mobile py-4 bg-[#839796] border-b border-[#839796] sticky top-0 z-50 no-print text-[#121615]">
+    <div class="flex flex-col gap-0.5">
+      <span class="font-sans text-base text-[#121615] tracking-wider font-bold leading-none">Orderly People</span>
+      <span class="text-[10px] text-white font-sans font-medium">We are order & grit</span>
+    </div>
+    <button class="text-[#121615] p-1" id="mobile-menu-btn">
       <span class="material-symbols-outlined">menu</span>
     </button>
   </header>
 
   <!-- Mobile Menu Drawer (Toggled by JS) -->
-  <div class="hidden md:hidden flex flex-col bg-surface-container border-b border-outline-variant px-margin-mobile py-4 space-y-2 z-40 no-print" id="mobile-menu">
-    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-medium" data-view="dashboard" href="#">Dashboard</a>
-    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-medium" data-view="partA" href="#">Module A: Standard Overview</a>
-    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-medium" data-view="partB" href="#">Module B: Analysis Workshop</a>
-    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-medium" data-view="quizzes" href="#">Competence Exams</a>
-    <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded text-sm font-medium" data-view="certificate" href="#">Training Certificate</a>
+  <div class="hidden md:hidden flex flex-col bg-[#839796] border-b border-[#839796] px-margin-mobile py-4 space-y-2 z-40 no-print text-[#121615]" id="mobile-menu">
+    <a class="flex items-center gap-3 px-4 py-2 text-[#121615]/80 hover:text-[#121615] hover:bg-[#121615]/8 rounded text-sm font-medium" data-view="dashboard" href="#">Dashboard</a>
+    <a class="flex items-center gap-3 px-4 py-2 text-[#121615]/80 hover:text-[#121615] hover:bg-[#121615]/8 rounded text-sm font-medium" data-view="partA" href="#">Module A: Standard Overview</a>
+    <a class="flex items-center gap-3 px-4 py-2 text-[#121615]/80 hover:text-[#121615] hover:bg-[#121615]/8 rounded text-sm font-medium" data-view="partB" href="#">Module B: Analysis Workshop</a>
+    <a class="flex items-center gap-3 px-4 py-2 text-[#121615]/80 hover:text-[#121615] hover:bg-[#121615]/8 rounded text-sm font-medium" data-view="quizzes" href="#">Competence Exams</a>
+    <a class="flex items-center gap-3 px-4 py-2 text-[#121615]/80 hover:text-[#121615] hover:bg-[#121615]/8 rounded text-sm font-medium" data-view="certificate" href="#">Training Certificate</a>
   </div>
 
   <!-- Main Canvas Component -->

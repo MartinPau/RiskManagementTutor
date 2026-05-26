@@ -60,10 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const links = sectionsContainer.querySelectorAll("[data-section-link]");
     links.forEach(link => {
       if (link.getAttribute("data-section-link") === activeSection) {
-        link.classList.remove("text-on-surface-variant");
+        link.classList.remove("text-[#121615]/75");
         link.classList.add("text-primary", "font-bold");
       } else {
-        link.classList.add("text-on-surface-variant");
+        link.classList.add("text-[#121615]/75");
         link.classList.remove("text-primary", "font-bold");
       }
     });
@@ -297,11 +297,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update active state in nav
     navItems.forEach(link => {
       if (link.getAttribute("data-view") === view) {
-        link.classList.remove("text-on-surface-variant");
-        link.classList.add("text-primary", "bg-surface-container-high", "border-r-2", "border-primary", "translate-x-1");
+        link.classList.remove("text-[#121615]/80", "hover:bg-[#121615]/8");
+        link.classList.add("text-primary", "bg-surface", "shadow-sm", "font-semibold");
       } else {
-        link.classList.add("text-on-surface-variant");
-        link.classList.remove("text-primary", "bg-surface-container-high", "border-r-2", "border-primary", "translate-x-1");
+        link.classList.add("text-[#121615]/80", "hover:bg-[#121615]/8");
+        link.classList.remove("text-primary", "bg-surface", "shadow-sm", "font-semibold");
       }
     });
 

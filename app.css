@@ -10,53 +10,53 @@
   --font-sans: 'Inter', 'Poppins', sans-serif;
   --font-mono: 'Inter', 'Poppins', monospace;
 
-  /* Orderly People Color System (New Light Corporate Theme) */
-  --primary: #1a365d;              /* Deep Navy Blue */
-  --primary-container: #edf2f7;    /* Slate-grey/blue container */
-  --primary-fixed-dim: #2b6cb0;    /* Muted accent blue */
-  --primary-fixed: #3182ce;
-  --on-primary: #ffffff;           /* White text on Navy */
-  --on-primary-container: #1a202c; /* Charcoal on slate container */
+  /* Orderly People Color System (Premium Warm Cream & Slate Teal Theme) */
+  --primary: #121615;              /* Deep Dark Charcoal/Teal-Black */
+  --primary-container: #e8ecec;    /* Soft Muted Teal container */
+  --primary-fixed-dim: #839796;    /* Muted Slate Teal */
+  --primary-fixed: #839796;
+  --on-primary: #ffffff;           /* White text on dark */
+  --on-primary-container: #121615; /* Deep dark on light container */
   --on-primary-fixed: #ffffff;
-  --on-primary-fixed-variant: #ebf8ff;
+  --on-primary-fixed-variant: #f8f5eb;
   
-  --secondary: #4a5568;            /* Charcoal grey */
+  --secondary: #839796;            /* Slate Teal */
   --secondary-container: #edf2f7;
   --secondary-fixed: #e2e8f0;
   --secondary-fixed-dim: #cbd5e1;
   --on-secondary: #ffffff;
-  --on-secondary-container: #1a202c;
+  --on-secondary-container: #121615;
   --on-secondary-fixed: #ffffff;
   --on-secondary-fixed-variant: #e2e8f0;
   
-  --tertiary: #b7791f;             /* Subtle warm amber/gold for highlights */
+  --tertiary: #b7791f;             /* Subtle amber highlights */
   --tertiary-container: #fefcbf;
   --tertiary-fixed: #fef3c7;
   --tertiary-fixed-dim: #fde68a;
   --on-tertiary: #ffffff;
-  --on-tertiary-container: #1a202c;
+  --on-tertiary-container: #121615;
   --on-tertiary-fixed: #ffffff;
   --on-tertiary-fixed-variant: #78350f;
 
-  --background: #f7fafc;           /* Off-white/Soft Grey background */
-  --on-background: #1a202c;        /* Charcoal text */
+  --background: #f8f5eb;           /* Warm Cream background */
+  --on-background: #121615;        /* Deep Dark text */
   
-  --surface: #ffffff;              /* Pure White surface for cards/sidebar */
-  --on-surface: #1a202c;           /* Charcoal text */
-  --on-surface-variant: #4a5568;   /* Medium grey */
-  --surface-dim: #d7dadc;          /* Dim grey */
+  --surface: #ffffff;              /* Pure White surface for cards */
+  --on-surface: #121615;           /* Deep Dark text */
+  --on-surface-variant: #4a5464;   /* Muted slate blue/grey */
+  --surface-dim: #e8e5da;          /* Dimmer warm cream */
   --surface-bright: #ffffff;
   
   --surface-container-lowest: #ffffff;
-  --surface-container-low: #f7fafc;
+  --surface-container-low: #fbfaf7;   /* Light warm cream */
   --surface-container: #ffffff;
-  --surface-container-high: #f7fafc;
-  --surface-container-highest: #edf2f7;
-  --surface-variant: #f7fafc;
+  --surface-container-high: #fbfaf7;
+  --surface-container-highest: #e8e5da; /* Medium warm cream */
+  --surface-variant: #fbfaf7;
   
-  --inverse-surface: #1a202c;
+  --inverse-surface: #121615;
   --inverse-on-surface: #ffffff;
-  --inverse-primary: #90cdf4;
+  --inverse-primary: #839796;
 
   --error: #c53030;                /* Soft corporate red */
   --error-container: #fed7d7;
@@ -64,8 +64,8 @@
   --on-error-container: #742a2a;
   
   --outline: #cbd5e1;              /* Outlines and borders */
-  --outline-variant: #cbd5e1;
-  --surface-tint: #1a365d;
+  --outline-variant: #dcdfe3;
+  --surface-tint: #121615;
 
   --success: #2f855a;              /* Corporate green */
   --warning: #dd6b20;}
