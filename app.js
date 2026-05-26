@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   // DOM Elements
-  const navItems = document.querySelectorAll("nav a[data-view]");
+  const navItems = document.querySelectorAll("nav a[data-view], #mobile-menu a[data-view]");
   const contentCanvas = document.getElementById("main-content-canvas");
   const overallProgressBar = document.getElementById("overall-progress-bar");
   const certUserText = document.getElementById("cert-user-level");
@@ -1067,7 +1067,12 @@ const partBSlides = [
             <rect x="80" y="140" width="120" height="40" rx="3" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1.5"/>
             <text x="140" y="160" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif" font-weight="bold">HACCP</text>
             <text x="140" y="172" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">Sterile line monitoring</text>
-        {
+          </svg>
+        </div>
+      `,
+      isWide: false
+    },
+    {
       title: `Preliminary Hazard Analysis (PHA)`,
       section: `pha`,
       content: `
