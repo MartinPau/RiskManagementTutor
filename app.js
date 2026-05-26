@@ -1,11 +1,29 @@
 // App logic for ISO 14971 Risk Management Tutor
 document.addEventListener("DOMContentLoaded", () => {
+  // Safe LocalStorage helpers to prevent SecurityError under file:// protocol
+  function safeGetItem(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch (e) {
+      console.warn("localStorage.getItem failed for key " + key + ":", e);
+      return null;
+    }
+  }
+
+  function safeSetItem(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (e) {
+      console.warn("localStorage.setItem failed for key " + key + ":", e);
+    }
+  }
+
   // Global State
   const state = {
     currentView: "dashboard", // dashboard, partA, partB, quizzes, certificate
     partASlide: 0,
     partBSlide: 0,
-    userName: localStorage.getItem("rm_tutor_username") || "",
+    userName: safeGetItem("rm_tutor_username") || "",
     quizState: {
       quizA: Array(5).fill(null),
       quizB: Array(6).fill(null),
@@ -16,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     // Tracking completion of slides for progress
     slidesViewed: {
-      partA: Array(12).fill(false),
+      partA: Array(7).fill(false),
       partB: Array(8).fill(false)
     }
   };
@@ -28,17 +46,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const PASS_THRESHOLD = 4; // 80% (4/5)
 
   // Load progress if available
-  const savedState = localStorage.getItem("rm_tutor_progress");
+  const savedState = safeGetItem("rm_tutor_progress");
   if (savedState) {
     try {
       const parsed = JSON.parse(savedState);
       state.quizState = parsed.quizState || state.quizState;
       if (parsed.slidesViewed) {
-        if (Array.isArray(parsed.slidesViewed.partA) && parsed.slidesViewed.partA.length === 12) {
-          state.slidesViewed.partA = parsed.slidesViewed.partA;
+        if (Array.isArray(parsed.slidesViewed.partA)) {
+          state.slidesViewed.partA = parsed.slidesViewed.partA.slice(0, 7);
+          while (state.slidesViewed.partA.length < 7) {
+            state.slidesViewed.partA.push(false);
+          }
         }
-        if (Array.isArray(parsed.slidesViewed.partB) && parsed.slidesViewed.partB.length === 8) {
-          state.slidesViewed.partB = parsed.slidesViewed.partB;
+        if (Array.isArray(parsed.slidesViewed.partB)) {
+          state.slidesViewed.partB = parsed.slidesViewed.partB.slice(0, 8);
+          while (state.slidesViewed.partB.length < 8) {
+            state.slidesViewed.partB.push(false);
+          }
         }
       }
     } catch (e) {
@@ -48,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Save progress helper
   function saveProgress() {
-    localStorage.setItem("rm_tutor_progress", JSON.stringify({
+    safeSetItem("rm_tutor_progress", JSON.stringify({
       quizState: state.quizState,
       slidesViewed: state.slidesViewed
     }));
@@ -60,11 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const links = sectionsContainer.querySelectorAll("[data-section-link]");
     links.forEach(link => {
       if (link.getAttribute("data-section-link") === activeSection) {
-        link.classList.remove("text-[#121615]/75");
-        link.classList.add("text-primary", "font-bold");
+        link.classList.remove("text-white/70");
+        link.classList.add("text-white", "font-bold");
       } else {
-        link.classList.add("text-[#121615]/75");
-        link.classList.remove("text-primary", "font-bold");
+        link.classList.add("text-white/70");
+        link.classList.remove("text-white", "font-bold");
       }
     });
   }
@@ -297,11 +321,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update active state in nav
     navItems.forEach(link => {
       if (link.getAttribute("data-view") === view) {
-        link.classList.remove("text-[#121615]/80", "hover:bg-[#121615]/8");
-        link.classList.add("text-primary", "bg-surface", "shadow-sm", "font-semibold");
+        link.classList.remove("text-white/80", "hover:bg-white/10");
+        link.classList.add("text-[#121615]", "bg-white", "shadow-sm", "font-semibold");
       } else {
-        link.classList.add("text-[#121615]/80", "hover:bg-[#121615]/8");
-        link.classList.remove("text-primary", "bg-surface", "shadow-sm", "font-semibold");
+        link.classList.add("text-white/80", "hover:bg-white/10");
+        link.classList.remove("text-[#121615]", "bg-white", "shadow-sm", "font-semibold");
       }
     });
 
@@ -401,7 +425,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <span class="w-8 h-[1px] bg-outline-variant"></span>
           <span class="font-label-sm text-label-sm text-on-surface-variant">Orderly People</span>
         </div>
-        <h1 class="font-serif text-headline-xl text-on-surface mb-6">Risk Management Training Portal</h1>
+        <h1 class="font-serif text-headline-lg-mobile md:text-headline-xl text-on-surface mb-6">Risk Management Training Portal</h1>
         <p class="font-body-lg text-body-lg text-on-surface-variant text-balance">
           Welcome to the interactive compliance tutor for medical device Risk Management under <strong>ISO 14971:2019</strong>. Build your expertise in standard requirements and risk analysis techniques, then verify your competence with the modules below.
         </p>
@@ -1529,7 +1553,7 @@ function renderPartA(container) {
           <!-- Text/Control Column -->
           <div class="lg:col-span-5 flex flex-col justify-between min-h-[500px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
             <div>
-              <h2 class="font-serif text-headline-xl mb-6">${slide.title}</h2>
+              <h2 class="font-serif text-headline-lg-mobile md:text-headline-xl mb-6">${slide.title}</h2>
               <div class="font-body-md text-body-md text-on-surface-variant text-balance">
                 ${slide.content}
               </div>
@@ -1986,7 +2010,7 @@ function renderPartA(container) {
           </div>
 
           <div class="bg-surface-container-high/30 rounded border border-outline-variant p-8 mb-8">
-            <h2 class="font-serif text-headline-xl mb-4">${slide.title}</h2>
+            <h2 class="font-serif text-headline-lg-mobile md:text-headline-xl mb-4">${slide.title}</h2>
             <div class="text-balance">
               ${slide.content}
             </div>
@@ -2020,7 +2044,7 @@ function renderPartA(container) {
             <!-- Text/Control Column -->
             <div class="lg:col-span-5 flex flex-col justify-between min-h-[500px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
               <div>
-                <h2 class="font-serif text-headline-xl mb-6">${slide.title}</h2>
+                <h2 class="font-serif text-headline-lg-mobile md:text-headline-xl mb-6">${slide.title}</h2>
                 <div class="font-body-md text-body-md text-on-surface-variant text-balance">
                   ${slide.content}
                 </div>
@@ -2542,7 +2566,7 @@ function renderPartA(container) {
           <span class="w-8 h-[1px] bg-outline-variant"></span>
           <span class="font-label-sm text-label-sm text-on-surface-variant">Module Tests</span>
         </div>
-        <h1 class="font-serif text-headline-xl text-on-surface mb-6">Verify Your Knowledge</h1>
+        <h1 class="font-serif text-headline-lg-mobile md:text-headline-xl text-on-surface mb-6">Verify Your Knowledge</h1>
         <p class="font-body-lg text-body-lg text-on-surface-variant">
           Complete both multiple-choice exams. You must score at least <strong>4 out of 5 on Quiz A (80%)</strong> and <strong>4 out of 6 on Quiz B (67%)</strong> to unlock the Certified ISO 14971 Practitioner certificate.
         </p>
@@ -2788,7 +2812,7 @@ function renderPartA(container) {
         <span class="material-symbols-outlined text-[64px] mb-4 ${passed ? 'text-primary' : 'text-error'}">
           ${passed ? 'check_circle' : 'cancel'}
         </span>
-        <h2 class="font-serif text-headline-xl mb-2">${passed ? 'Exam Passed!' : 'Exam Failed'}</h2>
+        <h2 class="font-serif text-headline-lg-mobile md:text-headline-xl mb-2">${passed ? 'Exam Passed!' : 'Exam Failed'}</h2>
         <p class="font-mono text-lg mb-6">Your Score: <span class="text-primary font-bold">${score} / ${data.length}</span> (${Math.round((score/data.length)*100)}%)</p>
         <p class="text-xs text-on-surface-variant mb-8 max-w-[500px] mx-auto">
           ${passed ? 'Excellent work. You have met the compliance requirement for this module.' : 'You did not meet the passing threshold. Review the modules and try again.'}
@@ -2962,7 +2986,7 @@ function renderPartA(container) {
       const val = nameInput.value.trim();
       if (val) {
         state.userName = val;
-        localStorage.setItem("rm_tutor_username", val);
+        safeSetItem("rm_tutor_username", val);
         nameDisplay.textContent = val;
       }
     };
