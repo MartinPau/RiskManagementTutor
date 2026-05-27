@@ -36,7 +36,7 @@ function initApp() {
     // Tracking completion of slides for progress
     slidesViewed: {
       partA: Array(7).fill(false),
-      partB: Array(8).fill(false)
+      partB: Array(9).fill(false)
     }
   };
 
@@ -60,8 +60,8 @@ function initApp() {
           }
         }
         if (Array.isArray(parsed.slidesViewed.partB)) {
-          state.slidesViewed.partB = parsed.slidesViewed.partB.slice(0, 8);
-          while (state.slidesViewed.partB.length < 8) {
+          state.slidesViewed.partB = parsed.slidesViewed.partB.slice(0, 9);
+          while (state.slidesViewed.partB.length < 9) {
             state.slidesViewed.partB.push(false);
           }
         }
@@ -1010,7 +1010,7 @@ const partASlides = [
       infographic: `
         <div class="h-full flex flex-col justify-center p-2">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">PMS → Risk Management Feedback Loop</h4>
-          <svg viewBox="0 0 360 250" class="w-full h-auto max-h-[380px]" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 440 250" class="w-full h-auto max-h-[380px]" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arr-d" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
                 <path d="M0,0 L0,7 L7,3.5 z" fill="var(--success)"/>
@@ -1021,42 +1021,43 @@ const partASlides = [
             </defs>
             
             <!-- Top Box: PMS Data Collection -->
-            <rect x="30" y="8" width="300" height="36" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="180" y="22" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif" font-weight="bold">PMS (POST-MARKET SURVEILLANCE) DATA COLLECTION (§10.2)</text>
-            <text x="180" y="34" text-anchor="middle" fill="#839896" font-size="10" font-family="sans-serif">Complaints · PMCF · NCs · Literature</text>
-            <line x1="180" y1="44" x2="180" y2="64" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
+            <rect x="50" y="8" width="360" height="36" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="230" y="22" text-anchor="middle" fill="var(--on-surface)" font-size="11.5" font-family="sans-serif" font-weight="bold">PMS (POST-MARKET SURVEILLANCE) DATA COLLECTION (§10.2)</text>
+            <text x="230" y="34" text-anchor="middle" fill="#839896" font-size="9.5" font-family="sans-serif">Complaints · PMCF · NCs · Literature</text>
+            <line x1="230" y1="44" x2="230" y2="64" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
  
             <!-- Middle Box 1: Trend Analysis -->
-            <rect x="60" y="64" width="240" height="32" rx="4" fill="var(--primary-container)" stroke="var(--tertiary)" stroke-width="1"/>
-            <text x="180" y="78" text-anchor="middle" fill="var(--tertiary)" font-size="12" font-family="sans-serif" font-weight="bold">TREND ANALYSIS</text>
-            <text x="180" y="89" text-anchor="middle" fill="#839896" font-size="10" font-family="sans-serif">MDR (Medical Device Regulation) Art.88 reporting trigger</text>
-            <line x1="180" y1="96" x2="180" y2="116" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
+            <rect x="110" y="64" width="240" height="32" rx="4" fill="var(--primary-container)" stroke="var(--tertiary)" stroke-width="1"/>
+            <text x="230" y="78" text-anchor="middle" fill="var(--tertiary)" font-size="11" font-family="sans-serif" font-weight="bold">TREND ANALYSIS</text>
+            <text x="230" y="89" text-anchor="middle" fill="#839896" font-size="9" font-family="sans-serif">MDR (Medical Device Regulation) Art.88 reporting trigger</text>
+            <line x1="230" y1="96" x2="230" y2="116" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
  
             <!-- Middle Box 2: Info Review -->
-            <rect x="30" y="116" width="300" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="180" y="130" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif" font-weight="bold">INFORMATION REVIEW (§10.3)</text>
-            <text x="180" y="141" text-anchor="middle" fill="#839896" font-size="10" font-family="sans-serif">New hazard? Changed probability?</text>
-            <line x1="180" y1="148" x2="180" y2="168" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
+            <rect x="70" y="116" width="320" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+            <text x="230" y="130" text-anchor="middle" fill="var(--on-surface)" font-size="11" font-family="sans-serif" font-weight="bold">INFORMATION REVIEW (§10.3)</text>
+            <text x="230" y="141" text-anchor="middle" fill="#839896" font-size="9" font-family="sans-serif">New hazard? Changed probability?</text>
+            <line x1="230" y1="148" x2="230" y2="168" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
  
             <!-- Decision Diamond -->
-            <polygon points="180,168 230,189 180,210 130,189" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1.5"/>
-            <text x="180" y="184" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif" font-weight="bold">Risk changed?</text>
-            <text x="180" y="196" text-anchor="middle" fill="#839896" font-size="9" font-family="sans-serif">YES / NO</text>
+            <polygon points="230,168 280,189 230,210 180,189" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1.5"/>
+            <text x="230" y="184" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif" font-weight="bold">Risk changed?</text>
+            <text x="230" y="196" text-anchor="middle" fill="#839896" font-size="9" font-family="sans-serif">YES / NO</text>
  
             <!-- YES Branch (Left) -->
-            <line x1="130" y1="189" x2="75" y2="189" stroke="var(--success)" stroke-width="1.5" marker-end="url(#arr-d)"/>
-            <text x="100" y="183" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif">YES</text>
+            <line x1="180" y1="189" x2="140" y2="189" stroke="var(--success)" stroke-width="1.5" marker-end="url(#arr-d)"/>
+            <text x="160" y="183" text-anchor="middle" fill="var(--success)" font-size="10.5" font-family="sans-serif">YES</text>
             
-            <rect x="5" y="174" width="70" height="30" rx="3" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1"/>
-            <text x="40" y="192" text-anchor="middle" fill="var(--success)" font-size="10" font-family="sans-serif" font-weight="bold">Update RMF (Risk Management File)</text>
-
+            <rect x="35" y="174" width="105" height="32" rx="4" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1"/>
+            <text x="87.5" y="186" text-anchor="middle" fill="var(--success)" font-size="9.5" font-family="sans-serif" font-weight="bold">Update RMF</text>
+            <text x="87.5" y="198" text-anchor="middle" fill="var(--success)" font-size="8" font-family="sans-serif">Risk Management File</text>
+ 
             <!-- NO Branch (Right) -->
-            <line x1="230" y1="189" x2="295" y2="189" stroke="var(--outline)" stroke-width="1.5"/>
-            <text x="260" y="183" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">NO</text>
-            <text x="310" y="193" fill="#839896" font-size="11" font-family="sans-serif" font-weight="bold">✓ OK</text>
-
+            <line x1="280" y1="189" x2="355" y2="189" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="315" y="183" text-anchor="middle" fill="#839896" font-size="10.5" font-family="sans-serif">NO</text>
+            <text x="365" y="193" fill="#839896" font-size="11" font-family="sans-serif" font-weight="bold">✓ OK</text>
+ 
             <!-- Feedback Loop Arrow -->
-            <path d="M 5 189 Q -15 100 30 23" fill="none" stroke="var(--success)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-d)"/>
+            <path d="M 35 190 Q 5 100 60 26" fill="none" stroke="var(--success)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-d)"/>
           </svg>
           <p class="text-[10px] text-on-surface-variant text-center mt-1">Closing the loop is a legal obligation — not optional</p>
         </div>
@@ -1539,6 +1540,91 @@ const partBSlides = [
               </marker>
             </defs>
           </svg>
+        </div>
+      `
+    },
+    {
+      title: `The True Object of Risk Analysis`,
+      section: `conclusion`,
+      content: `
+        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Finding and Mitigating Risks</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
+          It is common for practitioners to get bogged down in the exact numbers of a risk estimation. However, the ultimate goal of risk analysis is not to debate if a risk level is a 2, 3, or 5, but to <strong>identify hazards and prevent harms</strong>. Arguing over exact numbers often leads to unnecessary criticism and lost focus.
+        </p>
+        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Requirements and Risk Controls</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
+          Performance and safety requirements are identified by searching relevant literature or arise directly from the risk assessment itself. These insights must drive the implementation of design-level risk controls.
+        </p>
+        <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Continuous Commitment via PMS</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
+          Post-Market Surveillance (PMS) is not a one-time verification. It is a continuous activity to ensure risk estimations are accurate enough and to identify new, unforeseen hazards. A robust PMS feedback loop is vital for updating the Risk Management File.
+        </p>
+      `,
+      infographic: `
+        <div class="h-full flex flex-col justify-center p-2">
+          <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">Continuous Risk Management Lifecycle</h4>
+          <svg viewBox="0 0 360 220" class="w-full h-auto max-h-[380px]" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arr-loop" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="#cbd5e1"/>
+              </marker>
+              <marker id="arr-loop-green" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="var(--success)"/>
+              </marker>
+            </defs>
+            
+            <!-- Center branding -->
+            <text x="180" y="110" text-anchor="middle" font-size="10" font-weight="bold" fill="var(--tertiary)">LIFECYCLE FLOW</text>
+            <text x="180" y="122" text-anchor="middle" font-size="8" fill="#839896">Continuous Commitment</text>
+
+            <!-- 1. Requirements Node -->
+            <g id="cycle-node-1" class="cursor-pointer transition-all duration-300 hover:opacity-85">
+              <rect x="20" y="20" width="130" height="42" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+              <text x="85" y="35" text-anchor="middle" font-size="9" font-weight="bold" fill="var(--on-surface)">1. REQUIREMENTS</text>
+              <text x="85" y="47" text-anchor="middle" font-size="8" fill="#839896">Literature &amp; Standards</text>
+            </g>
+
+            <!-- Arrow 1 -> 2 -->
+            <line x1="150" y1="41" x2="202" y2="41" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-loop)"/>
+            <text x="176" y="36" text-anchor="middle" font-size="8" fill="#839896">Analyze</text>
+
+            <!-- 2. Assessment Node -->
+            <g id="cycle-node-2" class="cursor-pointer transition-all duration-300 hover:opacity-85">
+              <rect x="210" y="20" width="130" height="42" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+              <text x="275" y="35" text-anchor="middle" font-size="9" font-weight="bold" fill="var(--on-surface)">2. ASSESSMENT</text>
+              <text x="275" y="47" text-anchor="middle" font-size="8" fill="#839896">Find &amp; Prioritize Risks</text>
+            </g>
+
+            <!-- Arrow 2 -> 3 -->
+            <line x1="275" y1="62" x2="275" y2="152" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-loop)"/>
+            <text x="280" y="111" text-anchor="start" font-size="8" fill="#839896">Mitigate</text>
+
+            <!-- 3. Risk Controls Node -->
+            <g id="cycle-node-3" class="cursor-pointer transition-all duration-300 hover:opacity-85">
+              <rect x="210" y="160" width="130" height="42" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
+              <text x="275" y="175" text-anchor="middle" font-size="9" font-weight="bold" fill="var(--on-surface)">3. RISK CONTROLS</text>
+              <text x="275" y="187" text-anchor="middle" font-size="8" fill="#839896">Implement into Design</text>
+            </g>
+
+            <!-- Arrow 3 -> 4 -->
+            <line x1="210" y1="181" x2="158" y2="181" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-loop)"/>
+            <text x="184" y="176" text-anchor="middle" font-size="8" fill="#839896">Release</text>
+
+            <!-- 4. PMS Monitor Node -->
+            <g id="cycle-node-4" class="cursor-pointer transition-all duration-300 hover:opacity-85">
+              <rect x="20" y="160" width="130" height="42" rx="4" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1.5"/>
+              <text x="85" y="175" text-anchor="middle" font-size="9" font-weight="bold" fill="var(--success)">4. PMS MONITOR</text>
+              <text x="85" y="187" text-anchor="middle" font-size="8" fill="var(--success)">Continuous Review</text>
+            </g>
+
+            <!-- Arrow 4 -> 1 -->
+            <path d="M 85 160 L 85 70" stroke="var(--success)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arr-loop-green)" fill="none"/>
+            <text x="80" y="111" text-anchor="end" font-size="8" fill="var(--success)" font-weight="bold">Feedback Loop</text>
+          </svg>
+          
+          <div class="mt-4 p-3 rounded text-xs text-center min-h-[50px] flex items-center justify-center transition-all duration-300" id="cycle-details-card" style="background-color: var(--surface-container-high); border: 1px solid var(--outline-variant);">
+            Click any stage of the lifecycle above to explore details.
+          </div>
         </div>
       `
     }
@@ -2115,6 +2201,8 @@ function renderPartA(container) {
       setupEtaInteractivity();
     } else if (state.partBSlide === 5) {
       setupHazopInteractivity();
+    } else if (state.partBSlide === 8) {
+      setupConclusionInteractivity();
     }
 
     window.goToQuizzes = () => navigateTo("quizzes");
@@ -2512,6 +2600,62 @@ function renderPartA(container) {
     });
 
     if (selectorButtons[0]) selectorButtons[0].click();
+  }
+
+  // Interactivity: Continuous Risk Management Lifecycle (TEC-50)
+  function setupConclusionInteractivity() {
+    const nodes = [
+      { id: "cycle-node-1", title: "1. Requirements & Design", text: "Identify performance and safety requirements by reviewing literature, standards, or outputs from risk assessments. Design these mitigations directly into the device." },
+      { id: "cycle-node-2", title: "2. Risk Assessment", text: "Identify hazards and estimate risks. Focus on finding how risks occur and prioritizing them rather than getting stuck debating the exact numerical estimations." },
+      { id: "cycle-node-3", title: "3. Risk Controls", text: "Implement risk controls in the design to mitigate identified risks, then verify that these controls are correctly implemented and effective." },
+      { id: "cycle-node-4", title: "4. PMS Monitor", text: "Continuously collect and review post-market surveillance data. Verifying that your risk estimations match real-world observations is a vital, ongoing manufacturer commitment." }
+    ];
+
+    const card = document.getElementById("cycle-details-card");
+    if (!card) return;
+
+    nodes.forEach(node => {
+      const el = document.getElementById(node.id);
+      if (el) {
+        el.onclick = () => {
+          // Reset highlights
+          nodes.forEach(n => {
+            const otherEl = document.getElementById(n.id);
+            if (otherEl) {
+              const rect = otherEl.querySelector("rect");
+              const textEls = otherEl.querySelectorAll("text");
+              if (rect) {
+                rect.setAttribute("stroke", n.id === "cycle-node-4" ? "var(--success)" : "var(--outline)");
+                rect.setAttribute("stroke-width", n.id === "cycle-node-4" ? "1.5" : "1");
+                rect.setAttribute("fill", n.id === "cycle-node-4" ? "var(--primary-container)" : "var(--surface-container-highest)");
+              }
+              textEls.forEach(t => {
+                t.setAttribute("fill", n.id === "cycle-node-4" ? "var(--success)" : "var(--on-surface)");
+              });
+            }
+          });
+          
+          // Highlight active node
+          const rect = el.querySelector("rect");
+          const textEls = el.querySelectorAll("text");
+          if (rect) {
+            rect.setAttribute("stroke", "var(--tertiary)");
+            rect.setAttribute("stroke-width", "2");
+            rect.setAttribute("fill", "var(--tertiary-container)");
+          }
+          textEls.forEach(t => {
+            t.setAttribute("fill", "var(--tertiary)");
+          });
+
+          // Update card content with smooth opacity transition
+          card.style.opacity = "0";
+          setTimeout(() => {
+            card.innerHTML = `<strong>${node.title}:</strong> ${node.text}`;
+            card.style.opacity = "1";
+          }, 150);
+        };
+      }
+    });
   }
 
 
