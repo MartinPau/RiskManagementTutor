@@ -568,9 +568,9 @@ const partASlides = [
         </div>
       `,
       infographic: `
-        <div class="h-full flex flex-col justify-center p-4">
+        <div class="h-full flex flex-col justify-center p-2">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">Hazard → Harm Chain</h4>
-          <svg viewBox="0 0 360 230" width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 360 230" class="w-full h-auto max-h-[380px]" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arr-c" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
                 <path d="M0,0 L0,7 L7,3.5 z" fill="#839896"/>
@@ -666,9 +666,9 @@ const partASlides = [
         </ol>
       `,
       infographic: `
-        <div class="h-full flex flex-col justify-center p-4">
+        <div class="h-full flex flex-col justify-center p-2">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">3-Tier Risk Control Hierarchy</h4>
-          <svg viewBox="0 0 320 200" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 320 200" class="w-full h-auto max-h-[380px]" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arr-priority" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
                 <path d="M3,0 L6,6 L0,6 z" fill="var(--outline)"/>
@@ -781,9 +781,9 @@ const partASlides = [
         </div>
       `,
       infographic: `
-        <div class="h-full flex flex-col justify-center p-4">
+        <div class="h-full flex flex-col justify-center p-2">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2 text-center">Interactive Speed Bump Sequence</h4>
-          <svg viewBox="0 0 280 200" width="100%" height="180" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 280 200" class="w-full h-auto max-h-[380px]" xmlns="http://www.w3.org/2000/svg">
             <!-- Road background -->
             <rect x="5" y="5" width="270" height="190" fill="#f1f3f5" rx="6" stroke="var(--outline-variant)" stroke-width="1.5"/>
             <!-- Road Lane Lines -->
@@ -952,7 +952,7 @@ const partASlides = [
       infographic: `
         <div class="h-full flex flex-col justify-center items-center p-6 scale-container">
           <h4 class="font-mono text-primary text-xs uppercase mb-8">Benefit-Risk Balance Scale</h4>
-          <svg viewBox="0 0 300 200" class="w-full max-w-[260px] h-auto">
+          <svg viewBox="0 0 300 200" class="w-full max-w-[380px] h-auto">
             <!-- Stand -->
             <line x1="150" y1="180" x2="150" y2="70" stroke="var(--secondary)" stroke-width="4"></line>
             <polygon points="120,180 180,180 160,195 140,195" fill="var(--outline)"></polygon>
@@ -1008,9 +1008,9 @@ const partASlides = [
         </p>
       `,
       infographic: `
-        <div class="h-full flex flex-col justify-center p-4">
+        <div class="h-full flex flex-col justify-center p-2">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">PMS → Risk Management Feedback Loop</h4>
-          <svg viewBox="0 0 360 250" width="100%" height="240" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 360 250" class="w-full h-auto max-h-[380px]" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arr-d" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
                 <path d="M0,0 L0,7 L7,3.5 z" fill="var(--success)"/>
@@ -1087,9 +1087,9 @@ const partBSlides = [
         </ul>
       `,
       infographic: `
-        <div class="h-full flex flex-col justify-center p-4">
+        <div class="h-full flex flex-col justify-center p-2">
           <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-4 text-center">Tool Box Comparison</h4>
-          <svg viewBox="0 0 280 200" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 280 200" class="w-full h-auto max-h-[380px]" xmlns="http://www.w3.org/2000/svg">
             <rect x="10" y="20" width="120" height="40" rx="3" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
             <text x="70" y="40" text-anchor="middle" fill="var(--on-surface)" font-size="11" font-family="sans-serif" font-weight="bold">PHA</text>
             <text x="70" y="52" text-anchor="middle" fill="#839896" font-size="11" font-family="sans-serif">Early Concept baseline</text>
@@ -1284,7 +1284,7 @@ const partBSlides = [
         <div class="h-full flex flex-col justify-center items-center p-4">
           <h4 class="font-mono text-primary text-xs uppercase mb-2">FTA Interactive Fault Tree</h4>
           <p class="text-[9.5px] text-on-surface-variant text-center mb-4">Click basic event boxes in the diagram or toggles on the left to activate failures.</p>
-          <svg viewBox="0 0 400 280" class="w-full max-w-[380px] h-auto">
+          <svg viewBox="0 0 400 280" class="w-full max-w-[460px] h-auto">
             <!-- Connection Lines -->
             <!-- Top Event to G1 -->
             <line x1="200" y1="45" x2="200" y2="60" stroke="var(--secondary)" stroke-width="1.5" id="line-top-to-g1"></line>
@@ -1569,7 +1569,7 @@ function renderPartA(container) {
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
           <!-- Text/Control Column -->
-          <div class="lg:col-span-4 flex flex-col justify-between min-h-[500px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
+          <div class="lg:col-span-5 flex flex-col justify-between min-h-[500px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
             <div>
               <h2 class="font-serif text-headline-lg-mobile md:text-headline-xl mb-6">${slide.title}</h2>
               <div class="font-body-md text-body-md text-on-surface-variant text-balance">
@@ -1588,7 +1588,7 @@ function renderPartA(container) {
           </div>
 
           <!-- Infographic Column -->
-          <div class="lg:col-span-8 flex items-center justify-center min-h-[480px] bg-surface-container/30 rounded border border-outline-variant p-6">
+          <div class="lg:col-span-7 flex items-center justify-center min-h-[480px] bg-surface-container/30 rounded border border-outline-variant p-6">
             <div class="w-full h-full flex flex-col justify-center" id="infographic-stage">
               ${slide.infographic}
             </div>
@@ -2060,7 +2060,7 @@ function renderPartA(container) {
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
             <!-- Text/Control Column -->
-            <div class="lg:col-span-4 flex flex-col justify-between min-h-[500px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
+            <div class="lg:col-span-5 flex flex-col justify-between min-h-[500px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
               <div>
                 <h2 class="font-serif text-headline-lg-mobile md:text-headline-xl mb-6">${slide.title}</h2>
                 <div class="font-body-md text-body-md text-on-surface-variant text-balance">
@@ -2079,7 +2079,7 @@ function renderPartA(container) {
             </div>
 
             <!-- Infographic Column -->
-            <div class="lg:col-span-8 flex items-center justify-center min-h-[480px] bg-surface-container/30 rounded border border-outline-variant p-6">
+            <div class="lg:col-span-7 flex items-center justify-center min-h-[480px] bg-surface-container/30 rounded border border-outline-variant p-6">
               <div class="w-full h-full flex flex-col justify-center" id="infographic-stage-b">
                 ${slide.infographic}
               </div>
