@@ -451,7 +451,7 @@ function initApp() {
             </div>
             <h2 class="font-serif text-xl font-bold mb-3">Standard Overview</h2>
             <p class="text-on-surface-variant text-sm line-clamp-3 leading-relaxed">
-              Core definitions, EU MDR/US FDA alignments, risk management planning, lifecycle workflow, and key compliance requirements.
+              Core definitions, EU MDR (Medical Device Regulation) / US FDA (Food and Drug Administration) alignments, risk management planning, lifecycle workflow, and key compliance requirements.
             </p>
           </div>
           <div class="flex justify-between items-center mt-6">
@@ -541,7 +541,7 @@ const partASlides = [
       content: `
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">The Standard</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          ISO 14971 is the internationally recognised standard that specifies a process for manufacturers
+          ISO (International Organization for Standardization) 14971 is the internationally recognised standard that specifies a process for manufacturers
           to identify the hazards associated with medical devices, estimate and evaluate the risks,
           control those risks, and monitor the effectiveness of the controls.
         </p>
@@ -657,12 +657,12 @@ const partASlides = [
         </p>
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">The Three-Tier Priority for Risk Control (§7)</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-2">
-          ISO 14971 §7.1 mandates that risk controls be applied in strict priority order:
+          ISO (International Organization for Standardization) 14971 §7.1 mandates that risk controls be applied in strict priority order:
         </p>
         <ol class="list-decimal pl-5 mb-4 text-on-surface-variant text-sm space-y-2">
           <li><strong>Inherent safety by design</strong> — Eliminate or reduce the hazard at source. This is always preferred. Example: select non-toxic materials; design out the sharp edge.</li>
           <li><strong>Protective measures</strong> — If the hazard cannot be designed out, add guards, alarms, or interlocks. Example: needle retraction mechanism; automatic shut-off.</li>
-          <li><strong>Information for safety</strong> — Warnings, contraindications, and training instructions in the IFU. This is the last resort — labels do not substitute for design safety.</li>
+          <li><strong>Information for safety</strong> — Warnings, contraindications, and training instructions in the IFU (Instructions for Use). This is the last resort — labels do not substitute for design safety.</li>
         </ol>
       `,
       infographic: `
@@ -749,12 +749,18 @@ const partASlides = [
     },
     {
       title: `New Hazards from Risk Controls (§7.2/7.5)`,
-      section: `control`,
+      section: `new_hazards`,
       content: `
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Analyzing Control Side Effects</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          Under ISO 14971 §7.2 and §7.5, you must evaluate whether any risk control measure introduces <strong>new hazards</strong> or affects previously estimated risks.
+          Under <strong>ISO (International Organization for Standardization) 14971 §7.2 and §7.5</strong>, manufacturers must evaluate whether any risk control measure introduces <strong>new hazards</strong> or affects previously estimated risks. Introducing a control measure is not the end of the process; it triggers a secondary risk assessment.
         </p>
+        <div class="p-3 bg-surface-container-high rounded border border-outline-variant mb-3">
+          <span class="text-xs text-primary font-mono uppercase block mb-1">Secondary Hazards Case Study</span>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            In traffic safety, installing **speed cushions** (a type of speed bump) is a risk control measure to slow down traffic near a crosswalk. However, this control can introduce a **secondary hazard**: drivers swerving toward the center-line or oncoming lane to avoid or straddle the cushions, creating a new risk of high-speed head-on collisions.
+          </p>
+        </div>
         <p class="text-xs text-primary font-mono uppercase mb-2 font-bold">Interactive Case Study: The Speed Bump</p>
         <p class="text-xs text-on-surface-variant mb-3 font-sans">
           Step through the sequence below to analyze how introducing a risk control introduces new risks:
@@ -793,28 +799,33 @@ const partASlides = [
             <rect x="125" y="165" width="30" height="15" fill="#ffffff"/>
             <text x="140" y="188" text-anchor="middle" fill="#64748b" font-size="8" font-weight="bold">Crosswalk</text>
 
-            <!-- Speed Bumps (Risk Mitigations) - Controlled by Group Visibility -->
+            <!-- Speed Bumps (Risk Mitigations) - Controlled by Group Visibility (Corrected & Scaled up 25%) -->
             <g id="sb-bump-group">
-              <rect x="60" y="10" width="25" height="80" rx="3" fill="#991b1b" stroke="#7f1d1d" stroke-width="1"/>
-              <path d="M 65 20 L 80 30 M 65 40 L 80 50 M 65 60 L 80 70" stroke="#ffffff" stroke-width="1.5"/>
-              <rect x="195" y="110" width="25" height="80" rx="3" fill="#991b1b" stroke="#7f1d1d" stroke-width="1"/>
-              <path d="M 200 120 L 215 130 M 200 140 L 215 150 M 200 160 L 215 170" stroke="#ffffff" stroke-width="1.5"/>
-              <text x="72.5" y="96" text-anchor="middle" fill="#991b1b" font-size="7" font-weight="bold">Speed Bump</text>
-              <text x="207.5" y="102" text-anchor="middle" fill="#991b1b" font-size="7" font-weight="bold">Speed Bump</text>
+              <!-- Bump 1 (Bottom Lane, Left of Crosswalk) -->
+              <rect x="60" y="110" width="32" height="80" rx="3" fill="#991b1b" stroke="#7f1d1d" stroke-width="1"/>
+              <path d="M 66 120 L 86 130 M 66 140 L 86 150 M 66 160 L 86 170" stroke="#ffffff" stroke-width="1.5"/>
+              
+              <!-- Bump 2 (Top Lane, Right of Crosswalk) -->
+              <rect x="195" y="10" width="32" height="80" rx="3" fill="#991b1b" stroke="#7f1d1d" stroke-width="1"/>
+              <path d="M 201 20 L 221 30 M 201 40 L 221 50 M 201 60 L 221 70" stroke="#ffffff" stroke-width="1.5"/>
+              
+              <!-- Labels -->
+              <text x="76" y="102" text-anchor="middle" fill="#991b1b" font-size="7" font-weight="bold">Speed Bump</text>
+              <text x="211" y="96" text-anchor="middle" fill="#991b1b" font-size="7" font-weight="bold">Speed Bump</text>
             </g>
 
             <!-- Step 1 Elements -->
             <g id="sb-step-1">
-              <!-- Fast Car 1 (Blue) -->
-              <g transform="translate(15, 130)">
-                <rect x="0" y="5" width="40" height="20" rx="3" fill="var(--primary)" stroke="var(--primary-container)" stroke-width="1"/>
-                <rect x="25" y="8" width="10" height="14" rx="1" fill="#e2e8f0"/>
-                <rect x="5" y="2" width="8" height="3" fill="#000000" rx="1"/>
-                <rect x="27" y="2" width="8" height="3" fill="#000000" rx="1"/>
-                <rect x="5" y="25" width="8" height="3" fill="#000000" rx="1"/>
-                <rect x="27" y="25" width="8" height="3" fill="#000000" rx="1"/>
+              <!-- Fast Car 1 (Blue) - Scaled 25% -->
+              <g transform="translate(15, 128)">
+                <rect x="0" y="5" width="50" height="25" rx="4" fill="var(--primary)" stroke="var(--primary-container)" stroke-width="1"/>
+                <rect x="32" y="9" width="12" height="17" rx="1" fill="#e2e8f0"/>
+                <rect x="6" y="1" width="10" height="4" fill="#000000" rx="1"/>
+                <rect x="34" y="1" width="10" height="4" fill="#000000" rx="1"/>
+                <rect x="6" y="30" width="10" height="4" fill="#000000" rx="1"/>
+                <rect x="34" y="30" width="10" height="4" fill="#000000" rx="1"/>
                 <!-- Speed arrow -->
-                <path d="M 45 15 L 60 15 M 54 10 L 60 15 L 54 20" stroke="var(--error)" stroke-width="1.5" fill="none"/>
+                <path d="M 55 17.5 L 75 17.5 M 67 11.5 L 75 17.5 L 67 23.5" stroke="var(--error)" stroke-width="1.5" fill="none"/>
               </g>
               <!-- Unsafe Pedestrian -->
               <g transform="translate(135, 130)">
@@ -835,19 +846,19 @@ const partASlides = [
 
             <!-- Step 2 Elements -->
             <g id="sb-step-2" style="display: none;">
-              <!-- Slow Car 1 (Blue) -->
-              <g transform="translate(10, 130)">
-                <rect x="0" y="5" width="40" height="20" rx="3" fill="var(--primary)" stroke="var(--primary-container)" stroke-width="1"/>
-                <rect x="25" y="8" width="10" height="14" rx="1" fill="#e2e8f0"/>
-                <rect x="5" y="2" width="8" height="3" fill="#000000" rx="1"/>
-                <rect x="27" y="2" width="8" height="3" fill="#000000" rx="1"/>
-                <rect x="5" y="25" width="8" height="3" fill="#000000" rx="1"/>
-                <rect x="27" y="25" width="8" height="3" fill="#000000" rx="1"/>
+              <!-- Slow Car 1 (Blue) - Scaled 25% -->
+              <g transform="translate(10, 128)">
+                <rect x="0" y="5" width="50" height="25" rx="4" fill="var(--primary)" stroke="var(--primary-container)" stroke-width="1"/>
+                <rect x="32" y="9" width="12" height="17" rx="1" fill="#e2e8f0"/>
+                <rect x="6" y="1" width="10" height="4" fill="#000000" rx="1"/>
+                <rect x="34" y="1" width="10" height="4" fill="#000000" rx="1"/>
+                <rect x="6" y="30" width="10" height="4" fill="#000000" rx="1"/>
+                <rect x="34" y="30" width="10" height="4" fill="#000000" rx="1"/>
                 <!-- Brake indicator -->
-                <circle cx="2" cy="7" r="1.5" fill="#ef4444"/>
-                <circle cx="2" cy="23" r="1.5" fill="#ef4444"/>
+                <circle cx="2" cy="9" r="2" fill="#ef4444"/>
+                <circle cx="2" cy="26" r="2" fill="#ef4444"/>
                 <!-- Slow arrow -->
-                <path d="M 45 15 L 52 15" stroke="var(--success)" stroke-width="1.5"/>
+                <path d="M 55 17.5 L 64 17.5" stroke="var(--success)" stroke-width="2"/>
               </g>
               <!-- Safe Pedestrian -->
               <g transform="translate(135, 130)">
@@ -868,25 +879,25 @@ const partASlides = [
 
             <!-- Step 3 Elements -->
             <g id="sb-step-3" style="display: none;">
-              <!-- Swerving Car 1 (Blue) inside oncoming lane -->
-              <g transform="translate(85, 45) rotate(-6)">
-                <rect x="0" y="5" width="40" height="20" rx="3" fill="var(--primary)" stroke="var(--primary-container)" stroke-width="1"/>
-                <rect x="25" y="8" width="10" height="14" rx="1" fill="#e2e8f0"/>
-                <rect x="5" y="2" width="8" height="3" fill="#000000" rx="1"/>
-                <rect x="27" y="2" width="8" height="3" fill="#000000" rx="1"/>
-                <rect x="5" y="25" width="8" height="3" fill="#000000" rx="1"/>
-                <rect x="27" y="25" width="8" height="3" fill="#000000" rx="1"/>
+              <!-- Swerving Car 1 (Blue) inside oncoming lane - Scaled 25% -->
+              <g transform="translate(85, 43) rotate(-6)">
+                <rect x="0" y="5" width="50" height="25" rx="4" fill="var(--primary)" stroke="var(--primary-container)" stroke-width="1"/>
+                <rect x="32" y="9" width="12" height="17" rx="1" fill="#e2e8f0"/>
+                <rect x="6" y="1" width="10" height="4" fill="#000000" rx="1"/>
+                <rect x="34" y="1" width="10" height="4" fill="#000000" rx="1"/>
+                <rect x="6" y="30" width="10" height="4" fill="#000000" rx="1"/>
+                <rect x="34" y="30" width="10" height="4" fill="#000000" rx="1"/>
                 <!-- Swerve path arrow -->
                 <path d="M -25 35 Q -5 35 -5 15 Q -5 -5 15 -5" fill="none" stroke="var(--error)" stroke-width="1.5" stroke-dasharray="3,3"/>
               </g>
-              <!-- Oncoming Car 2 (Green) inside its lane -->
-              <g transform="translate(175, 35)">
-                <rect x="0" y="5" width="40" height="20" rx="3" fill="#15803d" stroke="#166534" stroke-width="1"/>
-                <rect x="5" y="8" width="10" height="14" rx="1" fill="#e2e8f0"/>
-                <rect x="5" y="2" width="8" height="3" fill="#000000" rx="1"/>
-                <rect x="27" y="2" width="8" height="3" fill="#000000" rx="1"/>
-                <rect x="5" y="25" width="8" height="3" fill="#000000" rx="1"/>
-                <rect x="27" y="25" width="8" height="3" fill="#000000" rx="1"/>
+              <!-- Oncoming Car 2 (Green) inside its lane - Scaled 25% -->
+              <g transform="translate(175, 33)">
+                <rect x="0" y="5" width="50" height="25" rx="4" fill="#15803d" stroke="#166534" stroke-width="1"/>
+                <rect x="6" y="9" width="12" height="17" rx="1" fill="#e2e8f0"/>
+                <rect x="6" y="1" width="10" height="4" fill="#000000" rx="1"/>
+                <rect x="34" y="1" width="10" height="4" fill="#000000" rx="1"/>
+                <rect x="6" y="30" width="10" height="4" fill="#000000" rx="1"/>
+                <rect x="34" y="30" width="10" height="4" fill="#000000" rx="1"/>
               </g>
               
               <!-- Collision Starburst -->
@@ -934,7 +945,7 @@ const partASlides = [
           </label>
           <label class="flex items-center gap-3 text-xs text-on-surface-variant cursor-pointer">
             <input type="checkbox" class="bra-toggle form-checkbox rounded text-primary" data-weight="20">
-            Aligned with State of the Art (comparable CE-marked equivalents).
+            Aligned with State of the Art (comparable CE (Conformité Européenne)-marked equivalents).
           </label>
         </div>
       `,
@@ -977,15 +988,15 @@ const partASlides = [
       content: `
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">The §10 Requirement</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          Risk management does not stop when the device is released. ISO 14971 §10 requires
+          Risk management does not stop when the device is released. ISO (International Organization for Standardization) 14971 §10 requires
           manufacturers to establish a system for actively collecting and reviewing post-production
           information — and feeding it back into the Risk Management File.
         </p>
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Information Sources (§10.2)</h4>
         <ul class="list-disc pl-5 mb-4 text-on-surface-variant text-sm space-y-1">
           <li>Complaints, adverse events, vigilance reports</li>
-          <li>PMSR (Periodic Safety Update Report) and PMCF data</li>
-          <li>NC/CAPA findings from manufacturing and quality systems</li>
+          <li>PMSR (Post-Market Surveillance Report) and PMCF (Post-Market Clinical Follow-up) data</li>
+          <li>NC (Non-Conformance) / CAPA (Corrective and Preventive Action) findings from manufacturing and quality systems</li>
           <li>Published literature and competitor device data</li>
           <li>Trend analysis results (moving averages, control charts)</li>
         </ul>
@@ -1011,33 +1022,33 @@ const partASlides = [
             
             <!-- Top Box: PMS Data Collection -->
             <rect x="30" y="8" width="300" height="36" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
-            <text x="180" y="22" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif" font-weight="bold">PMS DATA COLLECTION (§10.2)</text>
+            <text x="180" y="22" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif" font-weight="bold">PMS (POST-MARKET SURVEILLANCE) DATA COLLECTION (§10.2)</text>
             <text x="180" y="34" text-anchor="middle" fill="#839896" font-size="10" font-family="sans-serif">Complaints · PMCF · NCs · Literature</text>
             <line x1="180" y1="44" x2="180" y2="64" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
-
+ 
             <!-- Middle Box 1: Trend Analysis -->
             <rect x="60" y="64" width="240" height="32" rx="4" fill="var(--primary-container)" stroke="var(--tertiary)" stroke-width="1"/>
             <text x="180" y="78" text-anchor="middle" fill="var(--tertiary)" font-size="12" font-family="sans-serif" font-weight="bold">TREND ANALYSIS</text>
-            <text x="180" y="89" text-anchor="middle" fill="#839896" font-size="10" font-family="sans-serif">MDR Art.88 reporting trigger</text>
+            <text x="180" y="89" text-anchor="middle" fill="#839896" font-size="10" font-family="sans-serif">MDR (Medical Device Regulation) Art.88 reporting trigger</text>
             <line x1="180" y1="96" x2="180" y2="116" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
-
+ 
             <!-- Middle Box 2: Info Review -->
             <rect x="30" y="116" width="300" height="32" rx="4" fill="var(--surface-container-highest)" stroke="var(--outline)" stroke-width="1"/>
             <text x="180" y="130" text-anchor="middle" fill="var(--on-surface)" font-size="12" font-family="sans-serif" font-weight="bold">INFORMATION REVIEW (§10.3)</text>
             <text x="180" y="141" text-anchor="middle" fill="#839896" font-size="10" font-family="sans-serif">New hazard? Changed probability?</text>
             <line x1="180" y1="148" x2="180" y2="168" stroke="var(--outline)" stroke-width="1.5" marker-end="url(#arr-e)"/>
-
+ 
             <!-- Decision Diamond -->
             <polygon points="180,168 230,189 180,210 130,189" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1.5"/>
             <text x="180" y="184" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif" font-weight="bold">Risk changed?</text>
             <text x="180" y="196" text-anchor="middle" fill="#839896" font-size="9" font-family="sans-serif">YES / NO</text>
-
+ 
             <!-- YES Branch (Left) -->
             <line x1="130" y1="189" x2="75" y2="189" stroke="var(--success)" stroke-width="1.5" marker-end="url(#arr-d)"/>
             <text x="100" y="183" text-anchor="middle" fill="var(--success)" font-size="11" font-family="sans-serif">YES</text>
             
             <rect x="5" y="174" width="70" height="30" rx="3" fill="var(--primary-container)" stroke="var(--success)" stroke-width="1"/>
-            <text x="40" y="192" text-anchor="middle" fill="var(--success)" font-size="10" font-family="sans-serif" font-weight="bold">Update RMF</text>
+            <text x="40" y="192" text-anchor="middle" fill="var(--success)" font-size="10" font-family="sans-serif" font-weight="bold">Update RMF (Risk Management File)</text>
 
             <!-- NO Branch (Right) -->
             <line x1="230" y1="189" x2="295" y2="189" stroke="var(--outline)" stroke-width="1.5"/>
@@ -1064,15 +1075,15 @@ const partBSlides = [
         </p>
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Choosing the Right Tool</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          ISO 14971 does not mandate a single technique. Instead, it refers to standard reliability engineering methods described in ISO/TR 24971 Annex B. Choosing the right tool depends on the phase of development and the nature of the hazard.
+          ISO (International Organization for Standardization) 14971 does not mandate a single technique. Instead, it refers to standard reliability engineering methods described in ISO (International Organization for Standardization)/TR 24971 Annex B. Choosing the right tool depends on the phase of development and the nature of the hazard.
         </p>
         <ul class="list-disc pl-5 mb-4 text-on-surface-variant text-sm space-y-1">
-          <li><strong>PHA</strong> for early-stage baseline hazard identification.</li>
-          <li><strong>FMEA</strong> for bottom-up component failure reliability.</li>
-          <li><strong>FTA</strong> for top-down system fault combination logic.</li>
-          <li><strong>ETA</strong> for forward safety barrier event path tracing.</li>
-          <li><strong>HAZOP</strong> for process parameter deviation studies.</li>
-          <li><strong>HACCP</strong> for sterile manufacturing process control points.</li>
+          <li><strong>PHA (Preliminary Hazard Analysis)</strong> for early-stage baseline hazard identification.</li>
+          <li><strong>FMEA (Failure Mode and Effects Analysis)</strong> for bottom-up component failure reliability.</li>
+          <li><strong>FTA (Fault Tree Analysis)</strong> for top-down system fault combination logic.</li>
+          <li><strong>ETA (Event Tree Analysis)</strong> for forward safety barrier event path tracing.</li>
+          <li><strong>HAZOP (Hazard and Operability Study)</strong> for process parameter deviation studies.</li>
+          <li><strong>HACCP (Hazard Analysis and Critical Control Points)</strong> for sterile manufacturing process control points.</li>
         </ul>
       `,
       infographic: `
@@ -1114,7 +1125,7 @@ const partBSlides = [
         <div class="p-3 bg-surface-container-high rounded border border-outline-variant mb-3">
           <span class="text-xs text-primary font-mono uppercase block mb-1">Methodology Tip: ISO/TR 24971 Annex A</span>
           <p class="text-xs text-on-surface-variant">
-            A highly recommended method for finding applicable hazards during a PHA is to walk through the questions in <strong>ISO/TR 24971:2020 Annex A</strong>. It contains a systematic checklist of safety characteristics, hazards (biological, environmental, operational, etc.), and hazardous situations.
+            A highly recommended method for finding applicable hazards during a PHA is to walk through the questions in <strong>ISO (International Organization for Standardization)/TR 24971:2020 Annex A</strong>. It contains a systematic checklist of safety characteristics, hazards (biological, environmental, operational, etc.), and hazardous situations.
           </p>
         </div>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
@@ -1145,7 +1156,7 @@ const partBSlides = [
                 </tr>
                 <tr class="bg-surface hover:bg-surface-container-high transition-colors">
                   <td class="p-2 border border-outline-variant font-semibold">Thermal</td>
-                  <td class="p-2 border border-outline-variant">RF ablation tip overheating (>50°C)</td>
+                  <td class="p-2 border border-outline-variant">RF (Radiofrequency) ablation tip overheating (>50°C)</td>
                   <td class="p-2 border border-outline-variant">Ablation energy delivered with blocked irrigation ports</td>
                   <td class="p-2 border border-outline-variant">Myocardial charring, thrombus, stroke</td>
                   <td class="p-2 border border-outline-variant text-error font-semibold">Critical</td>
@@ -1180,9 +1191,9 @@ const partBSlides = [
           A <strong>Failure Mode and Effects Analysis (FMEA)</strong> is a structured, inductive (bottom-up) technique that analyzes component failure modes, their potential causes, and their effects on device function. It is highly effective at identifying design and process reliability weaknesses.
         </p>
         <div class="p-3 bg-surface-container-high rounded border border-outline-variant mb-3">
-          <span class="text-xs text-primary font-mono uppercase block mb-1">Methodology Note: RPN Reduction &amp; ISO 14971</span>
+          <span class="text-xs text-primary font-mono uppercase block mb-1">Methodology Note: RPN Reduction &amp; ISO (International Organization for Standardization) 14971</span>
           <p class="text-xs text-on-surface-variant">
-            Traditional FMEA uses a <strong>Risk Priority Number (RPN) = Severity (S) × Occurrence (O) × Detection (D)</strong>. Introducing a risk control reduces the RPN mathematically by lowering Occurrence (preventative design changes) or improving Detection (100% inspections). Note that under ISO 14971, risk reduction is evaluated by estimating the actual probability of occurrence and severity of harm; however, FMEA RPN remains an excellent tool for engineering teams to prioritize design work.
+            Traditional FMEA uses a <strong>Risk Priority Number (RPN) = Severity (S) × Occurrence (O) × Detection (D)</strong>. Introducing a risk control reduces the RPN mathematically by lowering Occurrence (preventative design changes) or improving Detection (100% inspections). Note that under ISO (International Organization for Standardization) 14971, risk reduction is evaluated by estimating the actual probability of occurrence and severity of harm; however, FMEA RPN remains an excellent tool for engineering teams to prioritize design work.
           </p>
         </div>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
@@ -1238,7 +1249,7 @@ const partBSlides = [
       content: `
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Top-Down Systemic Risk Logic</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          FTA is a deductive (top-down) system analysis technique that starts with an undesired 'Top Event' (e.g., drug overdose) and traces backward through logical AND/OR gates to identify the combinations of component failures or user errors that could cause it.
+          FTA (Fault Tree Analysis) is a deductive (top-down) system analysis technique that starts with an undesired 'Top Event' (e.g., drug overdose) and traces backward through logical AND/OR gates to identify the combinations of component failures or user errors that could cause it.
         </p>
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Logical Gates &amp; Risk Estimation</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
@@ -1260,7 +1271,7 @@ const partBSlides = [
             <input type="checkbox" id="fta-dosingbug" class="fta-toggle form-checkbox rounded text-primary">
           </label>
           <label class="flex items-center justify-between text-xs cursor-pointer">
-            <span class="text-on-surface-variant font-medium">RAM Bit Flip (No ECC memory)</span>
+            <span class="text-on-surface-variant font-medium">RAM Bit Flip (No ECC (Error-Correcting Code) memory)</span>
             <input type="checkbox" id="fta-bitflip" class="fta-toggle form-checkbox rounded text-primary">
           </label>
           <label class="flex items-center justify-between text-xs cursor-pointer">
@@ -1356,13 +1367,13 @@ const partBSlides = [
       content: `
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Tracing Safety Barrier Sequences</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          ETA is an inductive (forward-looking) technique that starts with an initiating event (e.g., pressure sensor failure) and branches forward through the success or failure of subsequent safety barriers to determine the final clinical outcomes.
+          ETA (Event Tree Analysis) is an inductive (forward-looking) technique that starts with an initiating event (e.g., pressure sensor failure) and branches forward through the success or failure of subsequent safety barriers to determine the final clinical outcomes.
         </p>
         <p class="text-xs text-primary font-mono uppercase mb-2">Select Clinical Example</p>
         <div class="grid grid-cols-3 gap-2 mb-4" id="eta-example-selector">
           <button class="p-2 bg-surface-container-high border border-primary text-primary font-sans text-xs uppercase font-semibold rounded active" data-ex="ventilator">Ventilator</button>
           <button class="p-2 bg-surface-container-high border border-outline-variant text-on-surface-variant font-sans text-xs uppercase rounded" data-ex="pump">Syringe Pump</button>
-          <button class="p-2 bg-surface-container-high border border-outline-variant text-on-surface-variant font-sans text-xs uppercase rounded" data-ex="defib">AED Shock</button>
+          <button class="p-2 bg-surface-container-high border border-outline-variant text-on-surface-variant font-sans text-xs uppercase rounded" data-ex="defib">AED (Automated External Defibrillator) Shock</button>
         </div>
         <p class="text-xs text-primary font-mono uppercase mb-2">Interactive Path Tracer</p>
         <p class="text-xs text-on-surface-variant mb-4">Click the safeguard barrier buttons below to toggle whether they work (YES) or fail (NO), and trace the clinical outcome.</p>
@@ -1402,12 +1413,12 @@ const partBSlides = [
       isWide: false
     },
     {
-      title: `HAZOP Example: Insulin Infusion Pump`,
+      title: `HAZOP (Hazard and Operability Study) Example: Insulin Infusion Pump`,
       section: `hazop`,
       content: `
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Guide-Word Deviation Analysis</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          HAZOP is a systematic, team-based technique that uses standardized guide words (More, Less, No, Reverse) applied to process parameters (Flow, Pressure, Temperature) to identify deviations from design intent.
+          HAZOP (Hazard and Operability Study) is a systematic, team-based technique that uses standardized guide words (More, Less, No, Reverse) applied to process parameters (Flow, Pressure, Temperature) to identify deviations from design intent.
         </p>
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Clinical Example: Insulin Infusion Pump</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
@@ -1430,12 +1441,12 @@ const partBSlides = [
       isWide: false
     },
     {
-      title: `HACCP Example: Catheter Steam Sterilization`,
+      title: `HACCP (Hazard Analysis and Critical Control Points) Example: Catheter Steam Sterilization`,
       section: `haccp`,
       content: `
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">Critical Control Points (CCPs)</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
-          HACCP is a preventive system developed to control hazards at critical points in a manufacturing process. It establishes Critical Limits (measurable values), monitoring procedures, and corrective actions to prevent, eliminate, or reduce hazards to acceptable levels.
+          HACCP (Hazard Analysis and Critical Control Points) is a preventive system developed to control hazards at critical points in a manufacturing process. It establishes Critical Limits (measurable values), monitoring procedures, and corrective actions to prevent, eliminate, or reduce hazards to acceptable levels.
         </p>
         <h4 class="font-sans text-xs font-bold text-primary uppercase tracking-wider mb-2">HACCP in Catheter Sterilization</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed mb-3">
@@ -1476,11 +1487,11 @@ const partBSlides = [
           A robust risk management file rarely relies on a single technique. In practice, medical device manufacturers combine these methods to achieve complete coverage:
         </p>
         <ul class="list-disc pl-5 mb-4 text-on-surface-variant text-sm space-y-1">
-          <li><strong>PHA</strong> provides the early baseline of hazards during conceptual design.</li>
-          <li><strong>FMEA</strong> systematically analyzes component failure modes and reliability.</li>
-          <li><strong>FTA</strong> traces multiple failures to top-level hazardous events.</li>
-          <li><strong>HAZOP</strong> identifies deviations in complex process nodes and fluid lines.</li>
-          <li><strong>HACCP</strong> establishes control points and monitoring on the production floor.</li>
+          <li><strong>PHA (Preliminary Hazard Analysis)</strong> provides the early baseline of hazards during conceptual design.</li>
+          <li><strong>FMEA (Failure Mode and Effects Analysis)</strong> systematically analyzes component failure modes and reliability.</li>
+          <li><strong>FTA (Fault Tree Analysis)</strong> traces multiple failures to top-level hazardous events.</li>
+          <li><strong>HAZOP (Hazard and Operability Study)</strong> identifies deviations in complex process nodes and fluid lines.</li>
+          <li><strong>HACCP (Hazard Analysis and Critical Control Points)</strong> establishes control points and monitoring on the production floor.</li>
         </ul>
         <div class="p-3 bg-surface-container-high rounded border border-outline-variant flex flex-col gap-3">
           <p class="text-xs text-on-surface-variant">When you are ready to complete your competence assessment, click the button below to open the exams.</p>
@@ -1558,7 +1569,7 @@ function renderPartA(container) {
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
           <!-- Text/Control Column -->
-          <div class="lg:col-span-5 flex flex-col justify-between min-h-[500px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
+          <div class="lg:col-span-4 flex flex-col justify-between min-h-[500px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
             <div>
               <h2 class="font-serif text-headline-lg-mobile md:text-headline-xl mb-6">${slide.title}</h2>
               <div class="font-body-md text-body-md text-on-surface-variant text-balance">
@@ -1577,7 +1588,7 @@ function renderPartA(container) {
           </div>
 
           <!-- Infographic Column -->
-          <div class="lg:col-span-7 flex items-center justify-center min-h-[480px] bg-surface-container/30 rounded border border-outline-variant p-6">
+          <div class="lg:col-span-8 flex items-center justify-center min-h-[480px] bg-surface-container/30 rounded border border-outline-variant p-6">
             <div class="w-full h-full flex flex-col justify-center" id="infographic-stage">
               ${slide.infographic}
             </div>
@@ -2049,7 +2060,7 @@ function renderPartA(container) {
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
             <!-- Text/Control Column -->
-            <div class="lg:col-span-5 flex flex-col justify-between min-h-[500px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
+            <div class="lg:col-span-4 flex flex-col justify-between min-h-[500px] pr-0 lg:pr-8 border-r-0 lg:border-r border-outline-variant">
               <div>
                 <h2 class="font-serif text-headline-lg-mobile md:text-headline-xl mb-6">${slide.title}</h2>
                 <div class="font-body-md text-body-md text-on-surface-variant text-balance">
@@ -2068,7 +2079,7 @@ function renderPartA(container) {
             </div>
 
             <!-- Infographic Column -->
-            <div class="lg:col-span-7 flex items-center justify-center min-h-[480px] bg-surface-container/30 rounded border border-outline-variant p-6">
+            <div class="lg:col-span-8 flex items-center justify-center min-h-[480px] bg-surface-container/30 rounded border border-outline-variant p-6">
               <div class="w-full h-full flex flex-col justify-center" id="infographic-stage-b">
                 ${slide.infographic}
               </div>
@@ -2586,7 +2597,7 @@ function renderPartA(container) {
             <span class="text-xs text-primary font-mono block mb-2 uppercase">Quiz A</span>
             <h2 class="font-serif text-headline-lg mb-3">Part A: Standard Requirements</h2>
             <p class="text-on-surface-variant text-sm mb-4">
-              5 questions testing definitions, regulatory alignment (MDR/QMSR), acceptability policy, and lifecycle steps.
+              5 questions testing definitions, regulatory alignment (MDR (Medical Device Regulation) / QMSR (Quality Management System Regulation)), acceptability policy, and lifecycle steps.
             </p>
           </div>
           <div class="flex justify-between items-center border-t border-outline-variant pt-4">
@@ -2605,7 +2616,7 @@ function renderPartA(container) {
             <span class="text-xs text-primary font-mono block mb-2 uppercase">Quiz B</span>
             <h2 class="font-serif text-headline-lg mb-3">Part B: Analysis & Techniques</h2>
             <p class="text-on-surface-variant text-sm mb-4">
-              6 questions testing FMEA limits, PHA baseline, FTA logic gates, HAZOP parameter deviations, HACCP limits, and benefit-risk analysis.
+              6 questions testing FMEA (Failure Mode and Effects Analysis) limits, PHA (Preliminary Hazard Analysis) baseline, FTA (Fault Tree Analysis) logic gates, HAZOP (Hazard and Operability Study) parameter deviations, HACCP (Hazard Analysis and Critical Control Points) limits, and benefit-risk analysis.
             </p>
           </div>
           <div class="flex justify-between items-center border-t border-outline-variant pt-4">
